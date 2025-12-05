@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ducs1ff3yw0u6"]
+
+[ext_resource type="Script" uid="uid://cdeno6y0wkgos" path="res://Gameplay Elements/Enemies/multi_hit_enemy.gd" id="1_d1o4w"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_cxtqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
+
+[node name="MultiHitEnemy" type="Area2D"]
+scale = Vector2(1.2, 1.2)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_d1o4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_50ioy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(0.5820312, 0.5859375)
+texture = ExtResource("2_cxtqi")
+
+[node name="HPHolder" type="Marker2D" parent="."]
+position = Vector2(0, 45.665)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

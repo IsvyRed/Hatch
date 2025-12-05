@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dij1cud50cvd"]
+
+[ext_resource type="Script" uid="uid://cdinw5gyxrwtq" path="res://Gameplay Elements/destruction_cast.gd" id="1_8jhc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pikwe"]
+size = Vector2(150, 150)
+
+[node name="ShapeCast2D" type="ShapeCast2D"]
+shape = SubResource("RectangleShape2D_pikwe")
+target_position = Vector2(500, 0)
+margin = 5.0
+max_results = 20
+collision_mask = 16
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("1_8jhc6")

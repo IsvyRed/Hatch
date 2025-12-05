@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://buptinn0f7qfe"]
+
+[ext_resource type="Script" uid="uid://ms8dcb4eg3mq" path="res://Testing Tools/label.gd" id="1_145lx"]
+
+[node name="Label" type="Label"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_145lx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

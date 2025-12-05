@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwow1h8av3il3"]
+
+[ext_resource type="Script" uid="uid://lkcs7flt0jbi" path="res://Gameplay Elements/enemy_spawn_bus.gd" id="1_vmhwu"]
+
+[node name="EnemySpawnBus" type="Marker2D"]
+script = ExtResource("1_vmhwu")

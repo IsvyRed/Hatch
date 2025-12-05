@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b88350481668c"]
+
+[ext_resource type="Script" uid="uid://6wdf1h040x2h" path="res://Gameplay Elements/player_vision.gd" id="1_skr5n"]
+
+[node name="PlayerVision" type="RayCast2D"]
+target_position = Vector2(500, 0)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("1_skr5n")

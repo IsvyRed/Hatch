@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2d4n4seh8vs8"]
+
+[ext_resource type="Script" uid="uid://mr31y6o7fhqx" path="res://Testing Tools/destruction_dummy.gd" id="1_tuwp8"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_qugt8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drpvb"]
+
+[node name="destructionDummy" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_tuwp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_drpvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.536743e-07, 1)
+scale = Vector2(0.1484375, 0.16015628)
+texture = ExtResource("2_qugt8")

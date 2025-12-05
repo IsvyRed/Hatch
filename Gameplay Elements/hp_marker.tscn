@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qg7v7cayclbk"]
+
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="1_gxmnf"]
+
+[node name="HPMarker" type="Sprite2D"]
+top_level = true
+rotation = 0.7853982
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_gxmnf")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwiw68oyuvcma"]
+
+[ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Gameplay Elements/player.gd" id="1_oihdw"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_v2t65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
+size = Vector2(20, 41)
+
+[node name="Player" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_oihdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_xxies")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.4609375, 0.421875)
+texture = ExtResource("2_v2t65")
+
+[node name="SlideTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="VisualTimer" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

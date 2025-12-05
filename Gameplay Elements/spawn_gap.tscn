@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bemrf5w4k510g"]
+
+[ext_resource type="Script" uid="uid://ci85cwoi78e2d" path="res://Gameplay Elements/spawnGap.gd" id="1_3w8r3"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_18cxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swej4"]
+
+[node name="spawnGap" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_3w8r3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_swej4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(-1.1920929e-07, 1.1920929e-07)
+rotation = -0.7853982
+scale = Vector2(0.052892134, 0.29797447)
+texture = ExtResource("2_18cxn")

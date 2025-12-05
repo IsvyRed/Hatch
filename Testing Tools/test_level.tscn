@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://lpiubfsstv5g"]
+
+[ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_f6ido"]
+[ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_ora1m"]
+[ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_ora1m"]
+[ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="4_ql1ef"]
+[ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="5_ql1ef"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="ValidTile" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(200, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ValidTile2" parent="." instance=ExtResource("2_ora1m")]
+
+[node name="ValidTile3" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(200, -200)
+
+[node name="ValidTile4" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(0, -200)
+
+[node name="ValidTile5" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(-200, -200)
+
+[node name="ValidTile6" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(-200, 0)
+
+[node name="ValidTile7" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(-200, 200)
+
+[node name="ValidTile8" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(0, 200)
+
+[node name="ValidTile9" parent="." instance=ExtResource("2_ora1m")]
+position = Vector2(200, 200)
+
+[node name="Player" parent="." instance=ExtResource("1_f6ido")]
+
+[node name="DeathTile" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(-200, -400)
+
+[node name="DeathTile2" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(0, -400)
+
+[node name="DeathTile3" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(200, -400)
+
+[node name="DeathTile4" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(400, -200)
+
+[node name="DeathTile5" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(400, 0)
+
+[node name="DeathTile6" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(400, 200)
+
+[node name="DeathTile7" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(200, 400)
+
+[node name="DeathTile8" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(0, 400)
+
+[node name="DeathTile9" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(-200, 400)
+
+[node name="DeathTile10" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(-400, 200)
+
+[node name="DeathTile11" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(-400, 0)
+
+[node name="DeathTile12" parent="." instance=ExtResource("4_ora1m")]
+position = Vector2(-400, -200)
+
+[node name="FloorCounter" parent="." instance=ExtResource("4_ql1ef")]
+offset_left = -493.0
+offset_top = -272.0
+offset_right = -493.0
+offset_bottom = -272.0
+
+[node name="Label" parent="." instance=ExtResource("5_ql1ef")]
+offset_left = -539.0
+offset_top = -211.0
+offset_right = -426.0
+offset_bottom = -188.0
+text = "PLACEHOLDER"
