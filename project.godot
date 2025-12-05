@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Hatch"
+config/name="Hatch - github"
 run/main_scene="uid://lpiubfsstv5g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Sprites/icon.svg"

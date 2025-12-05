@@ -7,7 +7,7 @@ var lastDirection
 var type = "player"
 var readyToMove = true
 var enemyHit = false
-#github comment
+#real github comment
 
 func _physics_process(_delta):
 	$VisualTimer.text = str(snapped($GameOverTimer.time_left,0.01))
