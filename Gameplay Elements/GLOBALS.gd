@@ -1,4 +1,5 @@
 extends Node
+#TO DO add lose function with small buffer before reset -- this will become the main game handler
 @warning_ignore("shadowed_global_identifier")
 var floor = 0
 var enemiesLeft =  0

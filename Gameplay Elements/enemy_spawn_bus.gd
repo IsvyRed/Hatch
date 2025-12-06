@@ -1,5 +1,4 @@
 extends Marker2D
-#TO DO: UPGRADE on cornered bus
 var VISIONCAST = preload("res://Gameplay Elements/bus_vision.tscn")
 var TESTENEMY = preload("res://Gameplay Elements/Enemies/pass_through_enemy.tscn")
 var GAPMARKER = preload("res://Gameplay Elements/spawn_gap.tscn")

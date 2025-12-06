@@ -1,5 +1,4 @@
 extends Area2D
-#REMEMBER: eventually add functionality to go through tiles with no enemies on them, falling off or reaching an enemy tile
 var BUS = preload("res://Gameplay Elements/enemy_spawn_bus.tscn")
 var VISIONCAST = preload("res://Gameplay Elements/player_vision.tscn")
 var DESTRUCTIONCAST = preload("res://Gameplay Elements/destructionCast.tscn")
@@ -7,7 +6,6 @@ var lastDirection
 var type = "player"
 var readyToMove = true
 var enemyHit = false
-#real github comment
 
 func _physics_process(_delta):
 	$VisualTimer.text = str(snapped($GameOverTimer.time_left,0.01))

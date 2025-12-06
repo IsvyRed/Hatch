@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://chwfq4c53qhjf"]
+[gd_scene load_steps=3 format=3 uid="uid://chwfq4c53qhjf"]
 
 [ext_resource type="Script" uid="uid://ckujkr1cmrd4h" path="res://Testing Tools/floor_counter.gd" id="1_5d0a5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d0a5"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="FloorCounter" type="Label"]
 anchors_preset = 15
@@ -8,4 +11,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+label_settings = SubResource("LabelSettings_5d0a5")
 script = ExtResource("1_5d0a5")

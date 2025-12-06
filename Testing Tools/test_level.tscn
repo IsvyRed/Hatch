@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://lpiubfsstv5g"]
+[gd_scene load_steps=7 format=3 uid="uid://lpiubfsstv5g"]
 
+[ext_resource type="Texture2D" uid="uid://c4ruwy5mekykp" path="res://Testing Tools/testBG.png" id="1_afx27"]
 [ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_f6ido"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_ora1m"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_ora1m"]
@@ -7,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="5_ql1ef"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="TestBg" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_afx27")
 
 [node name="ValidTile" parent="." instance=ExtResource("2_ora1m")]
 position = Vector2(200, 0)

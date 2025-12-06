@@ -19,6 +19,13 @@ config/icon="res://Sprites/icon.svg"
 
 Globals="*res://Gameplay Elements/GLOBALS.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/aspect="expand"
+window/canvas_textures/default_texture_filter=0
+
 [file_customization]
 
 folder_colors={
@@ -78,3 +85,7 @@ Attack2={
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Spawn Gaps"
 2d_physics/layer_5="EnvironmentDebris"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
