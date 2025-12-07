@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1ieq5spgoubg"]
+
+[ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_1wh16"]
+[ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_yup6v"]
+[ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="3_ehsp4"]
+[ext_resource type="Texture2D" uid="uid://commo6keinbis" path="res://Sprites/HatchBackgroundBG.png" id="4_mxsub"]
+[ext_resource type="Texture2D" uid="uid://c7m4dj5d51lhb" path="res://Sprites/HatchBackgroundTower.png" id="5_5qebm"]
+[ext_resource type="Texture2D" uid="uid://dbf4do513b6ig" path="res://Sprites/HatchBackgroundGlass.png" id="6_rsaji"]
+[ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_rsaji"]
+[ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_wbf2n"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="ValidTiles" type="Node" parent="."]
+
+[node name="ValidTile1" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(200, 0)
+
+[node name="ValidTile2" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+
+[node name="ValidTile3" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(200, -200)
+
+[node name="ValidTile4" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(0, -200)
+
+[node name="ValidTile5" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(-200, -200)
+
+[node name="ValidTile6" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(-200, 0)
+
+[node name="ValidTile7" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(-200, 200)
+
+[node name="ValidTile8" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(0, 200)
+
+[node name="ValidTile9" parent="ValidTiles" instance=ExtResource("2_yup6v")]
+position = Vector2(200, 200)
+
+[node name="DeathTiles" type="Node" parent="."]
+
+[node name="DeathTile" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(-200, -400)
+
+[node name="DeathTile2" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(0, -400)
+
+[node name="DeathTile3" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(200, -400)
+
+[node name="DeathTile4" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(400, -200)
+
+[node name="DeathTile5" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(400, 0)
+
+[node name="DeathTile6" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(400, 200)
+
+[node name="DeathTile7" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(200, 400)
+
+[node name="DeathTile8" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(0, 400)
+
+[node name="DeathTile9" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(-200, 400)
+
+[node name="DeathTile10" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(-400, 200)
+
+[node name="DeathTile11" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(-400, 0)
+
+[node name="DeathTile12" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
+position = Vector2(-400, -200)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_1wh16")]
+
+[node name="HatchBackgroundBg" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(5, 5)
+texture = ExtResource("4_mxsub")
+
+[node name="HatchBackgroundTower" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(5, 5)
+texture = ExtResource("5_5qebm")
+
+[node name="HatchBackgroundGlass" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(5, 5)
+texture = ExtResource("6_rsaji")
+
+[node name="FloorCounter" parent="." instance=ExtResource("7_rsaji")]
+offset_left = -493.0
+offset_top = -272.0
+offset_right = -493.0
+offset_bottom = -272.0
+
+[node name="Label" parent="." instance=ExtResource("8_wbf2n")]
+offset_left = -539.0
+offset_top = -211.0
+offset_right = -426.0
+offset_bottom = -188.0
+text = "PLACEHOLDER"

@@ -6,7 +6,7 @@ var enemiesLeft =  0
 var enemies = [] #Use this reference to upgrade enemies when bus is cornered
 var upgradeUnits = 2
 var usedEnemies = []
-var debugDeathMsg
+var debugDeathMsg = null
 var lastDirection
 
 func clearEnemies():
@@ -21,4 +21,5 @@ func runUpgrade():
 	usedEnemies.clear()
 
 func deathMessage():
-	debugDeathMsg.prompt()
+	if debugDeathMsg != null:
+		debugDeathMsg.prompt()

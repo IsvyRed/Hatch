@@ -10,6 +10,7 @@
 [node name="TestLevel" type="Node2D"]
 
 [node name="TestBg" type="Sprite2D" parent="."]
+z_index = -5
 scale = Vector2(5, 5)
 texture = ExtResource("1_afx27")
 
