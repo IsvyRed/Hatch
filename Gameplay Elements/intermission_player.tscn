@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxptvf378ki0c"]
+
+[ext_resource type="Script" uid="uid://bfm8ahbm6aoke" path="res://intermission_player.gd" id="1_ump6m"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_epqwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
+size = Vector2(20, 41)
+
+[node name="IntermissionPlayer" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ump6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_xxies")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.4609375, 0.421875)
+texture = ExtResource("2_epqwq")
+
+[node name="SlideTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]

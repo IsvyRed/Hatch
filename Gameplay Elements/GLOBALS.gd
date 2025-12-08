@@ -9,6 +9,9 @@ var usedEnemies = []
 var debugDeathMsg = null
 var lastDirection
 
+var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
+var curLevel = 0
+
 func clearEnemies():
 	enemies.clear()
 	enemiesLeft = 0
@@ -21,5 +24,11 @@ func runUpgrade():
 	usedEnemies.clear()
 
 func deathMessage():
+	curLevel = 0
 	if debugDeathMsg != null:
 		debugDeathMsg.prompt()
+	get_tree().change_scene_to_file(levels[curLevel])
+
+func nextArea():
+	curLevel += 1
+	get_tree().change_scene_to_file(levels[curLevel])
