@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://che436kyhlwah"]
+[gd_scene load_steps=10 format=3 uid="uid://che436kyhlwah"]
 
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="1_c35er"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="2_18elk"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dksx7taspqtm3" path="res://Sprites/RooftopRailing.png" id="6_cw1c1"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_lje68"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_44c2i"]
+[ext_resource type="PackedScene" uid="uid://d2d4n4seh8vs8" path="res://Testing Tools/destruction_dummy.tscn" id="9_18elk"]
 
 [node name="Rooftop" type="Node2D"]
 
@@ -108,3 +109,33 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
+
+[node name="destructionDummy" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(-116, -14)
+
+[node name="destructionDummy2" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(-85, 21)
+
+[node name="destructionDummy3" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(-71, -24)
+
+[node name="destructionDummy4" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(-152, 18)
+
+[node name="destructionDummy5" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(-167, -25)
+
+[node name="destructionDummy6" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(71, -27)
+
+[node name="destructionDummy7" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(69, 32)
+
+[node name="destructionDummy8" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(132, 22)
+
+[node name="destructionDummy9" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(130, -26)
+
+[node name="destructionDummy10" parent="." instance=ExtResource("9_18elk")]
+position = Vector2(172, 27)

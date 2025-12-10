@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2d4n4seh8vs8"]
+[gd_scene load_steps=5 format=3 uid="uid://d2d4n4seh8vs8"]
 
 [ext_resource type="Script" uid="uid://mr31y6o7fhqx" path="res://Testing Tools/destruction_dummy.gd" id="1_tuwp8"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_qugt8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drpvb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tuwp8"]
+font_size = 8
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="destructionDummy" type="Area2D"]
 collision_layer = 16
@@ -17,3 +22,11 @@ shape = SubResource("CapsuleShape2D_drpvb")
 position = Vector2(-9.536743e-07, 1)
 scale = Vector2(0.1484375, 0.16015628)
 texture = ExtResource("2_qugt8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -23.0
+offset_top = 9.0
+offset_right = 25.0
+offset_bottom = 21.0
+text = "Destructible"
+label_settings = SubResource("LabelSettings_tuwp8")

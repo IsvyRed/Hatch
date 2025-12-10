@@ -9,12 +9,17 @@ var usedEnemies = []
 var debugDeathMsg = null
 var lastDirection
 
+var debrisList = []
+
 var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
 var curLevel = 0
 
 func clearEnemies():
 	enemies.clear()
 	enemiesLeft = 0
+	for debris in debrisList:
+		debris.queue_free()
+	debrisList.clear()
 	
 func runUpgrade():
 	for i in upgradeUnits:
