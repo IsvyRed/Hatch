@@ -1,5 +1,6 @@
 extends Area2D
 var explodechance = randi_range(0,5)
+
 func _ready():
 	Globals.debrisList.append(self)
 	

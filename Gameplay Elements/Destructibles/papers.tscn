@@ -1,0 +1,130 @@
+[gd_scene load_steps=26 format=3 uid="uid://iodsfg1bjarb"]
+
+[ext_resource type="Script" uid="uid://di5tbtg50c5s2" path="res://papers.gd" id="1_j2yux"]
+[ext_resource type="Texture2D" uid="uid://dbayx8bjw0n1p" path="res://Sprites/Destructibles/Desk/PaperFall1.png" id="2_3w8fo"]
+[ext_resource type="Texture2D" uid="uid://b1mnuirdxgedp" path="res://Sprites/Destructibles/Desk/PaperFall2.png" id="3_i7ism"]
+[ext_resource type="Texture2D" uid="uid://dsdw02x1aakt7" path="res://Sprites/Destructibles/Desk/PaperFall3.png" id="4_o5xit"]
+[ext_resource type="Texture2D" uid="uid://t8vqfldfijvt" path="res://Sprites/Destructibles/Desk/PaperFall4.png" id="5_ftypv"]
+[ext_resource type="Texture2D" uid="uid://y6p4f0pl6c83" path="res://Sprites/Destructibles/Desk/PaperFall5.png" id="6_vdx6q"]
+[ext_resource type="Texture2D" uid="uid://od7imxgi4430" path="res://Sprites/Destructibles/Desk/PaperFall6.png" id="7_hef0u"]
+[ext_resource type="Texture2D" uid="uid://cyi36ob0edxlc" path="res://Sprites/Destructibles/Desk/PaperFall7.png" id="8_mfnqk"]
+[ext_resource type="Texture2D" uid="uid://4fuin41ifd1h" path="res://Sprites/Destructibles/Desk/PaperFallA1.png" id="9_on2da"]
+[ext_resource type="Texture2D" uid="uid://bnvs1ahyt55lt" path="res://Sprites/Destructibles/Desk/PaperFallA2.png" id="10_3xhit"]
+[ext_resource type="Texture2D" uid="uid://dkffa3l7ol13q" path="res://Sprites/Destructibles/Desk/PaperFallA3.png" id="11_p0txj"]
+[ext_resource type="Texture2D" uid="uid://cdcdah626j4qv" path="res://Sprites/Destructibles/Desk/PaperFallA4.png" id="12_6trp1"]
+[ext_resource type="Texture2D" uid="uid://on4sqyawarqu" path="res://Sprites/Destructibles/Desk/PaperFallA5.png" id="13_lef26"]
+[ext_resource type="Texture2D" uid="uid://busdodt3vxr50" path="res://Sprites/Destructibles/Desk/PaperFallA6.png" id="14_qxmx8"]
+[ext_resource type="Texture2D" uid="uid://lw3dlnd3v2rx" path="res://Sprites/Destructibles/Desk/PaperFallA7.png" id="15_y4ts2"]
+[ext_resource type="Texture2D" uid="uid://dfcimaxuppxwa" path="res://Sprites/Destructibles/Desk/PaperFallB1.png" id="16_njp4d"]
+[ext_resource type="Texture2D" uid="uid://cvr1cxidsglyf" path="res://Sprites/Destructibles/Desk/PaperFallB2.png" id="17_oitya"]
+[ext_resource type="Texture2D" uid="uid://dg0cthktg63w7" path="res://Sprites/Destructibles/Desk/PaperFallB3.png" id="18_cu5wq"]
+[ext_resource type="Texture2D" uid="uid://bdvbmoeji3ifw" path="res://Sprites/Destructibles/Desk/PaperFallB4.png" id="19_0nbpf"]
+[ext_resource type="Texture2D" uid="uid://jr4cshho3p1w" path="res://Sprites/Destructibles/Desk/PaperFallB5.png" id="20_aydoa"]
+[ext_resource type="Texture2D" uid="uid://csccwk7a8g0o" path="res://Sprites/Destructibles/Desk/PaperFallB6.png" id="21_xcldl"]
+[ext_resource type="Texture2D" uid="uid://dc4bgenx0xrcx" path="res://Sprites/Destructibles/Desk/PaperFallB7.png" id="22_eg378"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70cjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3w8fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i7ism")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o5xit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ftypv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vdx6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hef0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mfnqk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqqdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_on2da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3xhit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p0txj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6trp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lef26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qxmx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y4ts2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ooh1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_njp4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_oitya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cu5wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0nbpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aydoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xcldl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eg378")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="papers" type="Marker2D"]
+script = ExtResource("1_j2yux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_70cjv")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_pqqdr")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ooh1i")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D2" to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D3" to="." method="_on_animation_finished"]

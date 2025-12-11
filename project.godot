@@ -31,6 +31,7 @@ window/canvas_textures/default_texture_filter=0
 
 folder_colors={
 "res://Gameplay Elements/": "blue",
+"res://Gameplay Elements/Destructibles/": "yellow",
 "res://Gameplay Elements/Enemies/": "red",
 "res://Sprites/": "yellow",
 "res://Testing Tools/": "gray"
