@@ -89,7 +89,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/LowerBoundary"]
 z_index = 5
-position = Vector2(-2, 1147)
+position = Vector2(1, 1143)
 shape = SubResource("RectangleShape2D_rsaji")
 
 [node name="UpperBoundary" type="StaticBody2D" parent="Boudaries"]
@@ -108,7 +108,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/LeftBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(-109.630005, 139, -142.63, 664, -196.63, 663, -192.63, 143)
+polygon = PackedVector2Array(-108.630005, 138, -142.63, 665, -196.63, 663, -192.63, 143)
 
 [node name="RightBoundary" type="StaticBody2D" parent="Boudaries"]
 position = Vector2(0, -400)
@@ -117,7 +117,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/RightBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(389.37, 139, 424.37, 664, 463.37, 665, 460.37, 142)
+polygon = PackedVector2Array(388.37, 141, 426.37, 660, 463.37, 665, 460.37, 142)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

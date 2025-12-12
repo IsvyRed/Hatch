@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvrgtxh0cje56"]
+
+[ext_resource type="PackedScene" uid="uid://b3k80iabyle0l" path="res://Gameplay Elements/Destructibles/desk.tscn" id="1_gojpa"]
+
+[node name="Cluster2" type="Marker2D"]
+
+[node name="Desk" parent="." instance=ExtResource("1_gojpa")]

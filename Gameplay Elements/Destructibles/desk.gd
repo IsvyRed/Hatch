@@ -6,6 +6,7 @@ var neutralTexture = preload("res://Sprites/Destructibles/Desk/DeskhitN.png")
 var papers = preload("res://Gameplay Elements/Destructibles/papers.tscn")
 var motion = Vector2(0,0)
 
+
 func _ready():
 	Globals.debrisList.append(self)
 
@@ -45,7 +46,7 @@ func destroy():
 					paperinst.get_children()[i].flip_h = true
 				paperinst.position.x += randi_range(-2,2)*5
 				paperinst.setType(i)
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_collide(motion)
 	motion /= 1.5
 

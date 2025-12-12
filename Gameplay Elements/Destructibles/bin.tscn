@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://3yshdgdj8mgd"]
+
+[ext_resource type="Script" uid="uid://b6ck3v3sxk53u" path="res://Gameplay Elements/Destructibles/bin.gd" id="1_l531p"]
+[ext_resource type="Texture2D" uid="uid://dcb8x6yj8wyfm" path="res://Sprites/Destructibles/Bin/BinIntact.png" id="2_ovplu"]
+[ext_resource type="Texture2D" uid="uid://0iddnf6xq6fm" path="res://Sprites/Destructibles/Bin/BinFallH1.png" id="3_e3m43"]
+[ext_resource type="Texture2D" uid="uid://cf8xjyejb6gtq" path="res://Sprites/Destructibles/Bin/BinFallH2.png" id="4_0lhqc"]
+[ext_resource type="Texture2D" uid="uid://cmjowu8721jpt" path="res://Sprites/Destructibles/Bin/BinFallU1.png" id="5_u4cox"]
+[ext_resource type="Texture2D" uid="uid://eh1nkx2aah41" path="res://Sprites/Destructibles/Bin/BinFallU2.png" id="6_qx8nt"]
+[ext_resource type="Texture2D" uid="uid://w5qweycf7smy" path="res://Sprites/Destructibles/Bin/BinFallD1.png" id="7_t6rm6"]
+[ext_resource type="Texture2D" uid="uid://j6v6lmrx5q0c" path="res://Sprites/Destructibles/Bin/BinFallD2.png" id="8_v24oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l531p"]
+size = Vector2(5.9999995, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crwt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e3m43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0lhqc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1ddk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u4cox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qx8nt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dlf6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_t6rm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v24oa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Bin" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 32
+gravity_scale = 0.0
+script = ExtResource("1_l531p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_l531p")
+
+[node name="IntactSprite" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_ovplu")
+
+[node name="FallH" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_crwt1")
+
+[node name="FallU" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_u1ddk")
+
+[node name="FallD" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_0dlf6")

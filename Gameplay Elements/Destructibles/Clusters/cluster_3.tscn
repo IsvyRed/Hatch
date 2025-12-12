@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d26dqxugtl4ly"]
+
+[ext_resource type="PackedScene" uid="uid://3yshdgdj8mgd" path="res://Gameplay Elements/Destructibles/bin.tscn" id="1_ulwjf"]
+
+[node name="Cluster3" type="Marker2D"]
+
+[node name="Bin" parent="." instance=ExtResource("1_ulwjf")]
+position = Vector2(15, 25)
