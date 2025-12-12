@@ -28,8 +28,9 @@ func _physics_process(_delta):
 		add_child(destructionCast)
 		#afterimage cast
 		var afterImage = AFTERIMAGE.instantiate()
-		add_child(afterImage)
+		add_sibling(afterImage)
 		afterImage.rotation = PI
+		afterImage.position = position + lastDirection
 		afterImage.play()
 	if Input.is_action_just_pressed("Right") and readyToMove:
 		readyToMove = false
@@ -47,7 +48,8 @@ func _physics_process(_delta):
 		add_child(destructionCast)
 		#afterimage cast
 		var afterImage = AFTERIMAGE.instantiate()
-		add_child(afterImage)
+		add_sibling(afterImage)
+		afterImage.position = position + lastDirection
 		afterImage.play()
 	if Input.is_action_just_pressed("Up") and readyToMove:
 		readyToMove = false
@@ -65,8 +67,9 @@ func _physics_process(_delta):
 		add_child(destructionCast)
 		#afterimage cast
 		var afterImage = AFTERIMAGE.instantiate()
-		add_child(afterImage)
+		add_sibling(afterImage)
 		afterImage.rotation = -PI/2
+		afterImage.position = position + lastDirection
 		afterImage.play()
 	if Input.is_action_just_pressed("Down") and readyToMove:
 		readyToMove = false
@@ -84,8 +87,9 @@ func _physics_process(_delta):
 		add_child(destructionCast)
 		#afterimage cast
 		var afterImage = AFTERIMAGE.instantiate()
-		add_child(afterImage)
+		add_sibling(afterImage)
 		afterImage.rotation = PI/2
+		afterImage.position = position + lastDirection
 		afterImage.play()
 	if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
 		if has_overlapping_areas():

@@ -23,12 +23,15 @@ animations = [{
 }]
 
 [node name="Marker2D" type="Marker2D"]
+z_as_relative = false
 script = ExtResource("1_gylyl")
 
 [node name="AfterImage" type="AnimatedSprite2D" parent="."]
+z_index = 2
+z_as_relative = false
 position = Vector2(-239.99998, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_yxr2b")
 
-[connection signal="animation_finished" from="AfterImage" to="AfterImage" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AfterImage" to="." method="_on_after_image_animation_finished"]
+[connection signal="animation_finished" from="AfterImage" to="AfterImage" method="_on_animation_finished"]
