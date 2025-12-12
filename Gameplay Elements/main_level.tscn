@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1ieq5spgoubg"]
+[gd_scene load_steps=10 format=3 uid="uid://c1ieq5spgoubg"]
 
 [ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_1wh16"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_yup6v"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dbf4do513b6ig" path="res://Sprites/HatchBackgroundGlass.png" id="6_rsaji"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_rsaji"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_wbf2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
+size = Vector2(568, 164)
 
 [node name="MainLevel" type="Node2D"]
 
@@ -77,22 +80,64 @@ position = Vector2(-400, 0)
 [node name="DeathTile12" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
 position = Vector2(-400, -200)
 
+[node name="Boudaries" type="Node" parent="."]
+
+[node name="LowerBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -800)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/LowerBoundary"]
+z_index = 5
+position = Vector2(-2, 1147)
+shape = SubResource("RectangleShape2D_rsaji")
+
+[node name="UpperBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/UpperBoundary"]
+position = Vector2(-1, 58)
+shape = SubResource("RectangleShape2D_rsaji")
+
+[node name="LeftBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/LeftBoundary"]
+position = Vector2(-141.37, 0)
+polygon = PackedVector2Array(-109.630005, 139, -142.63, 664, -196.63, 663, -192.63, 143)
+
+[node name="RightBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/RightBoundary"]
+position = Vector2(-141.37, 0)
+polygon = PackedVector2Array(389.37, 139, 424.37, 664, 463.37, 665, 460.37, 142)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
 z_index = -1
+z_as_relative = false
 scale = Vector2(5, 5)
 texture = ExtResource("4_mxsub")
 
 [node name="HatchBackgroundTower" type="Sprite2D" parent="."]
 z_index = -1
+z_as_relative = false
 scale = Vector2(5, 5)
 texture = ExtResource("5_5qebm")
 
 [node name="HatchBackgroundGlass" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 3
+z_as_relative = false
 scale = Vector2(5, 5)
 texture = ExtResource("6_rsaji")
 

@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dksx7taspqtm3" path="res://Sprites/RooftopRailing.png" id="6_cw1c1"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_lje68"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_44c2i"]
-[ext_resource type="PackedScene" uid="uid://d2d4n4seh8vs8" path="res://Testing Tools/destruction_dummy.tscn" id="9_18elk"]
 [ext_resource type="PackedScene" uid="uid://b3k80iabyle0l" path="res://Gameplay Elements/Destructibles/desk.tscn" id="10_r3d51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3d51"]
+size = Vector2(542.5, 169)
 
 [node name="Rooftop" type="Node2D"]
 
@@ -79,6 +81,45 @@ position = Vector2(-400, 0)
 [node name="DeathTile12" parent="DeathTiles" instance=ExtResource("2_18elk")]
 position = Vector2(-400, -200)
 
+[node name="Boudaries" type="Node" parent="."]
+
+[node name="LowerBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -800)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/LowerBoundary"]
+z_index = 5
+position = Vector2(0.5, 1124)
+shape = SubResource("RectangleShape2D_r3d51")
+
+[node name="UpperBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/UpperBoundary"]
+position = Vector2(0, 74.5)
+shape = SubResource("RectangleShape2D_r3d51")
+
+[node name="LeftBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/LeftBoundary"]
+position = Vector2(-141.37, 0)
+polygon = PackedVector2Array(-90.630005, 158, -127.630005, 639, -195.63, 641, -189.63, 157)
+
+[node name="RightBoundary" type="StaticBody2D" parent="Boudaries"]
+position = Vector2(0, -400)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/RightBoundary"]
+position = Vector2(-141.37, 0)
+polygon = PackedVector2Array(375.37, 158, 409.37, 638, 460.37, 638, 459.37, 158)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
@@ -110,36 +151,6 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
-
-[node name="destructionDummy" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(-116, -14)
-
-[node name="destructionDummy2" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(-85, 21)
-
-[node name="destructionDummy3" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(-71, -24)
-
-[node name="destructionDummy4" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(-152, 18)
-
-[node name="destructionDummy5" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(-167, -25)
-
-[node name="destructionDummy6" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(71, -27)
-
-[node name="destructionDummy7" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(69, 32)
-
-[node name="destructionDummy8" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(132, 22)
-
-[node name="destructionDummy9" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(130, -26)
-
-[node name="destructionDummy10" parent="." instance=ExtResource("9_18elk")]
-position = Vector2(172, 27)
 
 [node name="Desk" parent="." instance=ExtResource("10_r3d51")]
 position = Vector2(-9.094947e-13, -170)

@@ -4,15 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dkexy015unwb2" path="res://Sprites/Destructibles/Desk/DeskIntact.png" id="2_0eh8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnlxw"]
+size = Vector2(20, 15)
 
-[node name="Desk" type="Area2D"]
-scale = Vector2(5, 5)
+[node name="Desk" type="RigidBody2D"]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 32
+gravity_scale = 0.0
 script = ExtResource("1_p3i8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.3841858e-06, 2.5000002)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_hnlxw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
 texture = ExtResource("2_0eh8o")

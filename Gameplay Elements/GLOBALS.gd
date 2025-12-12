@@ -10,6 +10,7 @@ var debugDeathMsg = null
 var lastDirection
 
 var debrisList = []
+var validTiles = []
 
 var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
 var curLevel = 0
@@ -36,4 +37,5 @@ func deathMessage():
 
 func nextArea():
 	curLevel += 1
+	validTiles.clear()
 	get_tree().change_scene_to_file(levels[curLevel])

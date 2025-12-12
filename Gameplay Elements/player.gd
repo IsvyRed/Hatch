@@ -3,6 +3,8 @@ extends Area2D
 var BUS = preload("res://Gameplay Elements/enemy_spawn_bus.tscn")
 var VISIONCAST = preload("res://Gameplay Elements/player_vision.tscn")
 var DESTRUCTIONCAST = preload("res://Gameplay Elements/destructionCast.tscn")
+var DEBRISSPAWNER = preload("res://Gameplay Elements/debris_spawner.tscn")
+var AFTERIMAGE = preload("res://Gameplay Elements/after_image.tscn")
 var lastDirection
 var type = "player"
 var readyToMove = true
@@ -22,8 +24,13 @@ func _physics_process(_delta):
 		Globals.lastDirection = lastDirection
 		#Shapecast for responsive destruction
 		var destructionCast = DESTRUCTIONCAST.instantiate()
-		destructionCast.set_target_position(lastDirection*1.1)
+		destructionCast.set_target_position(lastDirection)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_child(afterImage)
+		afterImage.rotation = PI
+		afterImage.play()
 	if Input.is_action_just_pressed("Right") and readyToMove:
 		readyToMove = false
 		$SlideTimer.start()
@@ -36,8 +43,12 @@ func _physics_process(_delta):
 		Globals.lastDirection = lastDirection
 		#Shapecast for responsive destruction
 		var destructionCast = DESTRUCTIONCAST.instantiate()
-		destructionCast.set_target_position(lastDirection*1.1)
+		destructionCast.set_target_position(lastDirection)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_child(afterImage)
+		afterImage.play()
 	if Input.is_action_just_pressed("Up") and readyToMove:
 		readyToMove = false
 		$SlideTimer.start()
@@ -50,8 +61,13 @@ func _physics_process(_delta):
 		Globals.lastDirection = lastDirection
 		#Shapecast for responsive destruction
 		var destructionCast = DESTRUCTIONCAST.instantiate()
-		destructionCast.set_target_position(lastDirection*1.1)
+		destructionCast.set_target_position(lastDirection)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_child(afterImage)
+		afterImage.rotation = -PI/2
+		afterImage.play()
 	if Input.is_action_just_pressed("Down") and readyToMove:
 		readyToMove = false
 		$SlideTimer.start()
@@ -64,8 +80,13 @@ func _physics_process(_delta):
 		Globals.lastDirection = lastDirection
 		#Shapecast for responsive destruction
 		var destructionCast = DESTRUCTIONCAST.instantiate()
-		destructionCast.set_target_position(lastDirection*1.1)
+		destructionCast.set_target_position(lastDirection)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_child(afterImage)
+		afterImage.rotation = PI/2
+		afterImage.play()
 	if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
 		if has_overlapping_areas():
 			get_overlapping_areas()[0].takeDamage()
@@ -79,6 +100,10 @@ func _physics_process(_delta):
 			Globals.floor += 1
 			Globals.clearEnemies()
 			$GameOverTimer.start()
+			
+			var destructibleSpawner = DEBRISSPAWNER.instantiate()
+			add_child(destructibleSpawner)
+			
 			print("Floor " + str(Globals.floor) + ": ")
 			
 		else:
