@@ -8,6 +8,7 @@ var upgradeUnits = 2
 var usedEnemies = []
 var debugDeathMsg = null
 var lastDirection
+var deathCon = ""
 
 var debrisList = []
 var validTiles = []
@@ -29,8 +30,10 @@ func runUpgrade():
 		enemies.pop_at(chosenEnemy)
 	usedEnemies.clear()
 
-func deathMessage():
+func deathMessage(cause = ""):
 	curLevel = 0
+	deathCon = cause
+	Globals.clearEnemies()
 	if debugDeathMsg != null:
 		debugDeathMsg.prompt()
 	get_tree().change_scene_to_file(levels[curLevel])

@@ -8,4 +8,4 @@
 [node name="Desk" parent="." instance=ExtResource("1_fuj7s")]
 
 [node name="Bin" parent="." instance=ExtResource("2_e8krw")]
-position = Vector2(36, 28)
+position = Vector2(65, 15)

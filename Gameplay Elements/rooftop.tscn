@@ -141,16 +141,19 @@ scale = Vector2(5, 5)
 texture = ExtResource("6_cw1c1")
 
 [node name="FloorCounter" parent="." instance=ExtResource("7_lje68")]
-offset_left = -625.0
-offset_top = -196.0
-offset_right = -550.5
-offset_bottom = -139.5
+offset_left = -623.0
+offset_top = -173.0
+offset_right = -510.0
+offset_bottom = -116.5
+text = "PLACEHOLDER
+"
 
 [node name="Label" parent="." instance=ExtResource("8_44c2i")]
-offset_left = -539.0
-offset_top = -211.0
-offset_right = -426.0
-offset_bottom = -188.0
+visible = true
+offset_left = -623.0
+offset_top = -156.0
+offset_right = -470.0
+offset_bottom = -116.0
 text = "PLACEHOLDER"
 
 [node name="Desk" parent="." instance=ExtResource("10_r3d51")]

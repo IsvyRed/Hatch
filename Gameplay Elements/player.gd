@@ -111,7 +111,7 @@ func _physics_process(_delta):
 			print("Floor " + str(Globals.floor) + ": ")
 			
 		else:
-			Globals.deathMessage()
+			Globals.deathMessage("Death: Floor was not clear")
 			$GameOverTimer.start()
 			print("Dead (floor not clear)")
 			Globals.floor = 0
@@ -120,14 +120,14 @@ func _physics_process(_delta):
 func onValidTile():
 	position += lastDirection
 func onDeathTile():
-	Globals.deathMessage()
+	Globals.deathMessage("Death: Moved out of bounds")
 	print("Dead (out of bounds)")
 	Globals.floor = 0
 	$SlideTimer.stop()
 	readyToMove = true
 	
 func missedEnemy():
-	Globals.deathMessage()
+	Globals.deathMessage("Death: Missed enemy")
 	print("Dead (missed enemy)")
 	Globals.floor = 0
 	
@@ -153,6 +153,6 @@ func _on_slide_timer_timeout():
 
 func _on_game_over_timer_timeout():
 	Globals.floor = 0
-	Globals.deathMessage()
+	Globals.deathMessage("Death: Out of time")
 	$GameOverTimer.start()
 	print("Dead (Out of time)")

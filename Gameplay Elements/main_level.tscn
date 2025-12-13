@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_wbf2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
-size = Vector2(568, 164)
+size = Vector2(628, 164)
 
 [node name="MainLevel" type="Node2D"]
 
@@ -89,7 +89,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/LowerBoundary"]
 z_index = 5
-position = Vector2(1, 1143)
+position = Vector2(0, 1143)
 shape = SubResource("RectangleShape2D_rsaji")
 
 [node name="UpperBoundary" type="StaticBody2D" parent="Boudaries"]
@@ -108,7 +108,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/LeftBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(-108.630005, 138, -142.63, 665, -196.63, 663, -192.63, 143)
+polygon = PackedVector2Array(-132.63, 141, -171.63, 662, -222.63, 660, -230.63, 138)
 
 [node name="RightBoundary" type="StaticBody2D" parent="Boudaries"]
 position = Vector2(0, -400)
@@ -117,7 +117,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/RightBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(388.37, 141, 426.37, 660, 463.37, 665, 460.37, 142)
+polygon = PackedVector2Array(419.37, 144, 452.37, 666, 499.37, 662, 495.37, 145)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
