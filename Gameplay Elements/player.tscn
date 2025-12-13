@@ -39,5 +39,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_v2t65")
 
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

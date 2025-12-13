@@ -124,7 +124,7 @@ polygon = PackedVector2Array(375.37, 158, 409.37, 638, 460.37, 638, 459.37, 158)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -3
 scale = Vector2(5, 5)
 texture = ExtResource("4_lniyk")
 

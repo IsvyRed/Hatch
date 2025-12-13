@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3yshdgdj8mgd"]
+[gd_scene load_steps=14 format=3 uid="uid://3yshdgdj8mgd"]
 
 [ext_resource type="Script" uid="uid://b6ck3v3sxk53u" path="res://Gameplay Elements/Destructibles/bin.gd" id="1_l531p"]
 [ext_resource type="Texture2D" uid="uid://dcb8x6yj8wyfm" path="res://Sprites/Destructibles/Bin/BinIntact.png" id="2_ovplu"]
@@ -54,7 +54,11 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovplu"]
+size = Vector2(38, 57)
+
 [node name="Bin" type="RigidBody2D"]
+z_as_relative = false
 collision_layer = 16
 collision_mask = 32
 gravity_scale = 0.0
@@ -83,3 +87,13 @@ sprite_frames = SubResource("SpriteFrames_u1ddk")
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_0dlf6")
+
+[node name="GlassChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassChecker"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_ovplu")
+
+[connection signal="body_entered" from="GlassChecker" to="." method="fall"]

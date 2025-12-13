@@ -124,7 +124,7 @@ polygon = PackedVector2Array(419.37, 144, 452.37, 666, 499.37, 662, 495.37, 145)
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -5
 z_as_relative = false
 scale = Vector2(5, 5)
 texture = ExtResource("4_mxsub")

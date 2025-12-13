@@ -31,14 +31,16 @@ func runUpgrade():
 	usedEnemies.clear()
 
 func deathMessage(cause = ""):
-	curLevel = 0
 	deathCon = cause
-	Globals.clearEnemies()
-	if debugDeathMsg != null:
-		debugDeathMsg.prompt()
-	get_tree().change_scene_to_file(levels[curLevel])
 
 func nextArea():
 	curLevel += 1
 	validTiles.clear()
+	get_tree().change_scene_to_file(levels[curLevel])
+
+func resetRun():
+	curLevel = 0
+	Globals.clearEnemies()
+	if debugDeathMsg != null:
+		debugDeathMsg.prompt()
 	get_tree().change_scene_to_file(levels[curLevel])
