@@ -46,6 +46,6 @@ func fall(_body):
 	if chance > judge:
 		collision_mask = 6
 		z_index = -2
-		motion += locLastDirection/10
+		motion += locLastDirection/15
 		gravity_scale = 6
 		angular_velocity = motion.x/3

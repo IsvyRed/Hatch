@@ -48,7 +48,7 @@ func _physics_process(_delta):
 	for direction in directionValidity:
 		if direction == false:
 			badDirections+=1
-	if badDirections == 4 and frame > 3:
+	if badDirections == 4 and frame > 4:
 		print("CORNERED, EXITING")
 		Globals.runUpgrade()
 		queue_free()

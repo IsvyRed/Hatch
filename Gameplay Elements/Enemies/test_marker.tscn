@@ -6,6 +6,7 @@
 [node name="TestMarker" type="PathFollow2D"]
 position = Vector2(30, 30)
 rotation = -0.24497867
+rotates = false
 script = ExtResource("1_wesqo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

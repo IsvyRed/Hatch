@@ -24,4 +24,10 @@ position = Vector2(0, 9.536743e-07)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cxtqi")
 
+[node name="DebugHP" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 43.0
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

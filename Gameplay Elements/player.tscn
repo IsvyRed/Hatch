@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_xxies")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(0, -11)
-scale = Vector2(0.4609375, 0.421875)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_v2t65")
 
 [node name="SlideTimer" type="Timer" parent="."]
@@ -31,7 +31,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 3.3
 autostart = true
 
 [node name="VisualTimer" type="Label" parent="."]

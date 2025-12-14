@@ -5,6 +5,7 @@ var VISIONCAST = preload("res://Gameplay Elements/player_vision.tscn")
 var DESTRUCTIONCAST = preload("res://Gameplay Elements/destructionCast.tscn")
 var DEBRISSPAWNER = preload("res://Gameplay Elements/debris_spawner.tscn")
 var AFTERIMAGE = preload("res://Gameplay Elements/after_image.tscn")
+var FALLINGPLAYER = preload("res://Gameplay Elements/falling_player.tscn")
 
 var dead = false
 var lastRot
@@ -122,7 +123,6 @@ func _physics_process(_delta):
 				dead = true
 				$ResetTimer.start()
 				Globals.deathMessage("Death: Floor was not clear")
-				print("Dead (floor not clear)")
 				Globals.floor = 0
 				
 
@@ -133,8 +133,11 @@ func onDeathTile():
 	dead = true
 	$ResetTimer.start()
 	Globals.deathMessage("Death: Moved out of bounds")
+	var fallingPlayer = FALLINGPLAYER.instantiate()
+	fallingPlayer.position = position + lastDirection
+	add_sibling(fallingPlayer)
+	print(fallingPlayer.position )
 	visible = false
-	print("Dead (out of bounds)")
 	Globals.floor = 0
 	$SlideTimer.stop()
 	readyToMove = true
@@ -143,13 +146,11 @@ func missedEnemy():
 	dead = true
 	$ResetTimer.start()
 	Globals.deathMessage("Death: Missed enemy")
-	print("Dead (missed enemy)")
 	Globals.floor = 0
 	
 	
 func touchedEnemy():
 	enemyHit = true
-
 
 func _on_slide_timer_timeout():
 	if not enemyHit:
