@@ -4,7 +4,8 @@ var TESTENEMY = preload("res://Gameplay Elements/Enemies/pass_through_enemy.tscn
 var GAPMARKER = preload("res://Gameplay Elements/spawn_gap.tscn")
 
 var frame = 0
-var enemyCount = randi_range(3,6) #HARD CODED FOR TESTING ONLY
+#see globals script for hash format
+var enemyCount = randi_range(Globals.enemyCountBase,Globals.enemyCountBase + 2) 
 var enemyTypes = []
 var spawnedEnemies = []
 #UP DOWN LEFT RIGHT
