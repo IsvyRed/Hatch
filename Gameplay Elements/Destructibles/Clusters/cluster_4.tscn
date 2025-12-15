@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://by45kw2y6fqnt"]
+
+[ext_resource type="PackedScene" uid="uid://clvri8h4orhje" path="res://Gameplay Elements/Destructibles/printer.tscn" id="1_4ja6p"]
+
+[node name="Cluster4" type="Marker2D"]
+
+[node name="Printer" parent="." instance=ExtResource("1_4ja6p")]
+position = Vector2(0, 1)

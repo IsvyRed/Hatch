@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ducs1ff3yw0u6"]
 
-[ext_resource type="Script" uid="uid://cdeno6y0wkgos" path="res://Gameplay Elements/Enemies/multi_hit_enemy.gd" id="1_d1o4w"]
+[ext_resource type="Script" uid="uid://cdeno6y0wkgos" path="res://Scripts/multi_hit_enemy.gd" id="1_d1o4w"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_cxtqi"]
 [ext_resource type="PackedScene" uid="uid://d30vnaswbqnf4" path="res://Gameplay Elements/Enemies/HealthOrbit.tscn" id="2_fy0g8"]
 

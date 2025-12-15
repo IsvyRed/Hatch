@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://biej7ev65cuhc"]
 
-[ext_resource type="Script" uid="uid://cvvqpasmoj4wt" path="res://Gameplay Elements/bus_vision.gd" id="1_okc4t"]
+[ext_resource type="Script" uid="uid://cvvqpasmoj4wt" path="res://Scripts/bus_vision.gd" id="1_okc4t"]
 
 [node name="BusVision" type="RayCast2D"]
 process_physics_priority = 1

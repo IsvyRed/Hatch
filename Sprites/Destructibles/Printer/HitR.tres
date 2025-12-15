@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bt0s3fmmwu7b8"]
+
+[ext_resource type="Texture2D" uid="uid://b4qhyg5whq1qy" path="res://Sprites/Destructibles/Printer/PrinterHitL1.png" id="1_66qeg"]
+[ext_resource type="Texture2D" uid="uid://c6c04uevmpkrn" path="res://Sprites/Destructibles/Printer/PrinterHitL2.png" id="2_f5ckh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_66qeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f5ckh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

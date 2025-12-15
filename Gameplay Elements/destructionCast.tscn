@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dij1cud50cvd"]
 
-[ext_resource type="Script" uid="uid://cdinw5gyxrwtq" path="res://Gameplay Elements/destruction_cast.gd" id="1_8jhc6"]
+[ext_resource type="Script" uid="uid://cdinw5gyxrwtq" path="res://Scripts/destruction_cast.gd" id="1_8jhc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pikwe"]
 size = Vector2(150, 150)

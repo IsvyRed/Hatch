@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwh7sdilh4bx"]
 
-[ext_resource type="Script" uid="uid://btnycp5gxf1w0" path="res://Gameplay Elements/death_tile.gd" id="1_n3i1f"]
+[ext_resource type="Script" uid="uid://btnycp5gxf1w0" path="res://Scripts/death_tile.gd" id="1_n3i1f"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_q0750"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0750"]

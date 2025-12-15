@@ -5,7 +5,7 @@ var GAPMARKER = preload("res://Gameplay Elements/spawn_gap.tscn")
 
 var frame = 0
 #see globals script for hash format
-var enemyCount = randi_range(Globals.enemyCountBase,Globals.enemyCountBase + 2) 
+var enemyCount = 0 #default value changed in ready func
 var enemyTypes = []
 var spawnedEnemies = []
 #UP DOWN LEFT RIGHT
@@ -13,6 +13,10 @@ var allDirections = [Vector2(0,-200),Vector2(0,200),Vector2(-200,0),Vector2(200,
 var directionValidity = [false,false,false,false]
 var curDirIdx = 0
 var randomIdx
+
+func _ready():
+	Globals.updateDifficulty()
+	enemyCount = randi_range(Globals.enemyCountBase,Globals.enemyCountBase + 2) 
 
 func _physics_process(_delta):
 	frame += 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://iodsfg1bjarb"]
 
-[ext_resource type="Script" uid="uid://di5tbtg50c5s2" path="res://papers.gd" id="1_j2yux"]
+[ext_resource type="Script" uid="uid://di5tbtg50c5s2" path="res://Scripts/papers.gd" id="1_j2yux"]
 [ext_resource type="Texture2D" uid="uid://dbayx8bjw0n1p" path="res://Sprites/Destructibles/Desk/PaperFall1.png" id="2_3w8fo"]
 [ext_resource type="Texture2D" uid="uid://b1mnuirdxgedp" path="res://Sprites/Destructibles/Desk/PaperFall2.png" id="3_i7ism"]
 [ext_resource type="Texture2D" uid="uid://dsdw02x1aakt7" path="res://Sprites/Destructibles/Desk/PaperFall3.png" id="4_o5xit"]

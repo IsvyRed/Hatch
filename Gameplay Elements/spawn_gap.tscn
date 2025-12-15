@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bemrf5w4k510g"]
 
-[ext_resource type="Script" uid="uid://ci85cwoi78e2d" path="res://Gameplay Elements/spawnGap.gd" id="1_3w8r3"]
+[ext_resource type="Script" uid="uid://ci85cwoi78e2d" path="res://Scripts/spawnGap.gd" id="1_3w8r3"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_18cxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swej4"]

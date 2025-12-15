@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cnlu1e6u6eepi"]
 
-[ext_resource type="Script" uid="uid://b2arqecub8b3k" path="res://garbage.gd" id="1_63l88"]
+[ext_resource type="Script" uid="uid://b2arqecub8b3k" path="res://Scripts/garbage.gd" id="1_63l88"]
 [ext_resource type="Texture2D" uid="uid://b0ge282tca4q1" path="res://Sprites/Destructibles/Bin/PaperRollB1.png" id="2_bss4e"]
 [ext_resource type="Texture2D" uid="uid://b2l6ac3c2opik" path="res://Sprites/Destructibles/Bin/PaperRollA1.png" id="2_st4bw"]
 [ext_resource type="Texture2D" uid="uid://5y2wb1ilpfep" path="res://Sprites/Destructibles/Bin/PaperRollA2.png" id="3_g4ijt"]

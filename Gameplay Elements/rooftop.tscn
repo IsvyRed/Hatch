@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://che436kyhlwah"]
+[gd_scene load_steps=10 format=3 uid="uid://che436kyhlwah"]
 
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="1_c35er"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="2_18elk"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dksx7taspqtm3" path="res://Sprites/RooftopRailing.png" id="6_cw1c1"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_lje68"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_44c2i"]
-[ext_resource type="PackedScene" uid="uid://3yshdgdj8mgd" path="res://Gameplay Elements/Destructibles/bin.tscn" id="10_lniyk"]
-[ext_resource type="PackedScene" uid="uid://b3k80iabyle0l" path="res://Gameplay Elements/Destructibles/desk.tscn" id="10_r3d51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3d51"]
 size = Vector2(542.5, 169)
@@ -155,9 +153,3 @@ offset_top = -156.0
 offset_right = -470.0
 offset_bottom = -116.0
 text = "PLACEHOLDER"
-
-[node name="Desk" parent="." instance=ExtResource("10_r3d51")]
-position = Vector2(-9.094947e-13, -170)
-
-[node name="Bin" parent="." instance=ExtResource("10_lniyk")]
-position = Vector2(57, -7)

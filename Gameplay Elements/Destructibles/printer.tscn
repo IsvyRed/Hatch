@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://clvri8h4orhje"]
+
+[ext_resource type="Script" uid="uid://cameht12lxqtn" path="res://printer.gd" id="1_31332"]
+[ext_resource type="SpriteFrames" uid="uid://bxy1bqkgnrx58" path="res://Sprites/Destructibles/Printer/HitN.tres" id="2_wvvgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvvgp"]
+size = Vector2(119, 105)
+
+[node name="Printer" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 32
+gravity_scale = 0.0
+script = ExtResource("1_31332")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("2_wvvgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 12.5)
+shape = SubResource("RectangleShape2D_wvvgp")
+
+[connection signal="body_entered" from="." to="." method="fall"]

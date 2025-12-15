@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cw7jvwv8g4fxq"]
+
+[ext_resource type="Texture2D" uid="uid://cf3v2lnuyugk3" path="res://Sprites/Destructibles/Printer/PrinterIntact.png" id="1_qmn6o"]
+
+[resource]
+resource_name = "Intact"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qmn6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

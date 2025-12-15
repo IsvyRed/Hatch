@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b64ughrwvg07c"]
 
-[ext_resource type="Script" uid="uid://cu4mpabwtx0tt" path="res://Gameplay Elements/Enemies/pass_through_enemy.gd" id="1_50ioy"]
+[ext_resource type="Script" uid="uid://cu4mpabwtx0tt" path="res://Scripts/pass_through_enemy.gd" id="1_50ioy"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="1_k5kji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]

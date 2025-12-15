@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://3yshdgdj8mgd"]
 
-[ext_resource type="Script" uid="uid://b6ck3v3sxk53u" path="res://Gameplay Elements/Destructibles/bin.gd" id="1_l531p"]
+[ext_resource type="Script" uid="uid://b6ck3v3sxk53u" path="res://Scripts/bin.gd" id="1_l531p"]
 [ext_resource type="Texture2D" uid="uid://dcb8x6yj8wyfm" path="res://Sprites/Destructibles/Bin/BinIntact.png" id="2_ovplu"]
 [ext_resource type="Texture2D" uid="uid://0iddnf6xq6fm" path="res://Sprites/Destructibles/Bin/BinFallH1.png" id="3_e3m43"]
 [ext_resource type="Texture2D" uid="uid://cf8xjyejb6gtq" path="res://Sprites/Destructibles/Bin/BinFallH2.png" id="4_0lhqc"]

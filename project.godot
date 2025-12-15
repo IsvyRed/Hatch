@@ -17,7 +17,7 @@ config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-Globals="*res://Gameplay Elements/GLOBALS.gd"
+Globals="*res://Scripts/GLOBALS.gd"
 
 [display]
 
@@ -33,6 +33,7 @@ folder_colors={
 "res://Gameplay Elements/": "blue",
 "res://Gameplay Elements/Destructibles/": "yellow",
 "res://Gameplay Elements/Enemies/": "red",
+"res://Scripts/": "gray",
 "res://Sprites/": "yellow",
 "res://Testing Tools/": "gray"
 }
