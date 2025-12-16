@@ -151,6 +151,8 @@ func missedEnemy():
 	
 func touchedEnemy():
 	enemyHit = true
+	#animation handler
+	$AnimationHandler.play(lastDirection)
 
 func _on_slide_timer_timeout():
 	if not enemyHit:

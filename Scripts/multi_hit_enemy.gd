@@ -26,7 +26,6 @@ func _on_area_entered(_area):
 
 func upgrade():
 	hp += 1
-	$DebugHP.text = str(hp)
 	for child in $HealthOrbit.get_children():
 		child.queue_free()
 	@warning_ignore("integer_division")
