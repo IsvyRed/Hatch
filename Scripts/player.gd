@@ -14,9 +14,11 @@ var type = "player"
 var readyToMove = true
 var enemyHit = false
 
+func _ready():
+	Globals.player = self
+
 func _physics_process(_delta):
 	if not dead:
-		$VisualTimer.text = str(snapped($GameOverTimer.time_left,0.01))
 		if Input.is_action_just_pressed("Left") and readyToMove:
 			readyToMove = false
 			$SlideTimer.start()
@@ -123,8 +125,8 @@ func _physics_process(_delta):
 			else:
 				dead = true
 				$ResetTimer.start()
+				Globals.resetRun()
 				Globals.deathMessage("Death: Floor was not clear")
-				Globals.floor = 0
 				
 
 
@@ -139,7 +141,7 @@ func onDeathTile():
 	add_sibling(fallingPlayer)
 	print(fallingPlayer.position )
 	visible = false
-	Globals.floor = 0
+	Globals.resetRun()
 	$SlideTimer.stop()
 	readyToMove = true
 	
@@ -147,7 +149,7 @@ func missedEnemy():
 	dead = true
 	$ResetTimer.start()
 	Globals.deathMessage("Death: Missed enemy")
-	Globals.floor = 0
+	Globals.resetRun()
 	
 	
 func touchedEnemy():
@@ -180,8 +182,8 @@ func _on_slide_timer_timeout():
 func _on_game_over_timer_timeout():
 	if not dead:
 		$ResetTimer.start()
-		Globals.floor = 0
 		Globals.deathMessage("Death: Out of time")
+		Globals.resetRun()
 		$GameOverTimer.start()
 		print("Dead (Out of time)")
 	dead = true

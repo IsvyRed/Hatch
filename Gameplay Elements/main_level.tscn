@@ -119,8 +119,6 @@ collision_mask = 0
 position = Vector2(-141.37, 0)
 polygon = PackedVector2Array(419.37, 144, 452.37, 666, 499.37, 662, 495.37, 145)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
@@ -142,10 +140,11 @@ scale = Vector2(5, 5)
 texture = ExtResource("6_rsaji")
 
 [node name="FloorCounter" parent="." instance=ExtResource("7_rsaji")]
-offset_left = -493.0
-offset_top = -272.0
-offset_right = -493.0
-offset_bottom = -272.0
+visible = false
+offset_left = -493.5
+offset_top = -283.5
+offset_right = -492.5
+offset_bottom = -260.5
 
 [node name="Label" parent="." instance=ExtResource("8_wbf2n")]
 offset_left = -539.0

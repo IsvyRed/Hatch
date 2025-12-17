@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bwiw68oyuvcma"]
+[gd_scene load_steps=28 format=3 uid="uid://bwiw68oyuvcma"]
 
 [ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Scripts/player.gd" id="1_oihdw"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_3dn4l"]
@@ -126,10 +126,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
 size = Vector2(20, 41)
 
-[sub_resource type="LabelSettings" id="LabelSettings_v2t65"]
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
-
 [node name="Player" type="Area2D"]
 z_index = 2
 z_as_relative = false
@@ -179,11 +175,6 @@ one_shot = true
 [node name="GameOverTimer" type="Timer" parent="."]
 wait_time = 3.3
 autostart = true
-
-[node name="VisualTimer" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_v2t65")
 
 [node name="ResetTimer" type="Timer" parent="."]
 wait_time = 0.3

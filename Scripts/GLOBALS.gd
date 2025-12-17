@@ -6,6 +6,8 @@ var difficultyHash = {1: [0,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [
 
 @warning_ignore("shadowed_global_identifier")
 var floor = 0
+var player
+var best = 0 #High score basically
 var enemiesLeft =  0
 var enemies = [] #Use this reference to upgrade enemies when bus is cornered
 var upgradeUnits = 0 #overwritten by hash, this is a failsafe
@@ -18,7 +20,7 @@ var enemyCountBase = 1 #overwritten by hash, this is a failsafe
 var debrisList = []
 var validTiles = []
 
-var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
+var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
 var curLevel = 0
 
 func clearEnemies():
@@ -47,6 +49,8 @@ func nextArea():
 	get_tree().change_scene_to_file(levels[curLevel])
 
 func resetRun():
+	if floor > best:
+		best = floor
 	curLevel = 0
 	floor = 0
 	Globals.clearEnemies()

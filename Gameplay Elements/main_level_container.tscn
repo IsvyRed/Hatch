@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://he3j45lvd230"]
+
+[ext_resource type="PackedScene" uid="uid://c1ieq5spgoubg" path="res://Gameplay Elements/main_level.tscn" id="1_75317"]
+[ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="2_fjdud"]
+[ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="3_xfokb"]
+[ext_resource type="Script" uid="uid://dk82ni81mdmmu" path="res://Gameplay Elements/visual_timer.gd" id="4_xfokb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_02urj"]
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainLevelContainer" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 5
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(256, 144)
+render_target_update_mode = 4
+
+[node name="MainLevel" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_75317")]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.2, 0.2)
+
+[node name="FloorCounter" parent="CanvasLayer" instance=ExtResource("2_fjdud")]
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 27.0
+offset_bottom = 44.0
+text = "PLACEHOLDER
+"
+
+[node name="Label" parent="CanvasLayer" instance=ExtResource("3_xfokb")]
+visible = true
+offset_left = 26.0
+offset_top = 48.0
+offset_right = 139.0
+offset_bottom = 71.0
+text = "PLACEHOLDER"
+
+[node name="VisualTimer" type="Label" parent="CanvasLayer"]
+offset_left = 1075.0
+offset_top = 624.0
+offset_right = 1266.0
+offset_bottom = 712.0
+text = "TIMER"
+label_settings = SubResource("LabelSettings_02urj")
+script = ExtResource("4_xfokb")
