@@ -101,6 +101,7 @@ func _physics_process(_delta):
 			afterImage.position = position + lastDirection
 			afterImage.play()
 		if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
+			$AnimationHandler.playAttack()
 			if has_overlapping_areas():
 				get_overlapping_areas()[0].takeDamage()
 			else:

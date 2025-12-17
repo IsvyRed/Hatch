@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwiw68oyuvcma"]
+[gd_scene load_steps=29 format=3 uid="uid://bwiw68oyuvcma"]
 
 [ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Scripts/player.gd" id="1_oihdw"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_3dn4l"]
@@ -8,6 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://bukg1q5nihg36" path="res://Sprites/Player/PlayerSwingH2.png" id="6_35a03"]
 [ext_resource type="Texture2D" uid="uid://bqxk4kpwukj4q" path="res://Sprites/Player/PlayerSwingH3.png" id="7_2swth"]
 [ext_resource type="Texture2D" uid="uid://bjs6dx5kdihxg" path="res://Sprites/Player/PlayerSwingH4.png" id="8_54kuu"]
+[ext_resource type="Texture2D" uid="uid://cg547qa0t30pv" path="res://Sprites/Player/PlayerSwingU1.png" id="9_5lgkq"]
+[ext_resource type="Texture2D" uid="uid://ro2r5i4nywev" path="res://Sprites/Player/PlayerSwingU2.png" id="10_2063k"]
+[ext_resource type="Texture2D" uid="uid://cign268ul30sk" path="res://Sprites/Player/PlayerSwingU3.png" id="11_gfxpv"]
+[ext_resource type="Texture2D" uid="uid://x0sn5kf26c8j" path="res://Sprites/Player/PlayerSwingU4.png" id="12_7oiih"]
+[ext_resource type="Texture2D" uid="uid://dislaryeslqmb" path="res://Sprites/Player/PlayerSwingD1.png" id="13_5td2p"]
+[ext_resource type="Texture2D" uid="uid://b1w4tdw0cup7i" path="res://Sprites/Player/PlayerSwingD2.png" id="14_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://d0h6is4itam37" path="res://Sprites/Player/PlayerSwingD3.png" id="15_ctpar"]
+[ext_resource type="Texture2D" uid="uid://dhbkq3etmxld7" path="res://Sprites/Player/PlayerSwingD4.png" id="16_nhk8h"]
+[ext_resource type="Texture2D" uid="uid://bslbyph265xqe" path="res://Sprites/Player/Attack1-1.png" id="17_5td2p"]
+[ext_resource type="Texture2D" uid="uid://dfxjtcaklvdx3" path="res://Sprites/Player/Attack1-2.png" id="18_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://bg8p1nn02gxek" path="res://Sprites/Player/Attack2-1.png" id="19_ctpar"]
+[ext_resource type="Texture2D" uid="uid://d1ypm1r1x0l4e" path="res://Sprites/Player/Attack2-2.png" id="20_nhk8h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbv4j"]
 animations = [{
@@ -43,6 +55,74 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sqvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5lgkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2063k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gfxpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7oiih")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yt0ko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_5td2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q4fvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ctpar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nhk8h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fmjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_5td2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q4fvn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2ovt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ctpar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nhk8h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
 size = Vector2(20, 41)
 
@@ -69,14 +149,27 @@ visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_1ytrv")
 
-[node name="SwingU" type="Sprite2D" parent="AnimationHandler"]
+[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler"]
 visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7sqvo")
 
-[node name="SwingD" type="Sprite2D" parent="AnimationHandler"]
+[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler"]
 visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_yt0ko")
+
+[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7fmjx")
+
+[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_u2ovt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_xxies")
 
 [node name="SlideTimer" type="Timer" parent="."]
@@ -97,6 +190,10 @@ wait_time = 0.3
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationHandler/SwingH" to="AnimationHandler" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationHandler/SwingU" to="AnimationHandler" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationHandler/SwingD" to="AnimationHandler" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationHandler/Attack1" to="AnimationHandler" method="on_attack_finished"]
+[connection signal="animation_finished" from="AnimationHandler/Attack2" to="AnimationHandler" method="on_attack_finished"]
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
