@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d0oj72re86a74"
+path="res://.godot/imported/Grayscale.aseprite-5f3fec05e240b84d7ecd61ee078b4695.res"
+
+[deps]
+
+source_file="res://Sprites/Grayscale.aseprite"
+dest_files=["res://.godot/imported/Grayscale.aseprite-5f3fec05e240b84d7ecd61ee078b4695.res"]
+
+[params]
+

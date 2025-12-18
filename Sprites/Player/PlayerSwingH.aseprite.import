@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://doo66r5mcocy1"
+path="res://.godot/imported/PlayerSwingH.aseprite-01e051f63b449f9b1b417544fafff8c9.res"
+
+[deps]
+
+source_file="res://Sprites/Player/PlayerSwingH.aseprite"
+dest_files=["res://.godot/imported/PlayerSwingH.aseprite-01e051f63b449f9b1b417544fafff8c9.res"]
+
+[params]
+

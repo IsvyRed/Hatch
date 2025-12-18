@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwiw68oyuvcma"]
+[gd_scene load_steps=32 format=3 uid="uid://bwiw68oyuvcma"]
 
 [ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Scripts/player.gd" id="1_oihdw"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_3dn4l"]
@@ -18,8 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://dhbkq3etmxld7" path="res://Sprites/Player/PlayerSwingD4.png" id="16_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://bslbyph265xqe" path="res://Sprites/Player/Attack1-1.png" id="17_5td2p"]
 [ext_resource type="Texture2D" uid="uid://dfxjtcaklvdx3" path="res://Sprites/Player/Attack1-2.png" id="18_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://b5eoxehcvoayw" path="res://Sprites/Player/Attack3-1.png" id="19_5td2p"]
 [ext_resource type="Texture2D" uid="uid://bg8p1nn02gxek" path="res://Sprites/Player/Attack2-1.png" id="19_ctpar"]
+[ext_resource type="Texture2D" uid="uid://b56kxugxetg6u" path="res://Sprites/Player/empty.png" id="19_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://d1ypm1r1x0l4e" path="res://Sprites/Player/Attack2-2.png" id="20_nhk8h"]
+[ext_resource type="Texture2D" uid="uid://b1gmxw1fs4bfr" path="res://Sprites/Player/Attack3-2.png" id="20_q4fvn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbv4j"]
 animations = [{
@@ -103,9 +106,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_q4fvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nhk8h")
 }],
 "loop": false,
-"name": &"default",
+"name": &"new_animation",
 "speed": 15.0
 }]
 
@@ -117,6 +123,26 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_nhk8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nhk8h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctpar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_5td2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q4fvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nhk8h")
 }],
 "loop": false,
 "name": &"default",
@@ -159,11 +185,18 @@ sprite_frames = SubResource("SpriteFrames_yt0ko")
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_7fmjx")
+animation = &"new_animation"
 
 [node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler"]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_u2ovt")
+
+[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+position = Vector2(0, -10)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ctpar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xxies")
@@ -183,8 +216,6 @@ one_shot = true
 [connection signal="animation_finished" from="AnimationHandler/SwingH" to="AnimationHandler" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationHandler/SwingU" to="AnimationHandler" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationHandler/SwingD" to="AnimationHandler" method="_on_animation_finished"]
-[connection signal="animation_finished" from="AnimationHandler/Attack1" to="AnimationHandler" method="on_attack_finished"]
-[connection signal="animation_finished" from="AnimationHandler/Attack2" to="AnimationHandler" method="on_attack_finished"]
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b4st064lsgfj6"
+path="res://.godot/imported/Attack2.aseprite-158039bc1b5f8a7d92afeacc73b741a9.res"
+
+[deps]
+
+source_file="res://Sprites/Player/Attack2.aseprite"
+dest_files=["res://.godot/imported/Attack2.aseprite-158039bc1b5f8a7d92afeacc73b741a9.res"]
+
+[params]
+

@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1ieq5spgoubg"]
+[gd_scene load_steps=11 format=3 uid="uid://c1ieq5spgoubg"]
 
 [ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_1wh16"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_yup6v"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="3_ehsp4"]
 [ext_resource type="Texture2D" uid="uid://commo6keinbis" path="res://Sprites/HatchBackgroundBG.png" id="4_mxsub"]
 [ext_resource type="Texture2D" uid="uid://c7m4dj5d51lhb" path="res://Sprites/HatchBackgroundTower.png" id="5_5qebm"]
-[ext_resource type="Texture2D" uid="uid://dbf4do513b6ig" path="res://Sprites/HatchBackgroundGlass.png" id="6_rsaji"]
+[ext_resource type="Texture2D" uid="uid://dbf4do513b6ig" path="res://Sprites/HatchBackgroundGlass.png" id="6_wbf2n"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_rsaji"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_wbf2n"]
+[ext_resource type="PackedScene" uid="uid://ljb3nxfgta2a" path="res://Gameplay Elements/Destructibles/GlassD1.tscn" id="9_wbf2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
 size = Vector2(628, 164)
@@ -119,6 +120,8 @@ collision_mask = 0
 position = Vector2(-141.37, 0)
 polygon = PackedVector2Array(419.37, 144, 452.37, 666, 499.37, 662, 495.37, 145)
 
+[node name="Glass" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
@@ -136,8 +139,32 @@ texture = ExtResource("5_5qebm")
 [node name="HatchBackgroundGlass" type="Sprite2D" parent="."]
 z_index = 3
 z_as_relative = false
+texture_filter = 1
 scale = Vector2(5, 5)
-texture = ExtResource("6_rsaji")
+texture = ExtResource("6_wbf2n")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Glass"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://Sprites/HatchBackground.aseprite",
+"source_uid": 6640986122218009900
+}
+metadata/_aseprite_wizard_source_file_hash_ = "052e68285d4029970d05f7597348efd0"
 
 [node name="FloorCounter" parent="." instance=ExtResource("7_rsaji")]
 visible = false
@@ -152,3 +179,12 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
+
+[node name="GlassD1" parent="." instance=ExtResource("9_wbf2n")]
+position = Vector2(-205, 180)
+
+[node name="GlassD2" parent="." instance=ExtResource("9_wbf2n")]
+position = Vector2(0, 180)
+
+[node name="GlassD3" parent="." instance=ExtResource("9_wbf2n")]
+position = Vector2(205, 180)

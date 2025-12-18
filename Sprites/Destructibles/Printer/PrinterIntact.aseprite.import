@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d01w5ueb3dhtq"
+path="res://.godot/imported/PrinterIntact.aseprite-f3e9299876998308318605fa97e7eba5.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Printer/PrinterIntact.aseprite"
+dest_files=["res://.godot/imported/PrinterIntact.aseprite-f3e9299876998308318605fa97e7eba5.res"]
+
+[params]
+

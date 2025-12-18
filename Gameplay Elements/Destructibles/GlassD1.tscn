@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://ljb3nxfgta2a"]
+
+[ext_resource type="Script" uid="uid://b21gx4xyh3bmf" path="res://Gameplay Elements/Destructibles/glass_d_1.gd" id="1_48lm4"]
+[ext_resource type="Texture2D" uid="uid://x0k5od4oyq7s" path="res://Sprites/Destructibles/Glass/GlassD1-1.png" id="2_78vxa"]
+[ext_resource type="Texture2D" uid="uid://bgddbulj5w40j" path="res://Sprites/Destructibles/Glass/GlassD1-2.png" id="3_0504q"]
+[ext_resource type="Texture2D" uid="uid://cf5vabilfoqhm" path="res://Sprites/Destructibles/Glass/GlassD1-3.png" id="4_e0oc5"]
+[ext_resource type="Texture2D" uid="uid://bdiu78pn8xicy" path="res://Sprites/Destructibles/Glass/GlassD1-4.png" id="5_52pxi"]
+[ext_resource type="Texture2D" uid="uid://cv4d663f70tke" path="res://Sprites/Destructibles/Glass/GlassD1-5.png" id="6_agply"]
+[ext_resource type="Texture2D" uid="uid://be84o65l3l488" path="res://Sprites/Destructibles/Glass/GlassD1-6.png" id="7_3lur4"]
+[ext_resource type="Texture2D" uid="uid://b4atcgn4luugy" path="res://Sprites/Destructibles/Glass/GlassD1-7.png" id="8_f5a06"]
+[ext_resource type="Texture2D" uid="uid://8kdvqjxg4ycw" path="res://Sprites/Destructibles/Glass/GlassD1-8.png" id="9_4gl5o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78vxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_78vxa")
+}, {
+"duration": 0.2,
+"texture": ExtResource("3_0504q")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_e0oc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_52pxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_agply")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3lur4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f5a06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4gl5o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgb1o"]
+size = Vector2(120, 22.75)
+
+[node name="GlassD1" type="Area2D"]
+z_index = 5
+z_as_relative = false
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_48lm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_78vxa")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": true,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Sprites/Destructibles/Glass/GlassD1.aseprite",
+"source_uid": 536347664026325130
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b92889adb1ef4b65011fbb8cba079d5b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 105)
+shape = SubResource("RectangleShape2D_bgb1o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

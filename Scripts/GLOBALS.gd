@@ -23,12 +23,15 @@ var validTiles = []
 var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
 var curLevel = 0
 
+signal resetGlass
+
 func clearEnemies():
 	enemies.clear()
 	enemiesLeft = 0
 	for debris in debrisList:
 		debris.queue_free()
 	debrisList.clear()
+	emit_signal("resetGlass")
 	
 func updateDifficulty():
 	if difficultyHash.has(floor):

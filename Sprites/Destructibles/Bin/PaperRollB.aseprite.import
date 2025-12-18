@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b6yt30bdadbc1"
+path="res://.godot/imported/PaperRollB.aseprite-40023192faaa3b2f54cf9358c0fa1208.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Bin/PaperRollB.aseprite"
+dest_files=["res://.godot/imported/PaperRollB.aseprite-40023192faaa3b2f54cf9358c0fa1208.res"]
+
+[params]
+

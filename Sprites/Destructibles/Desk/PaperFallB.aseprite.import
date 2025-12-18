@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bkpgfr3tha6l4"
+path="res://.godot/imported/PaperFallB.aseprite-7a5bcedf99a0dcb07c331a783b27b6e7.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Desk/PaperFallB.aseprite"
+dest_files=["res://.godot/imported/PaperFallB.aseprite-7a5bcedf99a0dcb07c331a783b27b6e7.res"]
+
+[params]
+

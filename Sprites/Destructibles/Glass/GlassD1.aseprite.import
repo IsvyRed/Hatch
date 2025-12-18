@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://hv2tkhrmj2bu"
+path="res://.godot/imported/GlassD1.aseprite-97c91a25d72ebf584c1c7c91c0781782.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Glass/GlassD1.aseprite"
+dest_files=["res://.godot/imported/GlassD1.aseprite-97c91a25d72ebf584c1c7c91c0781782.res"]
+
+[params]
+

@@ -32,6 +32,8 @@ func _physics_process(_delta):
 	move_and_collide(motion)
 	if not falling:
 		motion /= 1.5
+	else:
+		scale /= 1.5
 
 	
 func explode():

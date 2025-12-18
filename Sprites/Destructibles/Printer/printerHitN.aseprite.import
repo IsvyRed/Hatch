@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cmesqxugcxccd"
+path="res://.godot/imported/printerHitN.aseprite-2d07cebb74be80b473be65d678cabce0.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Printer/printerHitN.aseprite"
+dest_files=["res://.godot/imported/printerHitN.aseprite-2d07cebb74be80b473be65d678cabce0.res"]
+
+[params]
+

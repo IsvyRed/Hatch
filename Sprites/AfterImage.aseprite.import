@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bsosgwxwfp76y"
+path="res://.godot/imported/AfterImage.aseprite-8bb61ae822b55d2efbac0bc528e48bb8.res"
+
+[deps]
+
+source_file="res://Sprites/AfterImage.aseprite"
+dest_files=["res://.godot/imported/AfterImage.aseprite-8bb61ae822b55d2efbac0bc528e48bb8.res"]
+
+[params]
+

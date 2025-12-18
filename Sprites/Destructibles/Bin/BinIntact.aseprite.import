@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://5yxl7k7y83mt"
+path="res://.godot/imported/BinIntact.aseprite-5e146b1405d38c23b3d671f1c772ccc7.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Bin/BinIntact.aseprite"
+dest_files=["res://.godot/imported/BinIntact.aseprite-5e146b1405d38c23b3d671f1c772ccc7.res"]
+
+[params]
+

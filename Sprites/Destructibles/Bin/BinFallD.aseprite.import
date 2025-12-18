@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://yxekit3djove"
+path="res://.godot/imported/BinFallD.aseprite-e05a8417e3efde0627b8646cf9d7dce6.res"
+
+[deps]
+
+source_file="res://Sprites/Destructibles/Bin/BinFallD.aseprite"
+dest_files=["res://.godot/imported/BinFallD.aseprite-e05a8417e3efde0627b8646cf9d7dce6.res"]
+
+[params]
+
