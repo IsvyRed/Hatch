@@ -1,5 +1,6 @@
 extends Area2D
 var MULTIHITENEMY = preload("res://Gameplay Elements/Enemies/multi_hit_enemy.tscn")
+var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 var type = "enemy"
 var singleUpgrade = true
 
@@ -9,6 +10,10 @@ func _ready():
 
 func _on_area_entered(_area):
 	#DIE -- GIVE PLAYER FEEDBACK
+	var deadBody = DEADBODY.instantiate()
+	deadBody.position = position
+	add_sibling(deadBody)
+	deadBody.destroy(Globals.lastDirection)
 	get_overlapping_areas()[0].touchedEnemy()
 	Globals.enemiesLeft -= 1
 	queue_free()

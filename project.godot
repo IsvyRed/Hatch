@@ -29,7 +29,7 @@ window/canvas_textures/default_texture_filter=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
@@ -93,6 +93,7 @@ Attack2={
 2d_physics/layer_4="Spawn Gaps"
 2d_physics/layer_5="EnvironmentDebris"
 2d_physics/layer_6="Boundaries"
+2d_physics/layer_7="EnemyLandingPlanes"
 
 [rendering]
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ieq5spgoubg" path="res://Gameplay Elements/main_level.tscn" id="1_75317"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="2_fjdud"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="3_xfokb"]
-[ext_resource type="Script" uid="uid://dk82ni81mdmmu" path="res://Gameplay Elements/visual_timer.gd" id="4_xfokb"]
+[ext_resource type="Script" uid="uid://dk82ni81mdmmu" path="res://Scripts/visual_timer.gd" id="4_xfokb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_02urj"]
 font_size = 64

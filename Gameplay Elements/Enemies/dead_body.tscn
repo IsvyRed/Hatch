@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5nlp7kgcs0nc"]
+
+[ext_resource type="Script" uid="uid://qjctc5wn74cv" path="res://Gameplay Elements/Enemies/dead_body.gd" id="1_ctrc7"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_tqyk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y61fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81yub"]
+size = Vector2(34, 34)
+
+[node name="DeadBody" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 32
+gravity_scale = 0.0
+script = ExtResource("1_ctrc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y61fg")
+
+[node name="GlassChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassChecker"]
+shape = SubResource("RectangleShape2D_81yub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+skew = 0.7853982
+texture = ExtResource("2_tqyk5")
+
+[connection signal="body_entered" from="GlassChecker" to="." method="fall"]

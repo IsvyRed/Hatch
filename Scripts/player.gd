@@ -125,7 +125,6 @@ func _physics_process(_delta):
 			else:
 				dead = true
 				$ResetTimer.start()
-				Globals.resetRun()
 				Globals.deathMessage("Death: Floor was not clear")
 				
 
@@ -141,7 +140,6 @@ func onDeathTile():
 	add_sibling(fallingPlayer)
 	print(fallingPlayer.position )
 	visible = false
-	Globals.resetRun()
 	$SlideTimer.stop()
 	readyToMove = true
 	
@@ -149,7 +147,6 @@ func missedEnemy():
 	dead = true
 	$ResetTimer.start()
 	Globals.deathMessage("Death: Missed enemy")
-	Globals.resetRun()
 	
 	
 func touchedEnemy():
@@ -183,7 +180,6 @@ func _on_game_over_timer_timeout():
 	if not dead:
 		$ResetTimer.start()
 		Globals.deathMessage("Death: Out of time")
-		Globals.resetRun()
 		$GameOverTimer.start()
 		print("Dead (Out of time)")
 	dead = true

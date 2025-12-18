@@ -2,6 +2,7 @@ extends Area2D
 var type = "enemy"
 var hp = 2
 var HPMARKER = preload("res://Gameplay Elements/Enemies/test_marker.tscn")
+var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 
 func _ready():
 	Globals.enemiesLeft += 1
@@ -16,6 +17,10 @@ func _ready():
 func takeDamage():
 	hp -= 1
 	if hp == 0:
+		var deadBody = DEADBODY.instantiate()
+		deadBody.position = position
+		add_sibling(deadBody)
+		deadBody.destroy(Vector2(0,-200))
 		Globals.enemiesLeft -= 1
 		queue_free() 
 	$HealthOrbit.get_children()[0].die()
