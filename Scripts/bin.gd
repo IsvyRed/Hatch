@@ -46,8 +46,14 @@ func fall(_body):
 	var chance = abs(motion.x + motion.y)
 	var judge = randi_range(0,30)
 	if chance > judge:
+		$FallSpan.start()
 		set_collision_layer_value(6,false)
 		z_index = -2
 		motion += locLastDirection/15
 		gravity_scale = 6
 		angular_velocity = motion.x/3
+
+
+func _on_fall_span_timeout():
+	Globals.debrisList.erase(self)
+	queue_free()

@@ -125,6 +125,7 @@ func _physics_process(_delta):
 			else:
 				dead = true
 				$ResetTimer.start()
+				$AnimationHandler.playDeath()
 				Globals.deathMessage("Death: Floor was not clear")
 				
 
@@ -146,6 +147,7 @@ func onDeathTile():
 func missedEnemy():
 	dead = true
 	$ResetTimer.start()
+	$AnimationHandler.playDeath()
 	Globals.deathMessage("Death: Missed enemy")
 	
 	
@@ -179,6 +181,7 @@ func _on_slide_timer_timeout():
 func _on_game_over_timer_timeout():
 	if not dead:
 		$ResetTimer.start()
+		$AnimationHandler.playDeath()
 		Globals.deathMessage("Death: Out of time")
 		$GameOverTimer.start()
 		print("Dead (Out of time)")

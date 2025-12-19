@@ -1,5 +1,4 @@
 extends Node
-#TO DO add lose function with small buffer before reset -- this will become the main game handler
 
 #format: floorThreshold : [upgradeUnits, enemyCount (low end, high end is +2)]
 var difficultyHash = {1: [0,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [3,4], 45: [4,5], 55: [4,6]}

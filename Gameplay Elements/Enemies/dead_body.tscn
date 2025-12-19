@@ -29,4 +29,8 @@ scale = Vector2(0.3, 0.3)
 skew = 0.7853982
 texture = ExtResource("2_tqyk5")
 
+[node name="FallSpan" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="body_entered" from="GlassChecker" to="." method="fall"]
+[connection signal="timeout" from="FallSpan" to="." method="_on_fall_span_timeout"]

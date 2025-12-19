@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e05v0"]
-size = Vector2(20.5, 195)
+size = Vector2(61.25, 195)
 
 [node name="GlassR2" type="Area2D"]
 z_index = 5
@@ -72,7 +72,7 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "b92889adb1ef4b65011fbb8cba079d5b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, -2.5)
+position = Vector2(45.375, -2.5)
 shape = SubResource("RectangleShape2D_e05v0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -96,4 +96,8 @@ collision_mask = 32
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_ovplu")
 
+[node name="FallSpan" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="body_entered" from="GlassChecker" to="." method="fall"]
+[connection signal="timeout" from="FallSpan" to="." method="_on_fall_span_timeout"]

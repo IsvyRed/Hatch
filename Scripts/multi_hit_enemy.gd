@@ -33,7 +33,6 @@ func upgrade():
 	hp += 1
 	for child in $HealthOrbit.get_children():
 		child.queue_free()
-	@warning_ignore("integer_division")
 	var inc = 1.0/hp
 	for i in hp:
 		var curMarker = HPMARKER.instantiate()

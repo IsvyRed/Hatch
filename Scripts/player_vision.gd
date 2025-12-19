@@ -4,7 +4,7 @@ extends RayCast2D
 signal undefined
 signal validTile
 signal deathTile
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_colliding():
 		var collider = get_collider()
 		if collider.type == "valid":

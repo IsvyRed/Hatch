@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://clvri8h4orhje"]
 
-[ext_resource type="Script" uid="uid://cameht12lxqtn" path="res://printer.gd" id="1_31332"]
+[ext_resource type="Script" uid="uid://cameht12lxqtn" path="res://Scripts/printer.gd" id="1_31332"]
 [ext_resource type="SpriteFrames" uid="uid://bxy1bqkgnrx58" path="res://Sprites/Destructibles/Printer/HitN.tres" id="2_wvvgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvvgp"]

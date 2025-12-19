@@ -137,6 +137,24 @@ position = Vector2(0, 180)
 [node name="GlassD3" parent="Glass" instance=ExtResource("9_wbf2n")]
 position = Vector2(205, 180)
 
+[node name="GlassR1" parent="Glass" instance=ExtResource("10_2bw7g")]
+position = Vector2(295, -185)
+
+[node name="GlassL1" parent="Glass" instance=ExtResource("11_5y034")]
+position = Vector2(-295, -185)
+
+[node name="GlassR2" parent="Glass" instance=ExtResource("12_4gst2")]
+position = Vector2(295, -5)
+
+[node name="GlassL2" parent="Glass" instance=ExtResource("13_kbnh8")]
+position = Vector2(-295, -5)
+
+[node name="GlassR3" parent="Glass" instance=ExtResource("14_kbnh8")]
+position = Vector2(295, 180)
+
+[node name="GlassL3" parent="Glass" instance=ExtResource("15_klllu")]
+position = Vector2(-295, 180)
+
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="HatchBackgroundBg" type="Sprite2D" parent="."]
@@ -194,21 +212,3 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
-
-[node name="GlassD1" parent="." instance=ExtResource("10_2bw7g")]
-position = Vector2(295, -185)
-
-[node name="GlassL1" parent="." instance=ExtResource("11_5y034")]
-position = Vector2(-295, -185)
-
-[node name="GlassR2" parent="." instance=ExtResource("12_4gst2")]
-position = Vector2(295, -5)
-
-[node name="GlassL2" parent="." instance=ExtResource("13_kbnh8")]
-position = Vector2(-295, -5)
-
-[node name="GlassR3" parent="." instance=ExtResource("14_kbnh8")]
-position = Vector2(295, 180)
-
-[node name="GlassL3" parent="." instance=ExtResource("15_klllu")]
-position = Vector2(-295, 180)

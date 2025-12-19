@@ -1,5 +1,7 @@
 extends Marker2D
 
+var DEATHFLASH = preload("res://Gameplay Elements/bloody_screen.tscn")
+
 @onready var curState = $Idle
 @onready var states = {Vector2(0,-200): $SwingU, Vector2(0,200): $SwingD, Vector2(-200,0): $SwingH,Vector2(200,0): $SwingH,}
 var attackCount = 0
@@ -23,6 +25,12 @@ func playAttack():
 	attacks[attackCount%3].visible = true
 	attacks[attackCount%3].play()
 		
+
+func playDeath():
+	var deathFlash = DEATHFLASH.instantiate()
+	add_sibling(deathFlash)
+	$DeathShot.visible = true
+	$DeathShot.play()
 
 func _on_animation_finished():
 	curState.flip_h = false

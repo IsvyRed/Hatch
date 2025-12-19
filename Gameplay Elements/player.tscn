@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bwiw68oyuvcma"]
+[gd_scene load_steps=38 format=3 uid="uid://bwiw68oyuvcma"]
 
 [ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Scripts/player.gd" id="1_oihdw"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_3dn4l"]
@@ -23,6 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://b56kxugxetg6u" path="res://Sprites/Player/empty.png" id="19_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://d1ypm1r1x0l4e" path="res://Sprites/Player/Attack2-2.png" id="20_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://b1gmxw1fs4bfr" path="res://Sprites/Player/Attack3-2.png" id="20_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://drsgsc4r5bys7" path="res://Sprites/KillShot1.png" id="24_gon66"]
+[ext_resource type="Texture2D" uid="uid://c6pbq4sl55hh0" path="res://Sprites/KillShot2.png" id="25_7dj4f"]
+[ext_resource type="Texture2D" uid="uid://4m84sgymjb41" path="res://Sprites/KillShot3.png" id="26_etl84"]
+[ext_resource type="Texture2D" uid="uid://hnapx57cg0u5" path="res://Sprites/KillShot4.png" id="27_jkqc8"]
+[ext_resource type="Texture2D" uid="uid://dvd1fyjoa80ta" path="res://Sprites/KillShot5.png" id="28_c3wlo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbv4j"]
 animations = [{
@@ -149,6 +154,29 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oosy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_gon66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7dj4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_etl84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jkqc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_c3wlo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
 size = Vector2(20, 41)
 
@@ -197,6 +225,16 @@ visible = false
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ctpar")
+
+[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+z_index = 16
+z_as_relative = false
+position = Vector2(-60, 25)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_oosy3")
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xxies")
