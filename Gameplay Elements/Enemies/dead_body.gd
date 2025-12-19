@@ -13,7 +13,6 @@ func destroy(direction = Globals.lastDirection):
 	
 func _physics_process(_delta):
 	move_and_collide(motion)
-	$Sprite2D.position.y = motion.x
 	if not falling:
 		motion /= 1.5
 	else:
@@ -24,7 +23,7 @@ func fall(_body):
 	var chance = abs(motion.x + motion.y)
 	var judge = randi_range(0,10)
 	if chance > judge:
-		collision_mask = 6
+		set_collision_layer_value(6,false)
 		z_index = -2
 		motion += locLastDirection/15
 		gravity_scale = 6

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bs73jndna8a7"]
+
+[ext_resource type="Script" uid="uid://bw14umwavnf8j" path="res://Scripts/glass_R_1.gd" id="1_7mb2g"]
+[ext_resource type="Texture2D" uid="uid://b5mhqaksfkdlj" path="res://Sprites/Destructibles/Glass/GlassR3-1.png" id="2_rmfem"]
+[ext_resource type="Texture2D" uid="uid://nqftjksn0q03" path="res://Sprites/Destructibles/Glass/GlassR3-2.png" id="3_a2nxq"]
+[ext_resource type="Texture2D" uid="uid://bremwu2b2dveq" path="res://Sprites/Destructibles/Glass/GlassR3-3.png" id="4_66k0d"]
+[ext_resource type="Texture2D" uid="uid://vjjucwgj13xn" path="res://Sprites/Destructibles/Glass/GlassR3-4.png" id="5_btw8o"]
+[ext_resource type="Texture2D" uid="uid://u1jrijku7xo1" path="res://Sprites/Destructibles/Glass/GlassR3-5.png" id="6_p6f6y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iogbx"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_rmfem")
+}, {
+"duration": 0.7,
+"texture": ExtResource("3_a2nxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_66k0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_btw8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p6f6y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gejqu"]
+size = Vector2(20, 175)
+
+[node name="GlassR3" type="Area2D"]
+z_index = 5
+z_as_relative = false
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_7mb2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_iogbx")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": true,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Sprites/Destructibles/Glass/GlassD1.aseprite",
+"source_uid": 536347664026325130
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b92889adb1ef4b65011fbb8cba079d5b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, -2.5)
+shape = SubResource("RectangleShape2D_gejqu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

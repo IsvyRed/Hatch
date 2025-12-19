@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1ieq5spgoubg"]
+[gd_scene load_steps=17 format=3 uid="uid://c1ieq5spgoubg"]
 
 [ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_1wh16"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_yup6v"]
@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="7_rsaji"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="8_wbf2n"]
 [ext_resource type="PackedScene" uid="uid://ljb3nxfgta2a" path="res://Gameplay Elements/Destructibles/GlassD1.tscn" id="9_wbf2n"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wbf2n"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2bw7g"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5y034"]
+[ext_resource type="PackedScene" uid="uid://rvmcbjo11p1" path="res://Gameplay Elements/Destructibles/glass_R_1.tscn" id="10_2bw7g"]
+[ext_resource type="PackedScene" uid="uid://cutwb0msu2a4v" path="res://Gameplay Elements/Destructibles/glass_l_1.tscn" id="11_5y034"]
+[ext_resource type="PackedScene" uid="uid://cj2hbl8j8d60m" path="res://Gameplay Elements/Destructibles/glass_r_2.tscn" id="12_4gst2"]
+[ext_resource type="PackedScene" uid="uid://c4ym3l8x4lo2g" path="res://Gameplay Elements/Destructibles/glass_l_2.tscn" id="13_kbnh8"]
+[ext_resource type="PackedScene" uid="uid://bs73jndna8a7" path="res://Gameplay Elements/Destructibles/glass_r_3.tscn" id="14_kbnh8"]
+[ext_resource type="PackedScene" uid="uid://lfw4j26ij2p0" path="res://Gameplay Elements/Destructibles/glass_l_3.tscn" id="15_klllu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
 size = Vector2(628, 164)
@@ -86,32 +86,6 @@ position = Vector2(-400, 0)
 
 [node name="DeathTile12" parent="DeathTiles" instance=ExtResource("3_ehsp4")]
 position = Vector2(-400, -200)
-
-[node name="Enemy Landing Zones" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Enemy Landing Zones"]
-collision_layer = 64
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Landing Zones/StaticBody2D"]
-position = Vector2(0, -192)
-shape = SubResource("WorldBoundaryShape2D_wbf2n")
-one_way_collision_margin = 0.0
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Enemy Landing Zones"]
-collision_layer = 64
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Landing Zones/StaticBody2D2"]
-position = Vector2(0, 208)
-shape = SubResource("WorldBoundaryShape2D_2bw7g")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Enemy Landing Zones"]
-collision_layer = 64
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Landing Zones/StaticBody2D3"]
-shape = SubResource("WorldBoundaryShape2D_5y034")
 
 [node name="Boudaries" type="Node" parent="."]
 
@@ -220,3 +194,21 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
+
+[node name="GlassD1" parent="." instance=ExtResource("10_2bw7g")]
+position = Vector2(295, -185)
+
+[node name="GlassL1" parent="." instance=ExtResource("11_5y034")]
+position = Vector2(-295, -185)
+
+[node name="GlassR2" parent="." instance=ExtResource("12_4gst2")]
+position = Vector2(295, -5)
+
+[node name="GlassL2" parent="." instance=ExtResource("13_kbnh8")]
+position = Vector2(-295, -5)
+
+[node name="GlassR3" parent="." instance=ExtResource("14_kbnh8")]
+position = Vector2(295, 180)
+
+[node name="GlassL3" parent="." instance=ExtResource("15_klllu")]
+position = Vector2(-295, 180)

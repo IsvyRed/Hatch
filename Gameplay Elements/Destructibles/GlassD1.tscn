@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ljb3nxfgta2a"]
 
-[ext_resource type="Script" uid="uid://b21gx4xyh3bmf" path="res://Gameplay Elements/Destructibles/glass_d_1.gd" id="1_48lm4"]
+[ext_resource type="Script" uid="uid://b21gx4xyh3bmf" path="res://Scripts/glass_d_1.gd" id="1_48lm4"]
 [ext_resource type="Texture2D" uid="uid://x0k5od4oyq7s" path="res://Sprites/Destructibles/Glass/GlassD1-1.png" id="2_78vxa"]
 [ext_resource type="Texture2D" uid="uid://bgddbulj5w40j" path="res://Sprites/Destructibles/Glass/GlassD1-2.png" id="3_0504q"]
 [ext_resource type="Texture2D" uid="uid://cf5vabilfoqhm" path="res://Sprites/Destructibles/Glass/GlassD1-3.png" id="4_e0oc5"]
