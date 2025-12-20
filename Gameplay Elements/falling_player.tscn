@@ -1,11 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://q8r426ajyt4o"]
+[gd_scene load_steps=9 format=3 uid="uid://q8r426ajyt4o"]
 
-[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="1_m0qy5"]
 [ext_resource type="Script" uid="uid://frbgpctkkdks" path="res://Scripts/falling_player.gd" id="1_qpo0r"]
+[ext_resource type="Texture2D" uid="uid://rgrl0b587mfx" path="res://Sprites/Player/FallAnim1.png" id="1_r7eyu"]
+[ext_resource type="Texture2D" uid="uid://cqcib4edxucpg" path="res://Sprites/Player/FallAnim2.png" id="2_o471w"]
+[ext_resource type="Texture2D" uid="uid://bergoweggsnl" path="res://Sprites/Player/FallAnim3.png" id="3_sye0i"]
+[ext_resource type="Texture2D" uid="uid://d32vaqua42pmb" path="res://Sprites/Player/FallAnim4.png" id="4_s8hdd"]
+[ext_resource type="Script" uid="uid://cwhvf6p8cgipn" path="res://Gameplay Elements/area_2d.gd" id="6_o471w"]
 
-[node name="FallingPlayer" type="Sprite2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8h2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r7eyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o471w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sye0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s8hdd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7eyu"]
+size = Vector2(107, 222)
+
+[node name="FallingPlayerD" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 0
+gravity_scale = 3.0
+script = ExtResource("6_o471w")
+
+[node name="FallingPlayer" type="AnimatedSprite2D" parent="."]
 z_index = 1
 z_as_relative = false
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_m0qy5")
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_w8h2t")
 script = ExtResource("1_qpo0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.9802322e-08, -1.9073486e-06)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_r7eyu")

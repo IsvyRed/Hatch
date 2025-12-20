@@ -117,7 +117,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"new_animation",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2ovt"]
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctpar"]
@@ -151,7 +151,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oosy3"]
@@ -174,7 +174,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 30.0
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
@@ -248,7 +248,7 @@ wait_time = 3.3
 autostart = true
 
 [node name="ResetTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.2
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationHandler/SwingH" to="AnimationHandler" method="_on_animation_finished"]

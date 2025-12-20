@@ -2,9 +2,15 @@ extends Area2D
 var BUS = preload("res://Gameplay Elements/enemy_spawn_bus.tscn")
 var VISIONCAST = preload("res://Gameplay Elements/player_vision.tscn")
 var DESTRUCTIONCAST = preload("res://Gameplay Elements/destructionCast.tscn")
+var AFTERIMAGE = preload("res://Gameplay Elements/after_image.tscn")
+
+var lastRot
 var lastDirection
 var type = "player"
 var enemyHit = false
+
+func _ready():
+	Globals.player = self
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Left"):
@@ -19,6 +25,13 @@ func _physics_process(_delta):
 		var destructionCast = DESTRUCTIONCAST.instantiate()
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_sibling(afterImage)
+		afterImage.rotation = PI
+		lastRot = afterImage.rotation
+		afterImage.position = position + lastDirection
+		afterImage.play()
 	if Input.is_action_just_pressed("Right"):
 		var visionCast = VISIONCAST.instantiate()	
 		lastDirection = Vector2(200,0)
@@ -31,6 +44,12 @@ func _physics_process(_delta):
 		var destructionCast = DESTRUCTIONCAST.instantiate()
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_sibling(afterImage)
+		lastRot = afterImage.rotation
+		afterImage.position = position + lastDirection
+		afterImage.play()
 	if Input.is_action_just_pressed("Up"):
 		lastDirection = Vector2(0,-200)
 		var visionCast = VISIONCAST.instantiate()	
@@ -43,6 +62,13 @@ func _physics_process(_delta):
 		var destructionCast = DESTRUCTIONCAST.instantiate()
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_sibling(afterImage)
+		afterImage.rotation = -PI/2
+		lastRot = afterImage.rotation
+		afterImage.position = position + lastDirection
+		afterImage.play()
 	if Input.is_action_just_pressed("Down"):
 		lastDirection = Vector2(0,200)
 		var visionCast = VISIONCAST.instantiate()	
@@ -55,8 +81,15 @@ func _physics_process(_delta):
 		var destructionCast = DESTRUCTIONCAST.instantiate()
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
+		#afterimage cast
+		var afterImage = AFTERIMAGE.instantiate()
+		add_sibling(afterImage)
+		afterImage.rotation = PI/2
+		lastRot = afterImage.rotation
+		afterImage.position = position + lastDirection
+		afterImage.play()
 	if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
-		pass #PLAY SWING ANIMATION!!
+		$AnimationHandler.playAttack()
 	if Input.is_action_just_pressed("Next Floor"):
 		Globals.floor += 1
 		Globals.clearEnemies()

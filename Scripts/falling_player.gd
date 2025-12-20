@@ -1,8 +1,10 @@
-extends Sprite2D
+extends AnimatedSprite2D
+
+func _ready():
+	if Globals.lastDirection.x == 200:
+		flip_h = true
+	play()
 
 func _physics_process(_delta):
 	#REPLACE TYPE AND ALL OF THIS WITH A PROPER ANIMATION
 	scale /= 1.1
-	position += Globals.lastDirection/100
-	position.y += 10
-	position.y += 2
