@@ -95,6 +95,10 @@ Attack2={
 2d_physics/layer_6="Boundaries"
 2d_physics/layer_7="EnemyLandingPlanes"
 
+[physics]
+
+common/physics_ticks_per_second=120
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

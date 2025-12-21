@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch0vccbx33ci1"]
+[gd_scene load_steps=8 format=3 uid="uid://ch0vccbx33ci1"]
 
+[ext_resource type="Texture2D" uid="uid://b5xja2j25s5l4" path="res://Sprites/DeathFlash4.png" id="1_nvadn"]
 [ext_resource type="Texture2D" uid="uid://b327urdhyt38w" path="res://Sprites/DeathFlash1.png" id="1_w75lx"]
 [ext_resource type="Texture2D" uid="uid://c4ge2ow7ikc8g" path="res://Sprites/DeathFlash2.png" id="2_nvadn"]
 [ext_resource type="Texture2D" uid="uid://bbbt0cqyg24eh" path="res://Sprites/DeathFlash3.png" id="3_wuyki"]
 [ext_resource type="Script" uid="uid://ceenm8tag3aww" path="res://Gameplay Elements/bloody_screen.gd" id="4_br0pw"]
+[ext_resource type="Texture2D" uid="uid://b56kxugxetg6u" path="res://Sprites/Player/empty.png" id="5_wuyki"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l58qm"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nvadn")
+}, {
 "duration": 1.0,
 "texture": ExtResource("1_w75lx")
 }, {
@@ -16,6 +21,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_wuyki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wuyki")
 }],
 "loop": false,
 "name": &"default",

@@ -7,6 +7,7 @@ var DEATHFLASH = preload("res://Gameplay Elements/bloody_screen.tscn")
 var attackCount = 0
 @onready var attacks = [$Attack1,$Attack2,$Attack3]
 var lastAttack
+var dead = false
 
 func _ready():
 	$Idle.play()
@@ -27,8 +28,13 @@ func playAttack():
 		
 
 func playDeath():
+	dead = true
 	var deathFlash = DEATHFLASH.instantiate()
 	add_sibling(deathFlash)
+	curState.visible = false
+	curState.stop()
+	$PlayerShot.visible = true
+	$PlayerShot.play()
 	$DeathShot.visible = true
 	$DeathShot.play()
 
@@ -36,5 +42,6 @@ func _on_animation_finished():
 	curState.flip_h = false
 	curState.visible = false
 	curState = $Idle
-	$Idle.visible = true
-	$Idle.play()
+	if not dead:
+		$Idle.visible = true
+		$Idle.play()

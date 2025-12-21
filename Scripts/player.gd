@@ -13,15 +13,20 @@ var lastDirection
 var type = "player"
 var readyToMove = true
 var enemyHit = false
+var lastMovedF = 3 #Frames since last movement, set to threshold+1 to omit first instance of threshold met
 
 func _ready():
 	Globals.player = self
 
 func _physics_process(_delta):
+	#PHYSICS CLOCK BASED SLIDE DELAY -- timer provided inconsistencies
+	if lastMovedF == 2:
+		_on_slide_timer_timeout()
+	lastMovedF += 1
 	if not dead:
 		if Input.is_action_just_pressed("Left") and readyToMove:
 			readyToMove = false
-			$SlideTimer.start()
+			lastMovedF = 0
 			var visionCast = VISIONCAST.instantiate()	
 			lastDirection = Vector2(-200,0)
 			visionCast.set_target_position(Vector2(-200,0))
@@ -40,9 +45,9 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
-		if Input.is_action_just_pressed("Right") and readyToMove:
+		elif Input.is_action_just_pressed("Right") and readyToMove:
 			readyToMove = false
-			$SlideTimer.start()
+			lastMovedF = 0
 			var visionCast = VISIONCAST.instantiate()	
 			lastDirection = Vector2(200,0)
 			visionCast.set_target_position(Vector2(200,0))
@@ -60,9 +65,9 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
-		if Input.is_action_just_pressed("Up") and readyToMove:
+		elif Input.is_action_just_pressed("Up") and readyToMove:
 			readyToMove = false
-			$SlideTimer.start()
+			lastMovedF = 0
 			lastDirection = Vector2(0,-200)
 			var visionCast = VISIONCAST.instantiate()	
 			visionCast.set_target_position(Vector2(0,-200))
@@ -81,9 +86,9 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
-		if Input.is_action_just_pressed("Down") and readyToMove:
+		elif Input.is_action_just_pressed("Down") and readyToMove:
 			readyToMove = false
-			$SlideTimer.start()
+			lastMovedF = 0
 			lastDirection = Vector2(0,200)
 			var visionCast = VISIONCAST.instantiate()	
 			visionCast.set_target_position(Vector2(0,200))
