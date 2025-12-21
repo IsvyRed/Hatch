@@ -102,4 +102,3 @@ func onDeathTile():
 	Globals.deathMessage()
 	print("Dead (out of bounds)")
 	Globals.floor = 0
-	$SlideTimer.stop()

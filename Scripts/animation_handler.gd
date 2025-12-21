@@ -25,7 +25,6 @@ func playAttack():
 	attackCount += 1
 	attacks[attackCount%3].visible = true
 	attacks[attackCount%3].play()
-		
 
 func playDeath():
 	dead = true

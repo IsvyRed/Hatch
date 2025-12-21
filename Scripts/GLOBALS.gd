@@ -22,6 +22,8 @@ var validTiles = []
 var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
 var curLevel = 0
 
+var sceneCamera
+
 signal resetGlass
 
 func clearEnemies():

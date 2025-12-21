@@ -45,6 +45,8 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
+			#Camera movement
+			Globals.sceneCamera.flinch(lastDirection)
 		elif Input.is_action_just_pressed("Right") and readyToMove:
 			readyToMove = false
 			lastMovedF = 0
@@ -65,6 +67,8 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
+			#Camera movement
+			Globals.sceneCamera.flinch(lastDirection)
 		elif Input.is_action_just_pressed("Up") and readyToMove:
 			readyToMove = false
 			lastMovedF = 0
@@ -86,6 +90,8 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
+			#Camera movement
+			Globals.sceneCamera.flinch(lastDirection)
 		elif Input.is_action_just_pressed("Down") and readyToMove:
 			readyToMove = false
 			lastMovedF = 0
@@ -107,6 +113,8 @@ func _physics_process(_delta):
 			lastRot = afterImage.rotation
 			afterImage.position = position + lastDirection
 			afterImage.play()
+			#Camera movement
+			Globals.sceneCamera.flinch(lastDirection)
 		if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
 			$AnimationHandler.playAttack()
 			if has_overlapping_areas():

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://he3j45lvd230"]
+[gd_scene load_steps=7 format=3 uid="uid://he3j45lvd230"]
 
 [ext_resource type="PackedScene" uid="uid://c1ieq5spgoubg" path="res://Gameplay Elements/main_level.tscn" id="1_75317"]
+[ext_resource type="PackedScene" uid="uid://bluh7mqpyv2r4" path="res://Gameplay Elements/main_camera.tscn" id="2_02urj"]
 [ext_resource type="PackedScene" uid="uid://chwfq4c53qhjf" path="res://Testing Tools/floor_counter.tscn" id="2_fjdud"]
 [ext_resource type="PackedScene" uid="uid://buptinn0f7qfe" path="res://Testing Tools/label.tscn" id="3_xfokb"]
 [ext_resource type="Script" uid="uid://dk82ni81mdmmu" path="res://Scripts/visual_timer.gd" id="4_xfokb"]
@@ -30,10 +31,9 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(256, 144)
 render_target_update_mode = 4
 
-[node name="MainLevel" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_75317")]
+[node name="mainCamera" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("2_02urj")]
 
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
-zoom = Vector2(0.2, 0.2)
+[node name="MainLevel" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_75317")]
 
 [node name="FloorCounter" parent="CanvasLayer" instance=ExtResource("2_fjdud")]
 offset_left = 26.0
