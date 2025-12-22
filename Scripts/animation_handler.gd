@@ -27,6 +27,10 @@ func playAttack():
 	attacks[attackCount%3].play()
 
 func playDeath():
+	# clearing hearts and maybe other stuff for death flash
+	for child in Globals.normalLayer.get_children():
+		if child.has_method("die"):
+			child.visible = false
 	dead = true
 	var deathFlash = DEATHFLASH.instantiate()
 	add_sibling(deathFlash)

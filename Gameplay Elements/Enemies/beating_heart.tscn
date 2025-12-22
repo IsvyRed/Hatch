@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://jkqvca25s4s8"]
+
+[ext_resource type="Texture2D" uid="uid://y5jjgejs6nd5" path="res://Sprites/Enemies/BeatingHeart1.png" id="1_fvr5c"]
+[ext_resource type="Texture2D" uid="uid://ddb5w1bnl0wbp" path="res://Sprites/Enemies/BeatingHeart2.png" id="2_5pwpv"]
+[ext_resource type="Texture2D" uid="uid://cwruhvnxdswm2" path="res://Sprites/Enemies/BeatingHeart3.png" id="3_ji6qn"]
+[ext_resource type="Script" uid="uid://j4b6aes2yuky" path="res://Gameplay Elements/Enemies/beating_heart.gd" id="4_5pwpv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhicp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fvr5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5pwpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ji6qn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sprite2D" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_dhicp")
+script = ExtResource("4_5pwpv")

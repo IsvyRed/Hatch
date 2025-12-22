@@ -23,6 +23,7 @@ var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/ma
 var curLevel = 0
 
 var sceneCamera
+var normalLayer
 
 signal resetGlass
 
@@ -61,3 +62,4 @@ func resetRun():
 	if debugDeathMsg != null:
 		debugDeathMsg.prompt()
 	get_tree().change_scene_to_file(levels[curLevel])
+	

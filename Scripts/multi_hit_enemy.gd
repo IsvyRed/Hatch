@@ -5,6 +5,8 @@ var HPMARKER = preload("res://Gameplay Elements/Enemies/test_marker.tscn")
 var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 
 func _ready():
+	$Sprite.play()
+	$Sprite.speed_scale = randf_range(0.8,1.2)
 	Globals.enemiesLeft += 1
 	Globals.enemies.append(self)
 	@warning_ignore("integer_division")

@@ -7,6 +7,8 @@ var singleUpgrade = true
 func _ready():
 	Globals.enemiesLeft += 1
 	Globals.enemies.append(self)
+	$Sprite.play()
+	$Sprite.speed_scale = randf_range(0.8,1.2)
 
 func _on_area_entered(_area):
 	#DIE -- GIVE PLAYER FEEDBACK

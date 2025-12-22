@@ -1,15 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ducs1ff3yw0u6"]
+[gd_scene load_steps=7 format=3 uid="uid://ducs1ff3yw0u6"]
 
 [ext_resource type="Script" uid="uid://cdeno6y0wkgos" path="res://Scripts/multi_hit_enemy.gd" id="1_d1o4w"]
-[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_cxtqi"]
 [ext_resource type="PackedScene" uid="uid://d30vnaswbqnf4" path="res://Gameplay Elements/Enemies/HealthOrbit.tscn" id="2_fy0g8"]
+[ext_resource type="Texture2D" uid="uid://bl3577han30ys" path="res://Sprites/Enemies/Standing/StandingEnemyIdle1.png" id="3_fy0g8"]
+[ext_resource type="Texture2D" uid="uid://dds1uwxfhc3au" path="res://Sprites/Enemies/Standing/StandingEnemyIdle2.png" id="4_rv38l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfuod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fy0g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rv38l")
+}],
+"loop": true,
+"name": &"StandingIdle",
+"speed": 5.0
+}]
 
 [node name="MultiHitEnemy" type="Area2D"]
 z_index = 1
 z_as_relative = false
-scale = Vector2(1.2, 1.2)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_d1o4w")
@@ -19,9 +33,10 @@ script = ExtResource("1_d1o4w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_50ioy")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 9.536743e-07)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_cxtqi")
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_jfuod")
+animation = &"StandingIdle"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
