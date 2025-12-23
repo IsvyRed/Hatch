@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://jkqvca25s4s8"]
+[gd_scene load_steps=15 format=3 uid="uid://jkqvca25s4s8"]
 
+[ext_resource type="Texture2D" uid="uid://m1tnga5cb3lg" path="res://Sprites/Enemies/HeartBreakA1.png" id="1_42xm7"]
 [ext_resource type="Texture2D" uid="uid://y5jjgejs6nd5" path="res://Sprites/Enemies/BeatingHeart1.png" id="1_fvr5c"]
 [ext_resource type="Texture2D" uid="uid://ddb5w1bnl0wbp" path="res://Sprites/Enemies/BeatingHeart2.png" id="2_5pwpv"]
+[ext_resource type="Texture2D" uid="uid://d1lle76asde1c" path="res://Sprites/Enemies/HeartBreakA2.png" id="2_igr7i"]
+[ext_resource type="Texture2D" uid="uid://bjak4my58i5si" path="res://Sprites/Enemies/HeartBreakA3.png" id="3_6cr0n"]
 [ext_resource type="Texture2D" uid="uid://cwruhvnxdswm2" path="res://Sprites/Enemies/BeatingHeart3.png" id="3_ji6qn"]
 [ext_resource type="Script" uid="uid://j4b6aes2yuky" path="res://Gameplay Elements/Enemies/beating_heart.gd" id="4_5pwpv"]
+[ext_resource type="Texture2D" uid="uid://24tkebnebu8h" path="res://Sprites/Enemies/HeartBreakB1.png" id="4_27u2y"]
+[ext_resource type="Texture2D" uid="uid://bd5b3wu75ep02" path="res://Sprites/Enemies/HeartBreakB2.png" id="5_reoq4"]
+[ext_resource type="Texture2D" uid="uid://c4ms1o7tu1m0v" path="res://Sprites/Enemies/HeartBreakB3.png" id="6_xg4mh"]
+[ext_resource type="Texture2D" uid="uid://co6c2qnwjhgt4" path="res://Sprites/Enemies/HeartBreakC1.png" id="10_27u2y"]
+[ext_resource type="Texture2D" uid="uid://34dwgboxposj" path="res://Sprites/Enemies/HeartBreakC2.png" id="11_reoq4"]
+[ext_resource type="Texture2D" uid="uid://dinrinfcrpmvq" path="res://Sprites/Enemies/HeartBreakC3.png" id="12_xg4mh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhicp"]
 animations = [{
@@ -18,11 +27,56 @@ animations = [{
 "texture": ExtResource("3_ji6qn")
 }],
 "loop": true,
-"name": &"default",
+"name": &"AAdefault",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_42xm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_igr7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6cr0n")
+}],
+"loop": false,
+"name": &"BreakA",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_27u2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_reoq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xg4mh")
+}],
+"loop": false,
+"name": &"BreakB",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_27u2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_reoq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xg4mh")
+}],
+"loop": false,
+"name": &"BreakC",
+"speed": 24.0
 }]
 
 [node name="Sprite2D" type="AnimatedSprite2D"]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_dhicp")
+animation = &"AAdefault"
 script = ExtResource("4_5pwpv")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
