@@ -99,6 +99,7 @@ Attack2={
 [physics]
 
 common/physics_ticks_per_second=120
+2d/solver/solver_iterations=8
 
 [rendering]
 

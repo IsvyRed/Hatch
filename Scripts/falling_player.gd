@@ -6,5 +6,4 @@ func _ready():
 	play()
 
 func _physics_process(_delta):
-	#REPLACE TYPE AND ALL OF THIS WITH A PROPER ANIMATION
-	scale /= 1.1
+	scale *= 0.97

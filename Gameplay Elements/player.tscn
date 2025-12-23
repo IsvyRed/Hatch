@@ -219,6 +219,15 @@ animations = [{
 "duration": 0.2,
 "texture": ExtResource("32_dpdfr")
 }, {
+"duration": 0.2,
+"texture": ExtResource("32_dpdfr")
+}, {
+"duration": 0.2,
+"texture": ExtResource("32_dpdfr")
+}, {
+"duration": 0.2,
+"texture": ExtResource("32_dpdfr")
+}, {
 "duration": 1.0,
 "texture": ExtResource("33_fdm5v")
 }, {
@@ -310,7 +319,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="GameOverTimer" type="Timer" parent="."]
-wait_time = 3.3
+wait_time = 3.0
 autostart = true
 
 [node name="ResetTimer" type="Timer" parent="."]

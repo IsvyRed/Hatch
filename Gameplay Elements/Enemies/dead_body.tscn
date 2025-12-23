@@ -1,12 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5nlp7kgcs0nc"]
+[gd_scene load_steps=17 format=3 uid="uid://b5nlp7kgcs0nc"]
 
 [ext_resource type="Script" uid="uid://qjctc5wn74cv" path="res://Gameplay Elements/Enemies/dead_body.gd" id="1_ctrc7"]
-[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_tqyk5"]
+[ext_resource type="Texture2D" uid="uid://ddo76clrokgsf" path="res://Sprites/Enemies/Anims/FallRA1.png" id="2_c314q"]
+[ext_resource type="Texture2D" uid="uid://cl8lhj3g0iycj" path="res://Sprites/Enemies/Anims/FallRA2.png" id="3_xpdwe"]
+[ext_resource type="Texture2D" uid="uid://t06hhc13u0ni" path="res://Sprites/Enemies/Anims/FallRA3.png" id="4_sr6jb"]
+[ext_resource type="Texture2D" uid="uid://drb5g66frt4lc" path="res://Sprites/Enemies/Anims/FallRA4.png" id="5_pxqs6"]
+[ext_resource type="Texture2D" uid="uid://jqwjogu6r44j" path="res://Sprites/Enemies/Anims/FallRA5.png" id="6_ho1os"]
+[ext_resource type="Texture2D" uid="uid://bqe337g3uf1o" path="res://Sprites/Enemies/Anims/FallRA6.png" id="7_uea0o"]
+[ext_resource type="Texture2D" uid="uid://8a4cynjv055t" path="res://Sprites/Enemies/Anims/FallUA1.png" id="8_ya2p6"]
+[ext_resource type="Texture2D" uid="uid://b7u5npndyycec" path="res://Sprites/Enemies/Anims/FallUA2.png" id="9_1e0o1"]
+[ext_resource type="Texture2D" uid="uid://bukoq10jsqo5m" path="res://Sprites/Enemies/Anims/FallUA3.png" id="10_cksdd"]
+[ext_resource type="Texture2D" uid="uid://cg20qvxd4trso" path="res://Sprites/Enemies/Anims/FallUA4.png" id="11_w2h0h"]
+[ext_resource type="Texture2D" uid="uid://dctnh4v8k4moi" path="res://Sprites/Enemies/Anims/FallUA5.png" id="12_lth4q"]
+[ext_resource type="Texture2D" uid="uid://cmrywi7psqnvt" path="res://Sprites/Enemies/Anims/FallUA6.png" id="13_bvuw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y61fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81yub"]
 size = Vector2(34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya2p6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c314q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xpdwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sr6jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxqs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ho1os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uea0o")
+}],
+"loop": false,
+"name": &"RightA",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ya2p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1e0o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cksdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w2h0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lth4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bvuw2")
+}],
+"loop": false,
+"name": &"UpA",
+"speed": 12.0
+}]
 
 [node name="DeadBody" type="RigidBody2D"]
 collision_layer = 16
@@ -24,10 +84,12 @@ collision_mask = 33
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassChecker"]
 shape = SubResource("RectangleShape2D_81yub")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-skew = 0.7853982
-texture = ExtResource("2_tqyk5")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_ya2p6")
+animation = &"UpA"
+frame = 5
+frame_progress = 1.0
 
 [node name="FallSpan" type="Timer" parent="."]
 wait_time = 0.3

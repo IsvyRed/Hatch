@@ -8,6 +8,7 @@ func _physics_process(_delta):
 func _ready():
 	heart = HEART.instantiate()
 	heart.play()
+	Globals.debrisList.append(heart)
 	Globals.normalLayer.add_child(heart)
 
 func die():

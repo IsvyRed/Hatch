@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://q8r426ajyt4o"]
+[gd_scene load_steps=10 format=3 uid="uid://q8r426ajyt4o"]
 
 [ext_resource type="Script" uid="uid://frbgpctkkdks" path="res://Scripts/falling_player.gd" id="1_qpo0r"]
 [ext_resource type="Texture2D" uid="uid://rgrl0b587mfx" path="res://Sprites/Player/FallAnim1.png" id="1_r7eyu"]
@@ -28,7 +28,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7eyu"]
-size = Vector2(107, 222)
+size = Vector2(107, 266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o471w"]
+size = Vector2(70.59999, 20)
 
 [node name="FallingPlayerD" type="RigidBody2D"]
 collision_layer = 16
@@ -44,6 +47,11 @@ sprite_frames = SubResource("SpriteFrames_w8h2t")
 script = ExtResource("1_qpo0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.9802322e-08, -1.9073486e-06)
+position = Vector2(-1.7763568e-15, -1.9073486e-06)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_r7eyu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_o471w")
