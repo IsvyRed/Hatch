@@ -13,7 +13,7 @@ config_version=5
 config/name="Hatch - github"
 run/main_scene="uid://che436kyhlwah"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://Sprites/icon.svg"
+config/icon="uid://cpf0v1susnelq"
 
 [autoload]
 
@@ -25,7 +25,6 @@ PlayerSettings="*res://Scripts/PLAYERSETTINGS.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/canvas_textures/default_texture_filter=0
 
 [editor_plugins]

@@ -14,6 +14,8 @@ var type = "player"
 var readyToMove = true
 var enemyHit = false
 var lastMovedF = 3 #Frames since last movement, set to threshold+1 to omit first instance of threshold met
+var floorQueued = false
+var nextFloorF = 0
 
 func _ready():
 	Globals.player = self
@@ -22,7 +24,11 @@ func _physics_process(_delta):
 	#PHYSICS CLOCK BASED SLIDE DELAY -- timer provided inconsistencies
 	if lastMovedF == 2:
 		_on_slide_timer_timeout()
+	if floorQueued and nextFloorF == 5:
+		$GameOverTimer.start()
+		nextFloor()
 	lastMovedF += 1
+	nextFloorF += 1
 	if not dead:
 		if Input.is_action_just_pressed("Left") and readyToMove:
 			readyToMove = false
@@ -91,7 +97,7 @@ func _physics_process(_delta):
 			afterImage.position = position + lastDirection
 			afterImage.play()
 			#Camera movement
-			Globals.sceneCamera.flinch(lastDirection)
+			Globals.sceneCamera.flinch(lastDirection) 
 		elif Input.is_action_just_pressed("Down") and readyToMove:
 			readyToMove = false
 			lastMovedF = 0
@@ -123,19 +129,10 @@ func _physics_process(_delta):
 				missedEnemy()
 		if Input.is_action_just_pressed("Next Floor"):
 			if Globals.enemiesLeft <= 0:
-				var newBus = BUS.instantiate()
-				newBus.position = position
-				get_parent().add_child(newBus)
-				Globals.floor += 1
-				Globals.clearEnemies()
-				$GameOverTimer.start()
+				floorQueued = true
+				nextFloorF = 0
 				
-				var destructibleSpawner = DEBRISSPAWNER.instantiate()
-				add_child(destructibleSpawner)
-				
-				print("Floor " + str(Globals.floor) + ": ")
-				
-			else:
+			else: #DEATH CONDITION: when attempting to leave a floor that is not clear
 				dead = true
 				$ResetTimer.start()
 				$AnimationHandler.playDeath()
@@ -145,31 +142,29 @@ func _physics_process(_delta):
 
 func onValidTile():
 	position += lastDirection
-func onDeathTile():
+func onDeathTile(): #DEATH CONDITION: when moved out of the map
 	dead = true
 	$ResetTimer.start()
 	Globals.deathMessage("Death: Moved out of bounds")
 	var fallingPlayer = FALLINGPLAYER.instantiate()
 	fallingPlayer.position = position + lastDirection
 	add_sibling(fallingPlayer)
-	print(fallingPlayer.position )
 	visible = false
 	$SlideTimer.stop()
 	readyToMove = true
 	
-func missedEnemy():
+func missedEnemy(): #DEATH CONDITION: when swinging at the air
 	dead = true
 	$ResetTimer.start()
 	$AnimationHandler.playDeath()
 	Globals.deathMessage("Death: Missed enemy")
 	
-	
-func touchedEnemy():
+func touchedEnemy(): #helps dictate if you should slide past a tile when moving
 	enemyHit = true
 	#animation handler
 	$AnimationHandler.play(lastDirection)
-
-func _on_slide_timer_timeout():
+	
+func _on_slide_timer_timeout(): #no longer a timer, frames are counted in physics clock. This is the cooldown between movements, and dictates if you should slide across multiple tiles
 	if not enemyHit:
 		var visionCast = VISIONCAST.instantiate()	
 		visionCast.set_target_position(lastDirection)
@@ -190,8 +185,7 @@ func _on_slide_timer_timeout():
 	readyToMove = true
 	enemyHit = false
 	
-
-func _on_game_over_timer_timeout():
+func _on_game_over_timer_timeout(): #the 3 seconds you have to clear a floor
 	if not dead:
 		$ResetTimer.start()
 		$AnimationHandler.playDeath()
@@ -200,6 +194,18 @@ func _on_game_over_timer_timeout():
 		print("Dead (Out of time)")
 	dead = true
 	
-	
-func _on_reset_timer_timeout():
+func _on_reset_timer_timeout(): #the time between your death and the floor resetting
 	Globals.resetRun()
+	
+func nextFloor():
+	var newBus = BUS.instantiate()
+	newBus.position = position
+	get_parent().add_child(newBus)
+	Globals.floor += 1
+	Globals.clearEnemies()
+	
+	
+	var destructibleSpawner = DEBRISSPAWNER.instantiate()
+	add_child(destructibleSpawner)
+	
+	print("Floor " + str(Globals.floor) + ": ")

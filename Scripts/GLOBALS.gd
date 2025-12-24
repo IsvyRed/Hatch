@@ -1,7 +1,8 @@
 extends Node
 
 #format: floorThreshold : [upgradeUnits, enemyCount (low end, high end is +2)]
-var difficultyHash = {1: [0,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [3,4], 45: [4,5], 55: [4,6]}
+#game will probably end around floor 65
+var difficultyHash = {1: [0,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [3,4], 45: [4,5], 55: [4,6], 65: [5,6], 75: [6,6]}
 
 @warning_ignore("shadowed_global_identifier")
 var floor = 0
@@ -9,13 +10,12 @@ var player
 var best = 0 #High score basically
 var enemiesLeft =  0
 var enemies = [] #Use this reference to upgrade enemies when bus is cornered
-var upgradeUnits = 0 #overwritten by hash, this is a failsafe
+var upgradeUnits = 0 #overwritten by hash, this value is not used
 var usedEnemies = []
 var debugDeathMsg = null
 var lastDirection
 var deathCon = ""
-var enemyCountBase = 1 #overwritten by hash, this is a failsafe
-
+var enemyCountBase = 1 #overwritten by hash, this value is not used
 var debrisList = []
 var validTiles = []
 

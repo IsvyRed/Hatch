@@ -11,7 +11,13 @@ func _ready():
 	Globals.debrisList.append(heart)
 	Globals.normalLayer.add_child(heart)
 
-func die():
+func die(anim = true):
 	#PLAY EXPLOSION ANIM
-	heart.die()
-	queue_free()
+	if anim:
+		heart.die()
+		queue_free()
+	else:
+		Globals.debrisList.erase(heart)
+		heart.queue_free()
+		queue_free()
+ 
