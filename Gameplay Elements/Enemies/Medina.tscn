@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://pqyxhp5i8ws5"]
+
+[ext_resource type="Script" uid="uid://t1o1cdmxqlrv" path="res://Gameplay Elements/Enemies/medina.gd" id="1_kbuvf"]
+[ext_resource type="Texture2D" uid="uid://s2laccx3frnb" path="res://Sprites/Enemies/medina_gei.png" id="1_ltjbl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kbuvf"]
+radius = 30.0
+height = 134.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_kbuvf")
+
+[node name="MedinaGei" type="Sprite2D" parent="."]
+texture = ExtResource("1_ltjbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 1)
+shape = SubResource("CapsuleShape2D_kbuvf")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

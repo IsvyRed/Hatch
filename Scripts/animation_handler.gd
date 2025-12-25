@@ -41,6 +41,14 @@ func playDeath():
 	$DeathShot.visible = true
 	$DeathShot.play()
 
+func playDrop():
+	curState.flip_h = false
+	curState.visible = false
+	curState.stop()
+	curState = $Drop
+	$Drop.visible = true
+	$Drop.play()
+
 func _on_animation_finished():
 	curState.flip_h = false
 	curState.visible = false

@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	#PHYSICS CLOCK BASED SLIDE DELAY -- timer provided inconsistencies
 	if lastMovedF == 2:
 		_on_slide_timer_timeout()
-	if floorQueued and nextFloorF == 5:
+	if floorQueued and nextFloorF == 10:
 		$GameOverTimer.start()
 		nextFloor()
 	lastMovedF += 1
@@ -129,6 +129,9 @@ func _physics_process(_delta):
 				missedEnemy()
 		if Input.is_action_just_pressed("Next Floor"):
 			if Globals.enemiesLeft <= 0:
+				$AnimationHandler.playDrop()
+				get_parent().drop()
+				Globals.sceneCamera.flinch(Vector2(0,700))
 				floorQueued = true
 				nextFloorF = 0
 				
