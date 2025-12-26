@@ -151,13 +151,13 @@ polygon = PackedVector2Array(419.37, 144, 452.37, 666, 499.37, 662, 495.37, 145)
 [node name="Glass" type="Node" parent="."]
 
 [node name="GlassD1" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(-205, 180)
+position = Vector2(-205, 200)
 
 [node name="GlassD2" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(0, 180)
+position = Vector2(0, 200)
 
 [node name="GlassD3" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(205, 180)
+position = Vector2(205, 200)
 
 [node name="GlassR1" parent="Glass" instance=ExtResource("10_2bw7g")]
 position = Vector2(295, -185)

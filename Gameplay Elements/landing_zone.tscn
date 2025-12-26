@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8v6l2bgunuo6"]
+
+[ext_resource type="Texture2D" uid="uid://d2w30jm0skjih" path="res://Sprites/LandingZone1.png" id="1_6qfmk"]
+[ext_resource type="Texture2D" uid="uid://dustii75axb7d" path="res://Sprites/LandingZone2.png" id="2_uj8ea"]
+[ext_resource type="Texture2D" uid="uid://d3j0b4wa0rc0f" path="res://Sprites/LandingZone3.png" id="3_7e0dg"]
+[ext_resource type="Texture2D" uid="uid://cepn8l1y1uxcp" path="res://Sprites/LandingZone4.png" id="4_7ojga"]
+[ext_resource type="Texture2D" uid="uid://jckfcqhxm6uq" path="res://Sprites/LandingZoneB1.png" id="5_5vl5h"]
+[ext_resource type="Script" uid="uid://cbjh76x6h3ssw" path="res://Gameplay Elements/landing_zone.gd" id="5_uj8ea"]
+[ext_resource type="Texture2D" uid="uid://b8ndkn3uftdg8" path="res://Sprites/LandingZoneB2.png" id="6_4idc0"]
+[ext_resource type="Texture2D" uid="uid://dstpku5bb6ev0" path="res://Sprites/LandingZoneB3.png" id="7_f822d"]
+[ext_resource type="Texture2D" uid="uid://f138mtb7ien3" path="res://Sprites/LandingZoneB4.png" id="8_sdr55"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hnn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6qfmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uj8ea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7e0dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ojga")
+}],
+"loop": false,
+"name": &"0",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5vl5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4idc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f822d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sdr55")
+}],
+"loop": false,
+"name": &"1",
+"speed": 12.0
+}]
+
+[node name="LandingZone" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_0hnn5")
+animation = &"1"
+script = ExtResource("5_uj8ea")

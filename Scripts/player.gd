@@ -24,6 +24,8 @@ func _physics_process(_delta):
 	#PHYSICS CLOCK BASED SLIDE DELAY -- timer provided inconsistencies
 	if lastMovedF == 2:
 		_on_slide_timer_timeout()
+	if floorQueued and nextFloorF == 11:
+		$AnimationHandler.land()
 	if floorQueued and nextFloorF == 10:
 		$GameOverTimer.start()
 		nextFloor()

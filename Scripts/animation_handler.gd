@@ -1,6 +1,7 @@
 extends Marker2D
 
 var DEATHFLASH = preload("res://Gameplay Elements/bloody_screen.tscn")
+var LANDINGZONE = preload("res://Gameplay Elements/landing_zone.tscn")
 
 @onready var curState = $Idle
 @onready var states = {Vector2(0,-200): $SwingU, Vector2(0,200): $SwingD, Vector2(-200,0): $SwingH,Vector2(200,0): $SwingH,}
@@ -56,3 +57,8 @@ func _on_animation_finished():
 	if not dead:
 		$Idle.visible = true
 		$Idle.play()
+
+func land():
+	var landingZone = LANDINGZONE.instantiate()
+	landingZone.position = get_parent().position
+	get_parent().add_sibling(landingZone)

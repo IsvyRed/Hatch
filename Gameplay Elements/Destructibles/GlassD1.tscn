@@ -80,7 +80,7 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "b92889adb1ef4b65011fbb8cba079d5b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 122.5)
+position = Vector2(0, 97)
 shape = SubResource("RectangleShape2D_bgb1o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
