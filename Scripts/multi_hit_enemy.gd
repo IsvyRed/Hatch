@@ -3,6 +3,8 @@ var type = "enemy"
 var hp = 2
 var HPMARKER = preload("res://Gameplay Elements/Enemies/test_marker.tscn")
 var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
+var SPRAY = preload("res://Gameplay Elements/Blood/spray_particles.tscn")
+var DROPLET = preload("res://Gameplay Elements/Blood/droplet.tscn")
 
 func _ready():
 	$Sprite.play()
@@ -18,6 +20,23 @@ func _ready():
 
 func takeDamage():
 	hp -= 1
+	
+	var spray = SPRAY.instantiate()
+	spray.position = position
+	add_sibling(spray)
+	spray.emit(Vector2(0,-200))
+	$HealthOrbit.get_children()[0].die()
+	
+	var dropletdir = Vector2(0,-3)
+	for i in range(randi_range(1,4)):
+		var droplet = DROPLET.instantiate()
+		randomize()
+		dropletdir.y += randf_range(-1,1)
+		dropletdir.x += randf_range(-1,1)
+		droplet.position = position
+		add_sibling(droplet)
+		droplet.start(dropletdir)
+	
 	if hp == 0:
 		var deadBody = DEADBODY.instantiate()
 		deadBody.position = position
@@ -25,7 +44,10 @@ func takeDamage():
 		deadBody.destroy(Vector2(0,-200))
 		Globals.enemiesLeft -= 1
 		queue_free() 
-	$HealthOrbit.get_children()[0].die()
+	
+	
+	
+	
 
 func _on_area_entered(_area):
 	#GIVE PLAYER FEEDBACK

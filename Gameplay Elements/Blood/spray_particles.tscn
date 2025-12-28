@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl40kvc3bewm8"]
+
+[ext_resource type="Texture2D" uid="uid://2wj6s70iqux" path="res://Sprites/Blood/bloodspraypx.png" id="1_1f6gi"]
+[ext_resource type="Script" uid="uid://bgppwb3oqoc68" path="res://cpu_particles_2d.gd" id="1_bdjhk"]
+
+[node name="PrayParticles" type="CPUParticles2D"]
+scale = Vector2(5, 5)
+emitting = false
+amount = 20
+texture = ExtResource("1_1f6gi")
+lifetime = 0.15000000000000002
+one_shot = true
+explosiveness = 0.75
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(1, -0.5)
+spread = 30.0
+gravity = Vector2(0, 3000)
+initial_velocity_min = 85.0
+initial_velocity_max = 230.0
+color = Color(0.6156863, 0.09803922, 0.09803922, 1)
+script = ExtResource("1_bdjhk")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

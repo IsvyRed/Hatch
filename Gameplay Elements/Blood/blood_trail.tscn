@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://de5rajojxw3mx"]
+
+[ext_resource type="Script" uid="uid://d1a6v6ot68f0a" path="res://blood_trails.gd" id="1_7m556"]
+
+[node name="BloodTrail" type="Sprite2D"]
+z_index = -1
+z_as_relative = false
+scale = Vector2(5, 5)
+script = ExtResource("1_7m556")

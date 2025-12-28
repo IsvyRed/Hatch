@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://bo35sdei4g2nm"]
+
+[ext_resource type="Texture2D" uid="uid://dtrclpqb7d76o" path="res://Sprites/Blood/PoolA1.png" id="1_svk2v"]
+[ext_resource type="Texture2D" uid="uid://b42fh70f1skqo" path="res://Sprites/Blood/PoolA2.png" id="2_byvt7"]
+[ext_resource type="Texture2D" uid="uid://d1kc7506anwy4" path="res://Sprites/Blood/PoolA3.png" id="3_je4cj"]
+[ext_resource type="Texture2D" uid="uid://w8njgyew88t8" path="res://Sprites/Blood/PoolA4.png" id="4_wnmbc"]
+[ext_resource type="Texture2D" uid="uid://bdoawghs8qpk5" path="res://Sprites/Blood/PoolA5.png" id="5_7qk4k"]
+[ext_resource type="Texture2D" uid="uid://04mrgdjmd08k" path="res://Sprites/Blood/PoolB1.png" id="6_btk3p"]
+[ext_resource type="Texture2D" uid="uid://bhyfqg22uglal" path="res://Sprites/Blood/PoolB2.png" id="7_8m4pq"]
+[ext_resource type="Texture2D" uid="uid://bgpyf638r8tad" path="res://Sprites/Blood/PoolB3.png" id="8_mbuhx"]
+[ext_resource type="Texture2D" uid="uid://c1yeu8eqd1s1k" path="res://Sprites/Blood/PoolB4.png" id="9_buw77"]
+[ext_resource type="Texture2D" uid="uid://cg463yttqqcoy" path="res://Sprites/Blood/PoolB5.png" id="10_h7llh"]
+[ext_resource type="Script" uid="uid://dtmo5ad3l7efm" path="res://blood_pool.gd" id="11_472ot"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nr8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_svk2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_byvt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_je4cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wnmbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7qk4k")
+}],
+"loop": false,
+"name": &"0",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_btk3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8m4pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mbuhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_buw77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h7llh")
+}],
+"loop": false,
+"name": &"1",
+"speed": 8.0
+}]
+
+[node name="BloodPool" type="AnimatedSprite2D"]
+z_index = -1
+z_as_relative = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_8nr8p")
+animation = &"0"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("11_472ot")

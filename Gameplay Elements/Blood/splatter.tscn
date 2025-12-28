@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddfivxw2w2u34"]
+
+[ext_resource type="Script" uid="uid://ddivxsfk434eu" path="res://splatter.gd" id="1_3qh4f"]
+
+[node name="Splatter" type="Sprite2D"]
+z_index = -1
+scale = Vector2(5, 5)
+script = ExtResource("1_3qh4f")

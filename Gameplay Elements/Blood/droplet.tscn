@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://c07i1eiskpb56"]
+
+[ext_resource type="Texture2D" uid="uid://3jk6q87cgda4" path="res://Sprites/Blood/Droplet1-1.png" id="1_6siso"]
+[ext_resource type="Script" uid="uid://ccjvr6i2mvalc" path="res://Gameplay Elements/Blood/droplet.gd" id="1_71775"]
+[ext_resource type="Texture2D" uid="uid://wt2vdy8xjtnp" path="res://Sprites/Blood/Droplet1-2.png" id="2_71775"]
+[ext_resource type="Texture2D" uid="uid://b820grdqdxd6x" path="res://Sprites/Blood/Droplet1-3.png" id="3_wn758"]
+[ext_resource type="Texture2D" uid="uid://b61flfjjhg3do" path="res://Sprites/Blood/Droplet1-4.png" id="4_gdgmm"]
+[ext_resource type="Texture2D" uid="uid://bib7ysv6pgioa" path="res://Sprites/Blood/Droplet2-1.png" id="5_3cxue"]
+[ext_resource type="Texture2D" uid="uid://barb5mf8ksysv" path="res://Sprites/Blood/Droplet2-2.png" id="6_4u5ro"]
+[ext_resource type="Texture2D" uid="uid://bvsve582ijj5j" path="res://Sprites/Blood/Droplet3-1.png" id="7_xexlg"]
+[ext_resource type="Texture2D" uid="uid://dbn4g8qylhi1b" path="res://Sprites/Blood/Droplet3-2.png" id="8_oeldu"]
+[ext_resource type="Texture2D" uid="uid://cxor4a8jrpejs" path="res://Sprites/Blood/Droplet3-3.png" id="9_0pxcn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4218e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx3q8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6siso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_71775")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wn758")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gdgmm")
+}],
+"loop": true,
+"name": &"0",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3cxue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4u5ro")
+}],
+"loop": true,
+"name": &"1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xexlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oeldu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0pxcn")
+}],
+"loop": true,
+"name": &"2",
+"speed": 12.0
+}]
+
+[node name="Droplet" type="RigidBody2D"]
+z_index = -1
+z_as_relative = false
+collision_layer = 0
+collision_mask = 32
+gravity_scale = 3.0
+script = ExtResource("1_71775")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4218e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_nx3q8")
+animation = &"0"
+frame = 2
+frame_progress = 0.81471723
+
+[node name="MaxLifespan" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="MaxLifespan" to="." method="_on_body_entered"]
