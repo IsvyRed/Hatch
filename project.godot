@@ -93,7 +93,7 @@ Attack2={
 2d_physics/layer_4="Spawn Gaps"
 2d_physics/layer_5="EnvironmentDebris"
 2d_physics/layer_6="Boundaries"
-2d_physics/layer_7="EnemyLandingPlanes"
+2d_physics/layer_7="DeadBodies"
 
 [physics]
 

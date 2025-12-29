@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1ieq5spgoubg"]
+[gd_scene load_steps=23 format=3 uid="uid://c1ieq5spgoubg"]
 
 [ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="1_1wh16"]
 [ext_resource type="Script" uid="uid://cyd2ieb1gbk5i" path="res://Gameplay Elements/main_level.gd" id="1_3btcu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://drprp7mpyft5d" path="res://Sprites/TowerDropAnim1.png" id="15_1tp30"]
 [ext_resource type="PackedScene" uid="uid://lfw4j26ij2p0" path="res://Gameplay Elements/Destructibles/glass_l_3.tscn" id="15_klllu"]
 [ext_resource type="Texture2D" uid="uid://6rpbk2da3uyn" path="res://Sprites/TowerDropAnim2.png" id="16_riffs"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="20_riffs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
 size = Vector2(628, 164)
@@ -185,7 +186,7 @@ z_as_relative = false
 scale = Vector2(5, 5)
 texture = ExtResource("4_mxsub")
 
-[node name="HatchBackgroundTower" type="Sprite2D" parent="."]
+[node name="Tower" type="Sprite2D" parent="."]
 z_index = -1
 z_as_relative = false
 scale = Vector2(5, 5)
@@ -241,5 +242,10 @@ offset_top = -211.0
 offset_right = -426.0
 offset_bottom = -188.0
 text = "PLACEHOLDER"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(706, 393)
+scale = Vector2(0.19531223, 0.2109375)
+texture = ExtResource("20_riffs")
 
 [connection signal="animation_finished" from="DropAnim" to="." method="_on_drop_anim_animation_finished"]

@@ -1,12 +1,16 @@
 extends Area2D
 var type = "enemy"
 var hp = 2
+var bleeding = true
 var HPMARKER = preload("res://Gameplay Elements/Enemies/test_marker.tscn")
 var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 var SPRAY = preload("res://Gameplay Elements/Blood/spray_particles.tscn")
 var DROPLET = preload("res://Gameplay Elements/Blood/droplet.tscn")
 
 func _ready():
+	var bleedmod = randi()
+	if bleedmod % 3 == 0:
+		bleeding = false
 	$Sprite.play()
 	$Sprite.speed_scale = randf_range(0.8,1.2)
 	Globals.enemiesLeft += 1
@@ -39,6 +43,7 @@ func takeDamage():
 	
 	if hp == 0:
 		var deadBody = DEADBODY.instantiate()
+		deadBody.bleeding = bleeding
 		deadBody.position = position
 		add_sibling(deadBody)
 		deadBody.destroy(Vector2(0,-200))

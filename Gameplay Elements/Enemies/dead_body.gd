@@ -11,9 +11,6 @@ var initPos
 var pooling = false
 
 func _ready():
-	var bleedmod = randi()
-	if bleedmod % 2 == 0:
-		bleeding = true
 	Globals.debrisList.append(self)
 	initPos = position
 	#Choose proper animation here
@@ -56,14 +53,11 @@ func _physics_process(_delta):
 	
 func fall(_body):
 	falling = true
-	var chance = abs(motion.x + motion.y)
-	var judge = randi_range(0,15)
-	if chance > judge:
-		$FallSpan.start()
-		set_collision_mask_value(6,false)
-		z_index = -2
-		gravity_scale = 6
-		angular_velocity = motion.x/3
+	$FallSpan.start()
+	set_collision_mask_value(6,false)
+	z_index = -2
+	gravity_scale = 6
+	angular_velocity = motion.x/3
 
 
 func _on_fall_span_timeout():
