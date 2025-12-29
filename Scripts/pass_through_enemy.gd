@@ -9,7 +9,7 @@ var bleeding = true
 
 func _ready():
 	var bleedmod = randi()
-	if bleedmod % 3 == 0:
+	if bleedmod % 5 == 0:
 		bleeding = false
 	Globals.enemiesLeft += 1
 	Globals.enemies.append(self)

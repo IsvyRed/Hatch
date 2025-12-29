@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg5m1u1bjkrp"]
+
+[sub_resource type="GDScript" id="GDScript_enivw"]
+script/source = "extends Node
+
+@export var best:int = 0
+"
+
+[node name="SaveHandler" type="Node"]
+script = SubResource("GDScript_enivw")

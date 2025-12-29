@@ -25,7 +25,17 @@ var curLevel = 0
 var sceneCamera
 var normalLayer
 
+var FileSaver = load("res://Scripts/fileSaver.gd")
+var save
+
 signal resetGlass
+
+func _ready():
+	save = FileSaver.new()
+	if save.loadAll()!= null:
+		print("loaded")
+		best = save.loadAll().best
+		print(best)
 
 func clearEnemies():
 	enemies.clear()
@@ -51,11 +61,14 @@ func deathMessage(cause = ""):
 func nextArea():
 	curLevel += 1
 	validTiles.clear()
-	get_tree().change_scene_to_file(levels[curLevel])
+	get_tree().change_scene_to_file(levels[curLevel]) 
 
 func resetRun():
 	if floor > best:
 		best = floor
+		save = FileSaver.new()
+		save.best = best
+		save.saveAll()
 	curLevel = 0
 	floor = 0
 	Globals.clearEnemies()

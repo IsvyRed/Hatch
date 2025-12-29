@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl40kvc3bewm8"]
 
 [ext_resource type="Texture2D" uid="uid://2wj6s70iqux" path="res://Sprites/Blood/bloodspraypx.png" id="1_1f6gi"]
-[ext_resource type="Script" uid="uid://bgppwb3oqoc68" path="res://cpu_particles_2d.gd" id="1_bdjhk"]
+[ext_resource type="Script" uid="uid://bgppwb3oqoc68" path="res://Scripts/cpu_particles_2d.gd" id="1_bdjhk"]
 
 [node name="PrayParticles" type="CPUParticles2D"]
 scale = Vector2(5, 5)

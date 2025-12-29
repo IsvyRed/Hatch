@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bgpyf638r8tad" path="res://Sprites/Blood/PoolB3.png" id="8_mbuhx"]
 [ext_resource type="Texture2D" uid="uid://c1yeu8eqd1s1k" path="res://Sprites/Blood/PoolB4.png" id="9_buw77"]
 [ext_resource type="Texture2D" uid="uid://cg463yttqqcoy" path="res://Sprites/Blood/PoolB5.png" id="10_h7llh"]
-[ext_resource type="Script" uid="uid://dtmo5ad3l7efm" path="res://blood_pool.gd" id="11_472ot"]
+[ext_resource type="Script" uid="uid://dtmo5ad3l7efm" path="res://Scripts/blood_pool.gd" id="11_472ot"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8nr8p"]
 animations = [{
