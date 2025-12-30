@@ -55,7 +55,7 @@ func _physics_process(_delta):
 			badDirections+=1
 	if badDirections == 4 and frame > 4:
 		print("CORNERED, EXITING")
-		Globals.runUpgrade()
+		Globals.runUpgrade(enemyCount)
 		queue_free()
 	#when spawned enough enemies, call function that spawns all enemies on the spawned enemies array
 	if enemyCount <= 0:

@@ -13,6 +13,8 @@ config_version=5
 config/name="Hatch - github"
 run/main_scene="uid://che436kyhlwah"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="uid://cpf0v1susnelq"
 
 [autoload]
@@ -39,7 +41,8 @@ folder_colors={
 "res://Gameplay Elements/Enemies/": "red",
 "res://Scripts/": "gray",
 "res://Sprites/": "yellow",
-"res://Testing Tools/": "gray"
+"res://Testing Tools/": "gray",
+"res://UI/": "green"
 }
 
 [input]

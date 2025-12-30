@@ -2,7 +2,7 @@ extends Node
 
 #format: floorThreshold : [upgradeUnits, enemyCount (low end, high end is +2)]
 #game will probably end around floor 65
-var difficultyHash = {1: [0,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [3,4], 45: [4,5], 55: [4,6], 65: [5,6], 75: [6,6]}
+var difficultyHash = {1: [-5,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: [3,4], 45: [4,5], 55: [4,6], 65: [5,6], 75: [6,6]}
 
 @warning_ignore("shadowed_global_identifier")
 var floor = 0
@@ -49,8 +49,8 @@ func updateDifficulty():
 	if difficultyHash.has(floor):
 		upgradeUnits = difficultyHash[floor][0]
 		enemyCountBase = difficultyHash[floor][1]
-func runUpgrade():
-	for i in upgradeUnits:
+func runUpgrade(additionalUnits = 0):
+	for i in upgradeUnits + additionalUnits:
 		var chosenEnemy = randi_range(0,enemies.size()-1)
 		enemies[chosenEnemy].upgrade()
 	usedEnemies.clear()
