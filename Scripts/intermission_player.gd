@@ -101,7 +101,8 @@ func _physics_process(_delta):
 		$AnimationHandler.playAttack()
 		funnycounter += 1
 	if Input.is_action_just_pressed("Next Floor"):
-		Globals.floor += 1
+		#CHANGE ALL THIS TO COMMUNICATE WITH ROOFTOP SCENE, THIS WILL BE THE "SELECT" BUTTON
+		Globals.floor = Globals.unlockedCheckpoint-1
 		Globals.clearEnemies()
 		Globals.nextArea()
 		print("Floor " + str(Globals.floor) + ": ")

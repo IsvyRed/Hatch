@@ -8,6 +8,7 @@ var difficultyHash = {1: [-5,1], 5: [1,2], 10: [1,3], 15: [2,3], 20: [2,4], 30: 
 var floor = 0
 var player
 var best = 0 #High score basically
+var unlockedCheckpoint = 1
 var enemiesLeft =  0
 var enemies = [] #Use this reference to upgrade enemies when bus is cornered
 var upgradeUnits = 0 #overwritten by hash, this value is not used
@@ -33,9 +34,8 @@ signal resetGlass
 func _ready():
 	save = FileSaver.new()
 	if save.loadAll()!= null:
-		print("loaded")
 		best = save.loadAll().best
-		print(best)
+		unlockedCheckpoint = best/2
 
 func clearEnemies():
 	enemies.clear()
@@ -66,6 +66,7 @@ func nextArea():
 func resetRun():
 	if floor > best:
 		best = floor
+		unlockedCheckpoint = best/2
 		save = FileSaver.new()
 		save.best = best
 		save.saveAll()

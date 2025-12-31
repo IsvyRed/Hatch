@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://che436kyhlwah"]
+[gd_scene load_steps=11 format=3 uid="uid://che436kyhlwah"]
 
+[ext_resource type="Script" uid="uid://dpn3r2awrwtms" path="res://Gameplay Elements/rooftop_menu.gd" id="1_18elk"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="1_c35er"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="2_18elk"]
 [ext_resource type="PackedScene" uid="uid://bxptvf378ki0c" path="res://Gameplay Elements/intermission_player.tscn" id="4_c35er"]
@@ -13,6 +14,7 @@
 size = Vector2(542.5, 169)
 
 [node name="Rooftop" type="Node2D"]
+script = ExtResource("1_18elk")
 
 [node name="ValidTiles" type="Node" parent="."]
 

@@ -12,3 +12,4 @@ func _on_body_entered(_area):
 func reset():
 	$AnimatedSprite2D.frame = 0
 	$AnimatedSprite2D.stop()
+	broken = false
