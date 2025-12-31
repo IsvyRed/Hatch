@@ -6,10 +6,16 @@ var DROPLET = preload("res://Gameplay Elements/Blood/droplet.tscn")
 var type = "enemy"
 var singleUpgrade = true
 var bleeding = true
+var bloodSetting
+#FORMAT: array in array = setting config. within config array: 0: can bleed, 1: chance of non bleeding enemy (higher is lesser) 2: low end of blood droplets, 3: high end of blood droplets
+var bloodSettingTable = [[false,1,0,0],[true,5,5,10],[true,10,13,20]]
 
 func _ready():
+	bloodSetting = PlayerSettings.bloodSetting
 	var bleedmod = randi()
-	if bleedmod % 5 == 0:
+	if bleedmod % bloodSettingTable[bloodSetting][1] == 0:
+		bleeding = false
+	if not bloodSettingTable[bloodSetting][0]:
 		bleeding = false
 	Globals.enemiesLeft += 1
 	Globals.enemies.append(self)
@@ -48,7 +54,8 @@ func deferredDeath(deadBody):
 	 
 	if bleeding:
 		var dropletdir = Globals.lastDirection/50 
-		for i in range(randi_range(3,7)):
+		#see formatting table to understand this nonsense
+		for i in range(randi_range(bloodSettingTable[bloodSetting][2],bloodSettingTable[bloodSetting][3])):
 			var droplet = DROPLET.instantiate()
 			randomize()
 			dropletdir.y += randf_range(-1,1)

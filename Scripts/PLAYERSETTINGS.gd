@@ -1,2 +1,3 @@
 extends Node
-var screenshakeDampener = 12 # (small number mean big screenshake)
+var screenshakeMultiplier = 1.0
+var bloodSetting = 1

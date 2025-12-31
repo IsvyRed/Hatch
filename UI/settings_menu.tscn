@@ -1,4 +1,15 @@
-[gd_scene format=3 uid="uid://bnthc0u53gcex"]
+[gd_scene load_steps=5 format=3 uid="uid://bnthc0u53gcex"]
+
+[ext_resource type="Script" uid="uid://rokge3lht00r" path="res://UI/settings_menu.gd" id="1_77no7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jkv84"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_77no7"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0adsa"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +18,67 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_77no7")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 178.0
+offset_bottom = 23.0
+text = "SETTINGS:
+Screenshake Multiplier"
+label_settings = SubResource("LabelSettings_jkv84")
+
+[node name="Slider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 46.0
+offset_right = 69.5625
+offset_bottom = 77.0
+max_value = 5.0
+step = 0.1
+
+[node name="SliderNum" type="Label" parent="Slider"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 29.0
+offset_right = 42.0
+offset_bottom = 52.0
+text = "1.0 (Default)"
+label_settings = SubResource("LabelSettings_77no7")
+
+[node name="Bloodlabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 118.0
+offset_right = 91.0
+offset_bottom = 141.0
+text = "Blood Level"
+label_settings = SubResource("LabelSettings_0adsa")
+
+[node name="BloodOff" type="Button" parent="Bloodlabel"]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 33.0
+offset_bottom = 69.0
+text = "Off"
+
+[node name="BloodReg" type="Button" parent="Bloodlabel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 37.0
+offset_right = 73.0
+offset_bottom = 69.0
+text = "Reg"
+
+[node name="BloodMax" type="Button" parent="Bloodlabel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 38.0
+offset_right = 117.0
+offset_bottom = 69.0
+text = "Max"
+
+[connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
+[connection signal="button_down" from="Bloodlabel/BloodOff" to="." method="_on_blood_off_button_down"]
+[connection signal="button_down" from="Bloodlabel/BloodReg" to="." method="_on_blood_reg_button_down"]
+[connection signal="button_down" from="Bloodlabel/BloodMax" to="." method="_on_blood_max_button_down"]

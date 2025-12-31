@@ -1,15 +1,21 @@
 extends Area2D
 var type = "enemy"
 var hp = 2
-var bleeding = true
 var HPMARKER = preload("res://Gameplay Elements/Enemies/test_marker.tscn")
 var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 var SPRAY = preload("res://Gameplay Elements/Blood/spray_particles.tscn")
 var DROPLET = preload("res://Gameplay Elements/Blood/droplet.tscn")
+var bleeding = true
+var bloodSetting
+#FORMAT: array in array = setting config. within config array: 0: can bleed, 1: chance of non bleeding enemy (higher is lesser) 2: low end of blood droplets, 3: high end of blood droplets
+var bloodSettingTable = [[false,1,0,0],[true,5,7,12],[true,10,15,22]]
 
 func _ready():
+	bloodSetting = PlayerSettings.bloodSetting
 	var bleedmod = randi()
-	if bleedmod % 3 == 0:
+	if bleedmod % bloodSettingTable[bloodSetting][1] == 0:
+		bleeding = false
+	if not bloodSettingTable[bloodSetting][0]:
 		bleeding = false
 	$Sprite.play()
 	$Sprite.speed_scale = randf_range(0.8,1.2)
@@ -32,7 +38,7 @@ func takeDamage():
 	$HealthOrbit.get_children()[0].die()
 	
 	var dropletdir = Vector2(0,-3)
-	for i in range(randi_range(1,4)):
+	for i in range(randi_range(bloodSettingTable[bloodSetting][2],bloodSettingTable[bloodSetting][3])):
 		var droplet = DROPLET.instantiate()
 		randomize()
 		dropletdir.y += randf_range(-1,1)
@@ -49,10 +55,6 @@ func takeDamage():
 		deadBody.destroy(Vector2(0,-200))
 		Globals.enemiesLeft -= 1
 		queue_free() 
-	
-	
-	
-	
 
 func _on_area_entered(_area):
 	#GIVE PLAYER FEEDBACK
