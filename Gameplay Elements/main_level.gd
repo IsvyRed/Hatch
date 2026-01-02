@@ -1,6 +1,8 @@
 extends Node2D
 var towerSprites = [preload("res://Sprites/TowerA.png"),preload("res://Sprites/TowerB.png"),preload("res://Sprites/TowerC.png"),preload("res://Sprites/TowerD.png"),preload("res://Sprites/TowerE.png")]
 
+func _ready():
+	Globals.forceDifficulty()
 
 func drop():
 	$DropAnim.visible = true

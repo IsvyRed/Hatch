@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnthc0u53gcex"]
+[gd_scene load_steps=6 format=3 uid="uid://bnthc0u53gcex"]
 
 [ext_resource type="Script" uid="uid://rokge3lht00r" path="res://UI/settings_menu.gd" id="1_77no7"]
 
@@ -9,6 +9,9 @@ font_color = Color(0, 0, 0, 1)
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0adsa"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_80a2v"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="SettingsMenu" type="Control"]
@@ -78,7 +81,52 @@ offset_right = 117.0
 offset_bottom = 69.0
 text = "Max"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 199.0
+offset_right = 85.0
+offset_bottom = 222.0
+text = "START:"
+label_settings = SubResource("LabelSettings_80a2v")
+
+[node name="Beginning" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 28.0
+offset_right = 55.0
+offset_bottom = 59.0
+text = "Beginning"
+
+[node name="Checkpoint" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 28.0
+offset_right = 155.0
+offset_bottom = 59.0
+text = "Checkpoint"
+
+[node name="MaxDiff" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 28.0
+offset_right = 273.0
+offset_bottom = 59.0
+text = "Max Difficulty"
+
+[node name="ResetCheckpoint" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 61.0
+offset_right = 208.0
+offset_bottom = 92.0
+text = "Reset Best + Checkpoint"
+
 [connection signal="value_changed" from="Slider" to="." method="_on_slider_value_changed"]
 [connection signal="button_down" from="Bloodlabel/BloodOff" to="." method="_on_blood_off_button_down"]
 [connection signal="button_down" from="Bloodlabel/BloodReg" to="." method="_on_blood_reg_button_down"]
 [connection signal="button_down" from="Bloodlabel/BloodMax" to="." method="_on_blood_max_button_down"]
+[connection signal="button_down" from="Label/Beginning" to="." method="_on_beginning_button_down"]
+[connection signal="button_down" from="Label/Checkpoint" to="." method="_on_checkpoint_button_down"]
+[connection signal="button_down" from="Label/MaxDiff" to="." method="_on_max_diff_button_down"]
+[connection signal="button_down" from="Label/ResetCheckpoint" to="." method="_on_reset_checkpoint_button_down"]

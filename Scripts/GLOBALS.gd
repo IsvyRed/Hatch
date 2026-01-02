@@ -36,6 +36,11 @@ func _ready():
 	if save.loadAll()!= null:
 		best = save.loadAll().best
 		unlockedCheckpoint = best/2
+		
+func globalSave():
+	save = FileSaver.new()
+	save.best = best
+	save.saveAll()
 
 func clearEnemies():
 	enemies.clear()
@@ -49,6 +54,18 @@ func updateDifficulty():
 	if difficultyHash.has(floor):
 		upgradeUnits = difficultyHash[floor][0]
 		enemyCountBase = difficultyHash[floor][1]
+		
+func forceDifficulty():
+	var floorCheck = floor
+	while not difficultyHash.has(floorCheck):
+		floorCheck -= 1
+		if floorCheck < 0:
+			floorCheck = 1
+			break
+	upgradeUnits = difficultyHash[floorCheck][0]
+	enemyCountBase = difficultyHash[floorCheck][1]
+	
+
 func runUpgrade(additionalUnits = 0):
 	for i in upgradeUnits + additionalUnits:
 		var chosenEnemy = randi_range(0,enemies.size()-1)

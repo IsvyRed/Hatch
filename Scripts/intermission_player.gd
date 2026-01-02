@@ -38,7 +38,7 @@ func _physics_process(_delta):
 		lastRot = afterImage.rotation
 		afterImage.position = position + lastDirection
 		afterImage.play()
-	if Input.is_action_just_pressed("Right"):
+	elif Input.is_action_just_pressed("Right"):
 		funnycounter += 1
 		var visionCast = VISIONCAST.instantiate()	
 		lastDirection = Vector2(200,0)
@@ -57,7 +57,7 @@ func _physics_process(_delta):
 		lastRot = afterImage.rotation
 		afterImage.position = position + lastDirection
 		afterImage.play()
-	if Input.is_action_just_pressed("Up"):
+	elif Input.is_action_just_pressed("Up"):
 		funnycounter += 1
 		lastDirection = Vector2(0,-200)
 		var visionCast = VISIONCAST.instantiate()	
@@ -77,7 +77,7 @@ func _physics_process(_delta):
 		lastRot = afterImage.rotation
 		afterImage.position = position + lastDirection
 		afterImage.play()
-	if Input.is_action_just_pressed("Down"):
+	elif Input.is_action_just_pressed("Down"):
 		funnycounter += 1
 		lastDirection = Vector2(0,200)
 		var visionCast = VISIONCAST.instantiate()	
@@ -102,7 +102,7 @@ func _physics_process(_delta):
 		funnycounter += 1
 	if Input.is_action_just_pressed("Next Floor"):
 		#CHANGE ALL THIS TO COMMUNICATE WITH ROOFTOP SCENE, THIS WILL BE THE "SELECT" BUTTON
-		Globals.floor = Globals.unlockedCheckpoint-1
+		Globals.floor = Globals.unlockedCheckpoint
 		Globals.clearEnemies()
 		Globals.nextArea()
 		print("Floor " + str(Globals.floor) + ": ")
