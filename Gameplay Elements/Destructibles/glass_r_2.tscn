@@ -14,7 +14,7 @@ animations = [{
 "duration": 0.2,
 "texture": ExtResource("2_njuex")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("3_54dfa")
 }, {
 "duration": 1.0,
@@ -46,7 +46,7 @@ script = ExtResource("1_rkl87")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.1920929e-07, 0)
+position = Vector2(7.1525574e-07, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_qgpav")
 metadata/_aseprite_wizard_interface_config_ = {

@@ -1,37 +1,37 @@
 [gd_scene load_steps=11 format=3 uid="uid://cutwb0msu2a4v"]
 
 [ext_resource type="Script" uid="uid://bw14umwavnf8j" path="res://Scripts/glass_R_1.gd" id="1_jf0lp"]
-[ext_resource type="Texture2D" uid="uid://n3xcthxwkej1" path="res://Sprites/Destructibles/Glass/GlassR1.png" id="2_t16k3"]
-[ext_resource type="Texture2D" uid="uid://rqchtxml6dre" path="res://Sprites/Destructibles/Glass/GlassR2.png" id="3_04l54"]
-[ext_resource type="Texture2D" uid="uid://d2kvemr7r1afp" path="res://Sprites/Destructibles/Glass/GlassR3.png" id="4_5we77"]
-[ext_resource type="Texture2D" uid="uid://rce0ktp1is7r" path="res://Sprites/Destructibles/Glass/GlassR4.png" id="5_jblgv"]
-[ext_resource type="Texture2D" uid="uid://b6n8gi3kvjgt1" path="res://Sprites/Destructibles/Glass/GlassR5.png" id="6_di16i"]
-[ext_resource type="Texture2D" uid="uid://dgcrpk5546wqi" path="res://Sprites/Destructibles/Glass/GlassR6.png" id="7_nmmaw"]
-[ext_resource type="Texture2D" uid="uid://dywq6kfc8r08p" path="res://Sprites/Destructibles/Glass/GlassR7.png" id="8_8km1c"]
+[ext_resource type="Texture2D" uid="uid://ud04hyiwpbpw" path="res://Sprites/Destructibles/Glass/GlassR1-1.png" id="2_jf0lp"]
+[ext_resource type="Texture2D" uid="uid://c3l4y3b5rwi1h" path="res://Sprites/Destructibles/Glass/GlassR1-2.png" id="3_t16k3"]
+[ext_resource type="Texture2D" uid="uid://ckbrvkn4dantj" path="res://Sprites/Destructibles/Glass/GlassR1-3.png" id="4_04l54"]
+[ext_resource type="Texture2D" uid="uid://dwsfq61nundwk" path="res://Sprites/Destructibles/Glass/GlassR1-4.png" id="5_5we77"]
+[ext_resource type="Texture2D" uid="uid://lgvtbv885ou0" path="res://Sprites/Destructibles/Glass/GlassR1-5.png" id="6_jblgv"]
+[ext_resource type="Texture2D" uid="uid://cklvcnev3eqp1" path="res://Sprites/Destructibles/Glass/GlassR1-6.png" id="7_di16i"]
+[ext_resource type="Texture2D" uid="uid://bq0a0bqy1jkl" path="res://Sprites/Destructibles/Glass/GlassR1-7.png" id="8_nmmaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkhra"]
 animations = [{
 "frames": [{
 "duration": 0.2,
-"texture": ExtResource("2_t16k3")
-}, {
-"duration": 0.5,
-"texture": ExtResource("3_04l54")
+"texture": ExtResource("2_jf0lp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5we77")
+"texture": ExtResource("3_t16k3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jblgv")
+"texture": ExtResource("4_04l54")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_di16i")
+"texture": ExtResource("5_5we77")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_nmmaw")
+"texture": ExtResource("6_jblgv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_8km1c")
+"texture": ExtResource("7_di16i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nmmaw")
 }],
 "loop": false,
 "name": &"default",

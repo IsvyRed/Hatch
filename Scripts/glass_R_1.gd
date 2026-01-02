@@ -7,7 +7,7 @@ func _ready():
 func _on_body_entered(_area):
 	if not broken:
 		$AnimatedSprite2D.play() 
-		broken = true
+		broken = true 
 
 func reset():
 	$AnimatedSprite2D.frame = 0

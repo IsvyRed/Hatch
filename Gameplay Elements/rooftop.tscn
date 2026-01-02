@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bnthc0u53gcex" path="res://UI/settings_menu.tscn" id="10_r3d51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3d51"]
-size = Vector2(542.5, 169)
+size = Vector2(656, 169)
 
 [node name="Rooftop" type="Node2D"]
 script = ExtResource("1_18elk")
@@ -92,7 +92,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/LowerBoundary"]
 z_index = 5
-position = Vector2(0.5, 1124)
+position = Vector2(2, 1157)
 shape = SubResource("RectangleShape2D_r3d51")
 
 [node name="UpperBoundary" type="StaticBody2D" parent="Boudaries"]
@@ -101,7 +101,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boudaries/UpperBoundary"]
-position = Vector2(0, 74.5)
+position = Vector2(2, 58)
 shape = SubResource("RectangleShape2D_r3d51")
 
 [node name="LeftBoundary" type="StaticBody2D" parent="Boudaries"]
@@ -111,7 +111,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/LeftBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(-90.630005, 158, -127.630005, 639, -195.63, 641, -189.63, 157)
+polygon = PackedVector2Array(-133.63, 143, -169.63, 671, -216.63, 669, -201.63, 142)
 
 [node name="RightBoundary" type="StaticBody2D" parent="Boudaries"]
 position = Vector2(0, -400)
@@ -120,7 +120,7 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boudaries/RightBoundary"]
 position = Vector2(-141.37, 0)
-polygon = PackedVector2Array(375.37, 158, 409.37, 638, 460.37, 638, 459.37, 158)
+polygon = PackedVector2Array(417.37, 143, 454.37, 671, 494.37, 674, 470.37, 143)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -158,7 +158,7 @@ offset_bottom = -116.0
 text = "PLACEHOLDER"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("10_r3d51")]
-offset_left = -624.0
+offset_left = -640.0
 offset_top = -124.0
 offset_right = -624.0
 offset_bottom = -124.0

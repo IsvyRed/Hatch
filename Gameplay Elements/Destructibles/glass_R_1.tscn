@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://rvmcbjo11p1"]
 
 [ext_resource type="Script" uid="uid://bw14umwavnf8j" path="res://Scripts/glass_R_1.gd" id="1_amq2j"]
-[ext_resource type="Texture2D" uid="uid://n3xcthxwkej1" path="res://Sprites/Destructibles/Glass/GlassR1.png" id="2_fma57"]
-[ext_resource type="Texture2D" uid="uid://rqchtxml6dre" path="res://Sprites/Destructibles/Glass/GlassR2.png" id="3_wdlfb"]
-[ext_resource type="Texture2D" uid="uid://d2kvemr7r1afp" path="res://Sprites/Destructibles/Glass/GlassR3.png" id="4_7virg"]
-[ext_resource type="Texture2D" uid="uid://rce0ktp1is7r" path="res://Sprites/Destructibles/Glass/GlassR4.png" id="5_hh5y0"]
-[ext_resource type="Texture2D" uid="uid://b6n8gi3kvjgt1" path="res://Sprites/Destructibles/Glass/GlassR5.png" id="6_32njw"]
-[ext_resource type="Texture2D" uid="uid://dgcrpk5546wqi" path="res://Sprites/Destructibles/Glass/GlassR6.png" id="7_hgknl"]
-[ext_resource type="Texture2D" uid="uid://dywq6kfc8r08p" path="res://Sprites/Destructibles/Glass/GlassR7.png" id="8_fma57"]
+[ext_resource type="Texture2D" uid="uid://ud04hyiwpbpw" path="res://Sprites/Destructibles/Glass/GlassR1-1.png" id="2_fma57"]
+[ext_resource type="Texture2D" uid="uid://c3l4y3b5rwi1h" path="res://Sprites/Destructibles/Glass/GlassR1-2.png" id="3_wdlfb"]
+[ext_resource type="Texture2D" uid="uid://ckbrvkn4dantj" path="res://Sprites/Destructibles/Glass/GlassR1-3.png" id="4_7virg"]
+[ext_resource type="Texture2D" uid="uid://dwsfq61nundwk" path="res://Sprites/Destructibles/Glass/GlassR1-4.png" id="5_hh5y0"]
+[ext_resource type="Texture2D" uid="uid://lgvtbv885ou0" path="res://Sprites/Destructibles/Glass/GlassR1-5.png" id="6_32njw"]
+[ext_resource type="Texture2D" uid="uid://cklvcnev3eqp1" path="res://Sprites/Destructibles/Glass/GlassR1-6.png" id="7_hgknl"]
+[ext_resource type="Texture2D" uid="uid://bq0a0bqy1jkl" path="res://Sprites/Destructibles/Glass/GlassR1-7.png" id="8_hkhra"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkhra"]
 animations = [{
@@ -15,7 +15,7 @@ animations = [{
 "duration": 0.2,
 "texture": ExtResource("2_fma57")
 }, {
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("3_wdlfb")
 }, {
 "duration": 1.0,
@@ -31,7 +31,7 @@ animations = [{
 "texture": ExtResource("7_hgknl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_fma57")
+"texture": ExtResource("8_hkhra")
 }],
 "loop": false,
 "name": &"default",

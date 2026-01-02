@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_yup6v"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="3_ehsp4"]
 [ext_resource type="Texture2D" uid="uid://brt76um1xutnc" path="res://Sprites/ParallaxBG/Sky.png" id="4_m4cj8"]
-[ext_resource type="Texture2D" uid="uid://c7m4dj5d51lhb" path="res://Sprites/HatchBackgroundTower.png" id="5_5qebm"]
 [ext_resource type="Texture2D" uid="uid://cuwcf8rpsomy1" path="res://Sprites/ParallaxBG/Horizon.png" id="5_fys1s"]
 [ext_resource type="Script" uid="uid://cxgtni2pul6pr" path="res://Gameplay Elements/parallax_bg.gd" id="5_yk8oj"]
 [ext_resource type="Texture2D" uid="uid://dbf4do513b6ig" path="res://Sprites/HatchBackgroundGlass.png" id="6_wbf2n"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://drprp7mpyft5d" path="res://Sprites/TowerDropAnim1.png" id="15_1tp30"]
 [ext_resource type="PackedScene" uid="uid://lfw4j26ij2p0" path="res://Gameplay Elements/Destructibles/glass_l_3.tscn" id="15_klllu"]
 [ext_resource type="Texture2D" uid="uid://6rpbk2da3uyn" path="res://Sprites/TowerDropAnim2.png" id="16_riffs"]
+[ext_resource type="Texture2D" uid="uid://dt6ao6eyv2cej" path="res://Sprites/TowerA.png" id="17_yk8oj"]
 [ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="20_riffs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaji"]
@@ -194,42 +194,13 @@ position = Vector2(1.9999981, 1745)
 scale = Vector2(5, 5)
 texture = ExtResource("8_yk8oj")
 
-[node name="Glass" type="Node" parent="."]
-
-[node name="GlassD1" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(-205, 200)
-
-[node name="GlassD2" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(0, 200)
-
-[node name="GlassD3" parent="Glass" instance=ExtResource("9_wbf2n")]
-position = Vector2(205, 200)
-
-[node name="GlassR1" parent="Glass" instance=ExtResource("10_2bw7g")]
-position = Vector2(295, -185)
-
-[node name="GlassL1" parent="Glass" instance=ExtResource("11_5y034")]
-position = Vector2(-295, -185)
-
-[node name="GlassR2" parent="Glass" instance=ExtResource("12_4gst2")]
-position = Vector2(295, -5)
-
-[node name="GlassL2" parent="Glass" instance=ExtResource("13_kbnh8")]
-position = Vector2(-295, -5)
-
-[node name="GlassR3" parent="Glass" instance=ExtResource("14_kbnh8")]
-position = Vector2(295, 180)
-
-[node name="GlassL3" parent="Glass" instance=ExtResource("15_klllu")]
-position = Vector2(-295, 180)
-
 [node name="Player" parent="." instance=ExtResource("1_1wh16")]
 
 [node name="Tower" type="Sprite2D" parent="."]
 z_index = -1
 z_as_relative = false
 scale = Vector2(5, 5)
-texture = ExtResource("5_5qebm")
+texture = ExtResource("17_yk8oj")
 
 [node name="DropAnim" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -242,6 +213,7 @@ sprite_frames = SubResource("SpriteFrames_1tp30")
 z_index = 3
 z_as_relative = false
 texture_filter = 1
+position = Vector2(0, -2.9999998)
 scale = Vector2(5, 5)
 texture = ExtResource("6_wbf2n")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -286,5 +258,34 @@ text = "PLACEHOLDER"
 position = Vector2(706, 393)
 scale = Vector2(0.19531223, 0.2109375)
 texture = ExtResource("20_riffs")
+
+[node name="Glass" type="Node" parent="."]
+
+[node name="GlassD1" parent="Glass" instance=ExtResource("9_wbf2n")]
+position = Vector2(-205, 200)
+
+[node name="GlassD2" parent="Glass" instance=ExtResource("9_wbf2n")]
+position = Vector2(0, 200)
+
+[node name="GlassD3" parent="Glass" instance=ExtResource("9_wbf2n")]
+position = Vector2(205, 200)
+
+[node name="GlassR1" parent="Glass" instance=ExtResource("10_2bw7g")]
+position = Vector2(295, -185)
+
+[node name="GlassL1" parent="Glass" instance=ExtResource("11_5y034")]
+position = Vector2(-295, -185)
+
+[node name="GlassR2" parent="Glass" instance=ExtResource("12_4gst2")]
+position = Vector2(295, -5)
+
+[node name="GlassL2" parent="Glass" instance=ExtResource("13_kbnh8")]
+position = Vector2(-295, -5)
+
+[node name="GlassR3" parent="Glass" instance=ExtResource("14_kbnh8")]
+position = Vector2(295, 180)
+
+[node name="GlassL3" parent="Glass" instance=ExtResource("15_klllu")]
+position = Vector2(-295, 180)
 
 [connection signal="animation_finished" from="DropAnim" to="." method="_on_drop_anim_animation_finished"]

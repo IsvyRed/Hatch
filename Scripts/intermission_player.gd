@@ -10,6 +10,7 @@ var lastDirection
 var type = "player"
 var enemyHit = false
 var funnycounter = 0
+var curAfterImage
 
 func _ready():
 	Globals.player = self
@@ -32,12 +33,9 @@ func _physics_process(_delta):
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
 		#afterimage cast
-		var afterImage = AFTERIMAGE.instantiate()
-		add_sibling(afterImage)
-		afterImage.rotation = PI
-		lastRot = afterImage.rotation
-		afterImage.position = position + lastDirection
-		afterImage.play()
+		curAfterImage = AFTERIMAGE.instantiate()
+		curAfterImage.rotation = PI
+		lastRot = curAfterImage.rotation
 	elif Input.is_action_just_pressed("Right"):
 		funnycounter += 1
 		var visionCast = VISIONCAST.instantiate()	
@@ -52,11 +50,8 @@ func _physics_process(_delta):
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
 		#afterimage cast
-		var afterImage = AFTERIMAGE.instantiate()
-		add_sibling(afterImage)
-		lastRot = afterImage.rotation
-		afterImage.position = position + lastDirection
-		afterImage.play()
+		curAfterImage = AFTERIMAGE.instantiate()
+		lastRot = curAfterImage.rotation
 	elif Input.is_action_just_pressed("Up"):
 		funnycounter += 1
 		lastDirection = Vector2(0,-200)
@@ -71,12 +66,9 @@ func _physics_process(_delta):
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
 		#afterimage cast
-		var afterImage = AFTERIMAGE.instantiate()
-		add_sibling(afterImage)
-		afterImage.rotation = -PI/2
-		lastRot = afterImage.rotation
-		afterImage.position = position + lastDirection
-		afterImage.play()
+		curAfterImage = AFTERIMAGE.instantiate()
+		curAfterImage.rotation = -PI/2
+		lastRot = curAfterImage.rotation
 	elif Input.is_action_just_pressed("Down"):
 		funnycounter += 1
 		lastDirection = Vector2(0,200)
@@ -91,12 +83,9 @@ func _physics_process(_delta):
 		destructionCast.set_target_position(lastDirection*1.1)
 		add_child(destructionCast)
 		#afterimage cast
-		var afterImage = AFTERIMAGE.instantiate()
-		add_sibling(afterImage)
-		afterImage.rotation = PI/2
-		lastRot = afterImage.rotation
-		afterImage.position = position + lastDirection
-		afterImage.play()
+		curAfterImage = AFTERIMAGE.instantiate()
+		curAfterImage.rotation = PI/2
+		lastRot = curAfterImage.rotation
 	if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
 		$AnimationHandler.playAttack()
 		funnycounter += 1
@@ -109,7 +98,8 @@ func _physics_process(_delta):
 
 func onValidTile():
 	position += lastDirection
+	curAfterImage.position = position
+	add_sibling(curAfterImage)
+	curAfterImage.play()
 func onDeathTile():
-	Globals.deathMessage()
-	print("Dead (out of bounds)")
-	Globals.floor = 0
+	pass
