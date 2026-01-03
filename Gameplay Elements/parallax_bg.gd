@@ -1,5 +1,5 @@
 extends Node
 
-func dropLevel():
+func dropLevel(floor = Globals.floor):
 	for child in get_children():
-		child.scroll_offset.y = (20 * child.scroll_scale.y) * - Globals.floor
+		child.scroll_offset.y = (20 * child.scroll_scale.y) * - floor

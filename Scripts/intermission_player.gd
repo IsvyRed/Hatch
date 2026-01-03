@@ -91,9 +91,8 @@ func _physics_process(_delta):
 		funnycounter += 1
 	if Input.is_action_just_pressed("Next Floor"):
 		#CHANGE ALL THIS TO COMMUNICATE WITH ROOFTOP SCENE, THIS WILL BE THE "SELECT" BUTTON
-		Globals.floor = Globals.unlockedCheckpoint
-		Globals.clearEnemies()
-		Globals.nextArea()
+
+		get_parent().goDown()
 		print("Floor " + str(Globals.floor) + ": ")
 
 func onValidTile():

@@ -20,11 +20,12 @@ var enemyCountBase = 1 #overwritten by hash, this value is not used
 var debrisList = []
 var validTiles = []
 
-var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #MISSING BOTTOM FLOOR ENDING LEVEL
+var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #kinda unused now, easier to control inside of custom viewport.
 var curLevel = 0
 
 var sceneCamera
 var normalLayer
+var onScreenTimer
 
 var FileSaver = load("res://Scripts/fileSaver.gd")
 var save
@@ -51,6 +52,7 @@ func clearEnemies():
 	emit_signal("resetGlass")
 	
 func updateDifficulty():
+	
 	if difficultyHash.has(floor):
 		upgradeUnits = difficultyHash[floor][0]
 		enemyCountBase = difficultyHash[floor][1]
@@ -80,7 +82,7 @@ func nextArea():
 	validTiles.clear()
 	get_tree().change_scene_to_file(levels[curLevel]) 
 
-func resetRun():
+func resetRun(dead = true):
 	if floor > best:
 		best = floor
 		unlockedCheckpoint = best/2
@@ -89,8 +91,9 @@ func resetRun():
 		save.saveAll()
 	curLevel = 0
 	floor = 0
-	Globals.clearEnemies()
-	if debugDeathMsg != null:
-		debugDeathMsg.prompt()
-	get_tree().change_scene_to_file(levels[curLevel])
+	if dead:
+		Globals.clearEnemies()
+		if debugDeathMsg != null:
+			debugDeathMsg.prompt()
+		get_tree().change_scene_to_file(levels[curLevel])
 	

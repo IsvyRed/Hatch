@@ -19,6 +19,7 @@ var nextFloorF = 0
 
 func _ready():
 	Globals.player = self
+	
 
 func _physics_process(_delta):
 	#PHYSICS CLOCK BASED SLIDE DELAY -- timer provided inconsistencies
@@ -129,7 +130,7 @@ func _physics_process(_delta):
 				get_overlapping_areas()[0].takeDamage()
 			else:
 				missedEnemy()
-		if Input.is_action_just_pressed("Next Floor"):
+		if Input.is_action_just_pressed("Next Floor") and not dead:
 			if Globals.enemiesLeft <= 0:
 				$AnimationHandler.playDrop()
 				get_parent().drop()
@@ -199,18 +200,25 @@ func _on_game_over_timer_timeout(): #the 3 seconds you have to clear a floor
 		print("Dead (Out of time)")
 	dead = true
 	
+func stopTimer():
+	print("Stopped")
+	$GameOverTimer.stop()
+	
 func _on_reset_timer_timeout(): #the time between your death and the floor resetting
 	Globals.resetRun()
 	
 func nextFloor():
-	var newBus = BUS.instantiate()
-	newBus.position = position
-	get_parent().add_child(newBus)
-	Globals.floor += 1
-	Globals.clearEnemies()
-	
-	
-	var destructibleSpawner = DEBRISSPAWNER.instantiate()
-	add_child(destructibleSpawner)
-	
-	print("Floor " + str(Globals.floor) + ": ")
+	if not dead:
+		var newBus = BUS.instantiate()
+		newBus.position = position
+		get_parent().add_child(newBus)
+		Globals.floor += 1
+		Globals.clearEnemies()
+		
+		var destructibleSpawner = DEBRISSPAWNER.instantiate()
+		add_child(destructibleSpawner)
+		
+		print("Floor " + str(Globals.floor) + ": ")
+
+func endLevel():
+	dead = true

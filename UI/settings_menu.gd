@@ -23,7 +23,7 @@ func _on_beginning_button_down():
 func _on_checkpoint_button_down():
 	get_parent().startAt()
 func _on_max_diff_button_down():
-	get_parent().startAt(75)
+	get_parent().startAt(65)
 func _on_reset_checkpoint_button_down():
 	Globals.best = 0
 	Globals.unlockedCheckpoint = 0

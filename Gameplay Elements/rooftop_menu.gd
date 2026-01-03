@@ -7,6 +7,10 @@ func startAt(selectedFloor = Globals.unlockedCheckpoint-1):
 	Globals.nextArea()
 	Globals.forceDifficulty()
 	print("Floor " + str(Globals.floor) + ": ")
-	
+
+func goDown():
+	Globals.floor = Globals.unlockedCheckpoint
+	Globals.nextArea()
+
 func tutorial():
 	pass
