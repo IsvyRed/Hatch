@@ -61,5 +61,4 @@ func fall(_body):
 
 
 func _on_fall_span_timeout():
-	Globals.debrisList.erase(self)
 	queue_free()

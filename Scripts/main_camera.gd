@@ -7,7 +7,7 @@ func _ready():
 	Globals.sceneCamera = self
 	
 func flinch(direction = Vector2(0,0)):
-	position -= direction/12 * PlayerSettings.screenshakeMultiplier# change this to variable that can be turned down for accessibility
+	position -= direction/12 * PlayerSettings.screenshakeMultiplier
 
 	
 func _physics_process(_delta):

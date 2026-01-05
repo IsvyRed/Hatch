@@ -37,8 +37,6 @@ func _physics_process(_delta):
 
 	
 func explode():
-	Globals.debrisList.erase(self)
-	print("debris destroyed")
 	queue_free()
 
 func fall(_body):
@@ -55,5 +53,4 @@ func fall(_body):
 
 
 func _on_fall_span_timeout():
-	Globals.debrisList.erase(self)
 	queue_free()

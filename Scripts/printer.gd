@@ -55,5 +55,4 @@ func _physics_process(_delta):
 
 	
 func explode():
-	Globals.debrisList.erase(self)
 	queue_free()

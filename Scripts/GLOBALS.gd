@@ -47,7 +47,8 @@ func clearEnemies():
 	enemies.clear()
 	enemiesLeft = 0
 	for debris in debrisList:
-		debris.queue_free()
+		if debris: 
+			debris.queue_free()
 	debrisList.clear()
 	emit_signal("resetGlass")
 	
@@ -82,7 +83,7 @@ func nextArea():
 	validTiles.clear()
 	get_tree().change_scene_to_file(levels[curLevel]) 
 
-func resetRun(dead = true):
+func resetRun(returnToStart = true): #Stores new best if achieved and sets floor to 0, can also send the player to start
 	if floor > best:
 		best = floor
 		unlockedCheckpoint = best/2
@@ -91,7 +92,7 @@ func resetRun(dead = true):
 		save.saveAll()
 	curLevel = 0
 	floor = 0
-	if dead:
+	if returnToStart:
 		Globals.clearEnemies()
 		if debugDeathMsg != null:
 			debugDeathMsg.prompt()
