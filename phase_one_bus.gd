@@ -1,12 +1,10 @@
 extends Marker2D
 var VISIONCAST = preload("res://Gameplay Elements/bus_vision.tscn")
-#No longer test enemy ig i aint changing the name
-var TESTENEMY = preload("res://Gameplay Elements/Enemies/pass_through_enemy.tscn")
-var GAPMARKER = preload("res://Gameplay Elements/spawn_gap.tscn")
+var TESTENEMY = preload("res://Gameplay Elements/Bossfight/Phase 1/phase_one_pass_through.tscn")
 
 var frame = 0
 #see globals script for hash format
-var enemyCount = 0 #default value changed in ready func
+var enemyCount = 8
 var enemyTypes = []
 var spawnedEnemies = []
 #UP DOWN LEFT RIGHT
@@ -15,9 +13,7 @@ var directionValidity = [false,false,false,false]
 var curDirIdx = 0
 var randomIdx
 
-func _ready():
-	Globals.updateDifficulty()
-	enemyCount = randi_range(Globals.enemyCountBase,Globals.enemyCountBase + 2) 
+var lastSpawned
 
 func _physics_process(_delta):
 	frame += 1
@@ -47,6 +43,7 @@ func _physics_process(_delta):
 	#instantiate enemy on own position DO NOT ADD TO TREE, add to spawned enemies array
 	if successfulMove:
 		var spawnedEnemy = TESTENEMY.instantiate()
+		lastSpawned = spawnedEnemy
 		spawnedEnemy.global_position = global_position
 		spawnedEnemies.append(spawnedEnemy)
 		get_parent().add_child(spawnedEnemy)
@@ -56,11 +53,13 @@ func _physics_process(_delta):
 			badDirections+=1
 	if badDirections == 4 and frame > 4:
 		print("CORNERED, EXITING")
-		Globals.runUpgrade(enemyCount)
+		#SPAWN "MASH" ENEMY!!!
+		lastSpawned.upgrade()
 		queue_free()
 	#when spawned enough enemies, call function that spawns all enemies on the spawned enemies array
 	if enemyCount <= 0:
-		Globals.runUpgrade()
+		#SPAWN "MASH ENEMY!!!
+		lastSpawned.upgrade()
 		queue_free()
 
 func spawnEnemies():

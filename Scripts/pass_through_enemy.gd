@@ -1,4 +1,5 @@
 extends Area2D
+#one instance this idiot keeps spawning on the first boss phase stacked on top of the player for some reason, it's causing issues
 var MULTIHITENEMY = preload("res://Gameplay Elements/Enemies/multi_hit_enemy.tscn")
 var DEADBODY = preload("res://Gameplay Elements/Enemies/dead_body.tscn")
 var SPRAY = preload("res://Gameplay Elements/Blood/spray_particles.tscn")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdxbuvdd0d4bl"]
+
+[ext_resource type="Script" uid="uid://ctlnwnjh08yi" path="res://phase_one_bus.gd" id="1_qsqc7"]
+
+[node name="PhaseOneBus" type="Marker2D"]
+script = ExtResource("1_qsqc7")

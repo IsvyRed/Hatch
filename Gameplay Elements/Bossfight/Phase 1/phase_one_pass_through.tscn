@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfx4kbdwriry5"]
+
+[ext_resource type="Script" uid="uid://6lp1hmo22ci5" path="res://phase_one_pass_through.gd" id="1_mhf6p"]
+[ext_resource type="Texture2D" uid="uid://bl3577han30ys" path="res://Sprites/Enemies/Standing/StandingEnemyIdle1.png" id="2_60aq1"]
+[ext_resource type="Texture2D" uid="uid://dds1uwxfhc3au" path="res://Sprites/Enemies/Standing/StandingEnemyIdle2.png" id="3_brgwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khry0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_60aq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_brgwf")
+}],
+"loop": true,
+"name": &"StandingIdle",
+"speed": 5.0
+}]
+
+[node name="PhaseOnePassThrough" type="Area2D"]
+z_index = 1
+z_as_relative = false
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_mhf6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_50ioy")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_khry0")
+animation = &"StandingIdle"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

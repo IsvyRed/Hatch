@@ -4,7 +4,7 @@ var DEATHFLASH = preload("res://Gameplay Elements/bloody_screen.tscn")
 var LANDINGZONE = preload("res://Gameplay Elements/landing_zone.tscn")
 
 @onready var curState = $Idle
-@onready var states = {Vector2(0,-200): $SwingU, Vector2(0,200): $SwingD, Vector2(-200,0): $SwingH,Vector2(200,0): $SwingH,}
+@onready var states = {Vector2(0,-200): $SwingU, Vector2(0,200): $SwingD, Vector2(-200,0): $SwingH,Vector2(200,0): $SwingH}
 var attackCount = 0
 @onready var attacks = [$Attack1,$Attack2,$Attack3]
 var lastAttack

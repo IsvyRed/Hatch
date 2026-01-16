@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bau67x385d1gk"]
+
+[ext_resource type="Script" uid="uid://baqn5a6bagfhh" path="res://test_marker.gd" id="1_pas7i"]
+[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="2_eewil"]
+
+[node name="TestMarker" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_pas7i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_eewil")

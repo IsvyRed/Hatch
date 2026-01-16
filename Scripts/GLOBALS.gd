@@ -14,13 +14,13 @@ var enemies = [] #Use this reference to upgrade enemies when bus is cornered
 var upgradeUnits = 0 #overwritten by hash, this value is not used
 var usedEnemies = []
 var debugDeathMsg = null
-var lastDirection
+var lastDirection = Vector2(0,0)
 var deathCon = ""
 var enemyCountBase = 1 #overwritten by hash, this value is not used
 var debrisList = []
 var validTiles = []
 
-var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn"] #kinda unused now, easier to control inside of custom viewport.
+var levels = ["res://Gameplay Elements/rooftop.tscn","res://Gameplay Elements/main_level_container.tscn","res://Gameplay Elements/bossfight.tscn"]
 var curLevel = 0
 
 var sceneCamera
@@ -44,6 +44,9 @@ func globalSave():
 	save.saveAll()
 
 func clearEnemies():
+	for enemy in enemies:
+		if enemy:
+			enemy.queue_free()
 	enemies.clear()
 	enemiesLeft = 0
 	for debris in debrisList:

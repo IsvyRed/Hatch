@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dempb5ollee38"]
+
+[ext_resource type="Script" uid="uid://dh5mbf38ujm44" path="res://phase_one_multi_hit.gd" id="1_ssob2"]
+[ext_resource type="PackedScene" uid="uid://d30vnaswbqnf4" path="res://Gameplay Elements/Enemies/HealthOrbit.tscn" id="2_wwj6i"]
+[ext_resource type="Texture2D" uid="uid://bl3577han30ys" path="res://Sprites/Enemies/Standing/StandingEnemyIdle1.png" id="3_0r211"]
+[ext_resource type="Texture2D" uid="uid://dds1uwxfhc3au" path="res://Sprites/Enemies/Standing/StandingEnemyIdle2.png" id="4_rmtap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfuod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0r211")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rmtap")
+}],
+"loop": true,
+"name": &"StandingIdle",
+"speed": 5.0
+}]
+
+[node name="PhaseOneMultiHit" type="Area2D"]
+z_index = 1
+z_as_relative = false
+skew = 0.84648466
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_ssob2")
+
+[node name="HealthOrbit" parent="." instance=ExtResource("2_wwj6i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_50ioy")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_jfuod")
+animation = &"StandingIdle"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

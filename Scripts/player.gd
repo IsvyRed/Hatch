@@ -17,6 +17,11 @@ var lastMovedF = 3 #Frames since last movement, set to threshold+1 to omit first
 var floorQueued = false
 var nextFloorF = 0
 
+#bossfight controls
+var spawnEnemies = true
+var dieOnTimeout = true
+var dieOnMiss = true
+
 func _ready():
 	Globals.player = self
 	
@@ -160,10 +165,11 @@ func onDeathTile(): #DEATH CONDITION: when moved out of the map
 	readyToMove = true
 	
 func missedEnemy(): #DEATH CONDITION: when swinging at the air
-	dead = true
-	$ResetTimer.start()
-	$AnimationHandler.playDeath()
-	Globals.deathMessage("Death: Missed enemy")
+	if dieOnMiss:
+		dead = true
+		$ResetTimer.start()
+		$AnimationHandler.playDeath()
+		Globals.deathMessage("Death: Missed enemy")
 	
 func touchedEnemy(): #helps dictate if you should slide past a tile when moving
 	enemyHit = true
@@ -192,13 +198,15 @@ func _on_slide_timer_timeout(): #no longer a timer, frames are counted in physic
 	enemyHit = false
 	
 func _on_game_over_timer_timeout(): #the 3 seconds you have to clear a floor
-	if not dead:
+	if get_parent().has_method("timeout"): #for boss control
+		get_parent().timeout()
+	if not dead and dieOnTimeout:
 		$ResetTimer.start()
 		$AnimationHandler.playDeath()
 		Globals.deathMessage("Death: Out of time")
 		$GameOverTimer.start()
 		print("Dead (Out of time)")
-	dead = true
+		dead = true
 	
 func stopTimer():
 	print("Stopped")
@@ -208,7 +216,7 @@ func _on_reset_timer_timeout(): #the time between your death and the floor reset
 	Globals.resetRun()
 	
 func nextFloor():
-	if not dead:
+	if not dead and spawnEnemies: #make spawnenemies false on bossfight
 		var newBus = BUS.instantiate()
 		newBus.position = position
 		get_parent().add_child(newBus)

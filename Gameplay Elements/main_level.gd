@@ -17,7 +17,7 @@ func drop():
 	$DropAnim.play()
 	$Tower.texture = towerSprites.pick_random()
 	$ParallaxBG.dropLevel()
-	if Globals.floor == 150: #SET TO 65 FOR 66 FLOOR ENDING
+	if Globals.floor == 65: #SET TO 65 FOR 66 FLOOR ENDING
 		lastFloorReached()
 
 func _on_drop_anim_animation_finished():
