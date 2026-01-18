@@ -21,7 +21,7 @@ func _ready():
 func takeDamage():
 	dmgTaken += 1
 	get_parent().dmgDealtRound+=1
-	upgrade()
+	upgrade() #not actually an upgrade, just adds dmg markers
 
 func _on_area_entered(_area):
 	get_overlapping_areas()[0].touchedEnemy()

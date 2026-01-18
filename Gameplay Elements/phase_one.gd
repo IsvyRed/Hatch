@@ -22,8 +22,8 @@ func exit():
 
 #PHASE ONE SPECIFIC FUNCTIONS
 func drop(): # - ran when player hits space, should override standard enemy spawns
-	$DamageDealt.text = "Damage dealt: " + str(dmgDealtTotal) + "/10"
-	if dmgDealtTotal >= 10:
+	$DamageDealt.text = "Damage dealt: " + str(dmgDealtTotal) + "/100"
+	if dmgDealtTotal >= 100:
 		exit()
 		exiting = true
 	if not exiting:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1w523h2ffpdp" path="res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.gd" id="1_1xhwf"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_n82j1"]
-[ext_resource type="Texture2D" uid="uid://cqdjjbsy4aaka" path="res://Sprites/icon.svg" id="3_qfd3g"]
+[ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="3_1xhwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bei1o"]
 size = Vector2(75, 76)
@@ -18,9 +18,11 @@ position = Vector2(0, 200)
 [node name="ValidTile3" parent="." instance=ExtResource("2_n82j1")]
 position = Vector2(0, -200)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 3.8281248)
-texture = ExtResource("3_qfd3g")
+[node name="DeathTile" parent="." instance=ExtResource("3_1xhwf")]
+position = Vector2(0, -400)
+
+[node name="DeathTile2" parent="." instance=ExtResource("3_1xhwf")]
+position = Vector2(0, 400)
 
 [node name="KillBox" type="Area2D" parent="."]
 collision_layer = 0

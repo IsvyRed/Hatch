@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6ysnrt6sscyq"]
+[gd_scene load_steps=16 format=3 uid="uid://c6ysnrt6sscyq"]
 
 [ext_resource type="Script" uid="uid://bkl06dr4bfpqy" path="res://bossfight.gd" id="1_jhp7f"]
 [ext_resource type="PackedScene" uid="uid://bluh7mqpyv2r4" path="res://Gameplay Elements/main_camera.tscn" id="2_7t2ni"]
@@ -24,6 +24,9 @@ font_size = 46
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkv51"]
 size = Vector2(390, 1023)
 
+[sub_resource type="LabelSettings" id="LabelSettings_a705l"]
+font_size = 60
+
 [node name="BOSSFIGHT" type="Node2D"]
 script = ExtResource("1_jhp7f")
 
@@ -39,7 +42,6 @@ text = "Lives: 3"
 label_settings = SubResource("LabelSettings_wruvp")
 
 [node name="PhaseOne" type="Marker2D" parent="."]
-visible = false
 script = ExtResource("2_vdx4a")
 
 [node name="Player" parent="PhaseOne" instance=ExtResource("3_vdx4a")]
@@ -194,6 +196,7 @@ label_settings = SubResource("LabelSettings_mkv51")
 wait_time = 5.0
 
 [node name="PhaseTwo" type="Marker2D" parent="."]
+visible = false
 script = ExtResource("5_uriuh")
 
 [node name="PhaseTwoPlatform7" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
@@ -216,6 +219,12 @@ position = Vector2(-200, 0)
 [node name="PhaseTwoPlatform6" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
 position = Vector2(800, 0)
 
+[node name="PhaseTwoPlatform8" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
+position = Vector2(1200, 0)
+
+[node name="PhaseTwoPlatform9" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
+position = Vector2(1400, 0)
+
 [node name="Label" type="Label" parent="PhaseTwo"]
 offset_left = -111.0
 offset_top = -93.0
@@ -233,12 +242,6 @@ script = ExtResource("9_a705l")
 position = Vector2(-716, 0)
 shape = SubResource("RectangleShape2D_mkv51")
 
-[node name="PhaseTwoPlatform8" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(1200, 0)
-
-[node name="PhaseTwoPlatform9" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(1400, 0)
-
 [node name="DeathTile" parent="PhaseTwo" instance=ExtResource("6_k6h3u")]
 position = Vector2(1600, -200)
 
@@ -251,5 +254,13 @@ position = Vector2(1600, 200)
 [node name="PhaseThree" type="Marker2D" parent="."]
 visible = false
 script = ExtResource("6_wkdq1")
+
+[node name="Label" type="Label" parent="PhaseThree"]
+offset_left = -87.0
+offset_top = -31.0
+offset_right = 137.0
+offset_bottom = 52.0
+text = "Phase 3"
+label_settings = SubResource("LabelSettings_a705l")
 
 [connection signal="timeout" from="PhaseOne/ExitTimer" to="PhaseOne" method="_on_exit_timer_timeout"]
