@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3wy2p37duya"]
+
+[ext_resource type="Script" uid="uid://muray7cdpk6c" path="res://Gameplay Elements/phase_three.gd" id="1_au0ei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8n1ba"]
+font_size = 60
+
+[node name="PhaseThree" type="Marker2D"]
+visible = false
+script = ExtResource("1_au0ei")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -87.0
+offset_top = -31.0
+offset_right = 137.0
+offset_bottom = 52.0
+text = "Phase 3"
+label_settings = SubResource("LabelSettings_8n1ba")

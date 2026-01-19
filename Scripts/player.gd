@@ -18,9 +18,8 @@ var floorQueued = false
 var nextFloorF = 0
 
 #bossfight controls
-var spawnEnemies = true
-var dieOnTimeout = true
-var dieOnMiss = true
+var inBossfight = false
+var inCutscene = false
 
 func _ready():
 	Globals.player = self
@@ -38,7 +37,7 @@ func _physics_process(_delta):
 	lastMovedF += 1
 	nextFloorF += 1
 	if not dead:
-		if Input.is_action_just_pressed("Left") and readyToMove:
+		if Input.is_action_just_pressed("Left") and readyToMove and not inCutscene:
 			readyToMove = false
 			lastMovedF = 0
 			var visionCast = VISIONCAST.instantiate()	
@@ -61,7 +60,7 @@ func _physics_process(_delta):
 			afterImage.play()
 			#Camera movement
 			Globals.sceneCamera.flinch(lastDirection)
-		elif Input.is_action_just_pressed("Right") and readyToMove:
+		elif Input.is_action_just_pressed("Right") and readyToMove and not inCutscene:
 			readyToMove = false
 			lastMovedF = 0
 			var visionCast = VISIONCAST.instantiate()	
@@ -83,7 +82,7 @@ func _physics_process(_delta):
 			afterImage.play()
 			#Camera movement
 			Globals.sceneCamera.flinch(lastDirection)
-		elif Input.is_action_just_pressed("Up") and readyToMove:
+		elif Input.is_action_just_pressed("Up") and readyToMove and not inCutscene:
 			readyToMove = false
 			lastMovedF = 0
 			lastDirection = Vector2(0,-200)
@@ -106,7 +105,7 @@ func _physics_process(_delta):
 			afterImage.play()
 			#Camera movement
 			Globals.sceneCamera.flinch(lastDirection) 
-		elif Input.is_action_just_pressed("Down") and readyToMove:
+		elif Input.is_action_just_pressed("Down") and readyToMove and not inCutscene:
 			readyToMove = false
 			lastMovedF = 0
 			lastDirection = Vector2(0,200)
@@ -129,13 +128,13 @@ func _physics_process(_delta):
 			afterImage.play()
 			#Camera movement
 			Globals.sceneCamera.flinch(lastDirection)
-		if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2"):
+		if Input.is_action_just_pressed("Attack") or Input.is_action_just_pressed("Attack1") or Input.is_action_just_pressed("Attack2") and not inCutscene:
 			$AnimationHandler.playAttack()
 			if has_overlapping_areas():
 				get_overlapping_areas()[0].takeDamage()
 			else:
 				missedEnemy()
-		if Input.is_action_just_pressed("Next Floor") and not dead:
+		if Input.is_action_just_pressed("Next Floor") and not dead and not inCutscene:
 			if Globals.enemiesLeft <= 0:
 				$AnimationHandler.playDrop()
 				get_parent().drop()
@@ -143,19 +142,23 @@ func _physics_process(_delta):
 				floorQueued = true
 				nextFloorF = 0
 				
-			else: #DEATH CONDITION: when attempting to leave a floor that is not clear
+			elif not inBossfight: #DEATH CONDITION: when attempting to leave a floor that is not clear -- do nothing on cutscene
 				dead = true
 				$ResetTimer.start()
 				$AnimationHandler.playDeath()
 				Globals.deathMessage("Death: Floor was not clear")
-				
+			else:
+				get_parent().playerDied()
 
 
 func onValidTile():
 	position += lastDirection
 func onDeathTile(): #DEATH CONDITION: when moved out of the map
+	if not inBossfight:
+		$ResetTimer.start()
+	else:
+		get_parent().playerDied()
 	dead = true
-	$ResetTimer.start()
 	Globals.deathMessage("Death: Moved out of bounds")
 	var fallingPlayer = FALLINGPLAYER.instantiate()
 	fallingPlayer.position = position + lastDirection
@@ -165,7 +168,7 @@ func onDeathTile(): #DEATH CONDITION: when moved out of the map
 	readyToMove = true
 	
 func missedEnemy(): #DEATH CONDITION: when swinging at the air
-	if dieOnMiss:
+	if not inBossfight:
 		dead = true
 		$ResetTimer.start()
 		$AnimationHandler.playDeath()
@@ -200,7 +203,7 @@ func _on_slide_timer_timeout(): #no longer a timer, frames are counted in physic
 func _on_game_over_timer_timeout(): #the 3 seconds you have to clear a floor
 	if get_parent().has_method("timeout"): #for boss control
 		get_parent().timeout()
-	if not dead and dieOnTimeout:
+	if not dead and not inBossfight:
 		$ResetTimer.start()
 		$AnimationHandler.playDeath()
 		Globals.deathMessage("Death: Out of time")
@@ -216,7 +219,7 @@ func _on_reset_timer_timeout(): #the time between your death and the floor reset
 	Globals.resetRun()
 	
 func nextFloor():
-	if not dead and spawnEnemies: #make spawnenemies false on bossfight
+	if not dead and not inBossfight:
 		var newBus = BUS.instantiate()
 		newBus.position = position
 		get_parent().add_child(newBus)

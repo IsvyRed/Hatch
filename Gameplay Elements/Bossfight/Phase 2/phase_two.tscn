@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://2pi8n7vrcpsf"]
+
+[ext_resource type="Script" uid="uid://det2k4eietonb" path="res://Gameplay Elements/phase_two.gd" id="1_mdi0v"]
+[ext_resource type="PackedScene" uid="uid://bfsrdnp8l2pdg" path="res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.tscn" id="2_qrcq2"]
+[ext_resource type="Script" uid="uid://g20vj5qul348" path="res://Gameplay Elements/Bossfight/platform_killer.gd" id="3_tkgmd"]
+[ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_ok1hk"]
+[ext_resource type="Script" uid="uid://1gee4q24l05t" path="res://Gameplay Elements/Bossfight/Phase 2/debris_remover.gd" id="4_qrcq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xhfq"]
+font_size = 46
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bv4fc"]
+size = Vector2(198, 112.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkgmd"]
+size = Vector2(258, 845)
+
+[node name="PhaseTwo" type="Marker2D"]
+script = ExtResource("1_mdi0v")
+
+[node name="PhaseTwoPlatform7" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(1000, 0)
+
+[node name="PhaseTwoPlatform5" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(600, 0)
+
+[node name="PhaseTwoPlatform4" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(400, 0)
+
+[node name="PhaseTwoPlatform2" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(200, 0)
+
+[node name="PhaseTwoPlatform" parent="." instance=ExtResource("2_qrcq2")]
+
+[node name="PhaseTwoPlatform3" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(-200, 0)
+
+[node name="PhaseTwoPlatform6" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(800, 0)
+
+[node name="PhaseTwoPlatform8" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(1200, 0)
+
+[node name="PhaseTwoPlatform9" parent="." instance=ExtResource("2_qrcq2")]
+position = Vector2(1400, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -111.0
+offset_top = -93.0
+offset_right = 121.0
+offset_bottom = -18.0
+text = "(PHASE 2)"
+label_settings = SubResource("LabelSettings_5xhfq")
+
+[node name="PlatformKiller" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("3_tkgmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformKiller"]
+position = Vector2(-622, 0)
+shape = SubResource("RectangleShape2D_bv4fc")
+
+[node name="DebrisRemover" type="Area2D" parent="PlatformKiller"]
+collision_layer = 0
+collision_mask = 80
+script = ExtResource("4_qrcq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformKiller/DebrisRemover"]
+position = Vector2(-521, 0)
+shape = SubResource("RectangleShape2D_tkgmd")
+
+[node name="DeathTile" parent="." instance=ExtResource("4_ok1hk")]
+position = Vector2(1600, -200)
+
+[node name="DeathTile2" parent="." instance=ExtResource("4_ok1hk")]
+position = Vector2(1600, 0)
+
+[node name="DeathTile3" parent="." instance=ExtResource("4_ok1hk")]
+position = Vector2(1600, 200)
+
+[connection signal="area_entered" from="PlatformKiller" to="PlatformKiller" method="_on_area_entered"]
+[connection signal="body_entered" from="PlatformKiller" to="PlatformKiller" method="_on_body_entered"]
+[connection signal="area_entered" from="PlatformKiller/DebrisRemover" to="PlatformKiller/DebrisRemover" method="_on_area_entered"]
+[connection signal="body_entered" from="PlatformKiller/DebrisRemover" to="PlatformKiller/DebrisRemover" method="_on_body_entered"]

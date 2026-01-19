@@ -4,6 +4,8 @@ var dmgTaken = 0
 var HPMARKER = preload("res://Gameplay Elements/Bossfight/Phase 1/damage_dealt_marker.tscn")
 
 
+
+
 #FORMAT: array in array = setting config. within config array: 0: can bleed, 1: chance of non bleeding enemy (higher is lesser) 2: low end of blood droplets, 3: high end of blood droplets
 var bloodSettingTable = [[false,1,0,0],[true,5,7,12],[true,10,15,22]]
 
@@ -17,6 +19,9 @@ func _ready():
 		var curMarker = HPMARKER.instantiate()
 		$HealthOrbit.add_child(curMarker)
 		curMarker.progress_ratio += inc*i
+	#PHASE 2 STUFF
+	if get_parent().has_method("addMultihit"):
+		get_parent().addMultihit(self)
 
 func takeDamage():
 	dmgTaken += 1

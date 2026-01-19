@@ -1,15 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6ysnrt6sscyq"]
+[gd_scene load_steps=8 format=3 uid="uid://c6ysnrt6sscyq"]
 
 [ext_resource type="Script" uid="uid://bkl06dr4bfpqy" path="res://bossfight.gd" id="1_jhp7f"]
 [ext_resource type="PackedScene" uid="uid://bluh7mqpyv2r4" path="res://Gameplay Elements/main_camera.tscn" id="2_7t2ni"]
 [ext_resource type="Script" uid="uid://c8wjqk7rycsfa" path="res://Gameplay Elements/phase_one.gd" id="2_vdx4a"]
-[ext_resource type="PackedScene" uid="uid://bwiw68oyuvcma" path="res://Gameplay Elements/player.tscn" id="3_vdx4a"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="4_k6h3u"]
-[ext_resource type="Script" uid="uid://det2k4eietonb" path="res://Gameplay Elements/phase_two.gd" id="5_uriuh"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="6_k6h3u"]
-[ext_resource type="Script" uid="uid://muray7cdpk6c" path="res://Gameplay Elements/phase_three.gd" id="6_wkdq1"]
-[ext_resource type="PackedScene" uid="uid://bfsrdnp8l2pdg" path="res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.tscn" id="8_xxn40"]
-[ext_resource type="Script" uid="uid://g20vj5qul348" path="res://Gameplay Elements/Bossfight/platform_killer.gd" id="9_a705l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wruvp"]
 paragraph_spacing = 16.0
@@ -18,16 +13,8 @@ font_size = 46
 [sub_resource type="LabelSettings" id="LabelSettings_mkv51"]
 font_size = 46
 
-[sub_resource type="LabelSettings" id="LabelSettings_xxn40"]
-font_size = 46
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkv51"]
-size = Vector2(390, 1023)
-
-[sub_resource type="LabelSettings" id="LabelSettings_a705l"]
-font_size = 60
-
 [node name="BOSSFIGHT" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_jhp7f")
 
 [node name="mainCamera" parent="." instance=ExtResource("2_7t2ni")]
@@ -43,8 +30,6 @@ label_settings = SubResource("LabelSettings_wruvp")
 
 [node name="PhaseOne" type="Marker2D" parent="."]
 script = ExtResource("2_vdx4a")
-
-[node name="Player" parent="PhaseOne" instance=ExtResource("3_vdx4a")]
 
 [node name="ValidTiles" type="Marker2D" parent="PhaseOne"]
 
@@ -194,73 +179,13 @@ label_settings = SubResource("LabelSettings_mkv51")
 
 [node name="ExitTimer" type="Timer" parent="PhaseOne"]
 wait_time = 5.0
+one_shot = true
 
-[node name="PhaseTwo" type="Marker2D" parent="."]
-visible = false
-script = ExtResource("5_uriuh")
-
-[node name="PhaseTwoPlatform7" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(1000, 0)
-
-[node name="PhaseTwoPlatform5" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(600, 0)
-
-[node name="PhaseTwoPlatform4" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(400, 0)
-
-[node name="PhaseTwoPlatform2" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(200, 0)
-
-[node name="PhaseTwoPlatform" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-
-[node name="PhaseTwoPlatform3" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(-200, 0)
-
-[node name="PhaseTwoPlatform6" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(800, 0)
-
-[node name="PhaseTwoPlatform8" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(1200, 0)
-
-[node name="PhaseTwoPlatform9" parent="PhaseTwo" instance=ExtResource("8_xxn40")]
-position = Vector2(1400, 0)
-
-[node name="Label" type="Label" parent="PhaseTwo"]
-offset_left = -111.0
-offset_top = -93.0
-offset_right = 121.0
-offset_bottom = -18.0
-text = "(PHASE 2)"
-label_settings = SubResource("LabelSettings_xxn40")
-
-[node name="PlatformKiller" type="Area2D" parent="PhaseTwo"]
-collision_layer = 128
-collision_mask = 0
-script = ExtResource("9_a705l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhaseTwo/PlatformKiller"]
-position = Vector2(-716, 0)
-shape = SubResource("RectangleShape2D_mkv51")
-
-[node name="DeathTile" parent="PhaseTwo" instance=ExtResource("6_k6h3u")]
-position = Vector2(1600, -200)
-
-[node name="DeathTile2" parent="PhaseTwo" instance=ExtResource("6_k6h3u")]
-position = Vector2(1600, 0)
-
-[node name="DeathTile3" parent="PhaseTwo" instance=ExtResource("6_k6h3u")]
-position = Vector2(1600, 200)
-
-[node name="PhaseThree" type="Marker2D" parent="."]
-visible = false
-script = ExtResource("6_wkdq1")
-
-[node name="Label" type="Label" parent="PhaseThree"]
-offset_left = -87.0
-offset_top = -31.0
-offset_right = 137.0
-offset_bottom = 52.0
-text = "Phase 3"
-label_settings = SubResource("LabelSettings_a705l")
+[node name="ResetTimer" type="Timer" parent="."]
+process_mode = 3
+process_callback = 0
+one_shot = true
+ignore_time_scale = true
 
 [connection signal="timeout" from="PhaseOne/ExitTimer" to="PhaseOne" method="_on_exit_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
