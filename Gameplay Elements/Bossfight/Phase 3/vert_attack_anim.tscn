@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb8sf5wnquqkn"]
+
+[ext_resource type="Texture2D" uid="uid://coa3e3vfhvbdc" path="res://Sprites/Bossfight/Phase 3/VBossSwing.png" id="1_545w5"]
+[ext_resource type="Script" uid="uid://3uwtghijyivd" path="res://vert_attack_anim.gd" id="2_ep1l7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1db48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_545w5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="VertAttackAnim" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_1db48")
+script = ExtResource("2_ep1l7")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

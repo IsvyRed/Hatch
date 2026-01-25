@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://boqjg5y1vjoat"]
+
+[ext_resource type="Script" uid="uid://gulqiq81m4tk" path="res://vert_attack.gd" id="1_hy282"]
+[ext_resource type="Texture2D" uid="uid://ddvye1k3yt3fv" path="res://Sprites/Bossfight/Phase 3/VBossWarning.png" id="2_5x7aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x7aj"]
+size = Vector2(20, 800)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bv0cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5x7aj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="VertAttack" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_hy282")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5x7aj")
+
+[node name="WarningTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LifespanOffset" type="Timer" parent="."]
+one_shot = true
+
+[node name="WarningSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_bv0cj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]
+[connection signal="timeout" from="LifespanOffset" to="." method="_on_lifespan_offset_timeout"]
+[connection signal="animation_finished" from="WarningSprite" to="." method="_on_warning_sprite_animation_finished"]

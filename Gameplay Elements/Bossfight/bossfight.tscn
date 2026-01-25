@@ -178,7 +178,7 @@ text = "Damage dealt: 0/100"
 label_settings = SubResource("LabelSettings_mkv51")
 
 [node name="ExitTimer" type="Timer" parent="PhaseOne"]
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 
 [node name="ResetTimer" type="Timer" parent="."]

@@ -6,6 +6,7 @@ var queuedPlatformX = 1600
 var damageTaken = 0
 var skipEnemyChance = 1 #set by platforms
 var curlane = 1
+var scrolling = true
 #STATE MACHINE FUNCTIONS
 func enter():
 	curlane = 1
@@ -20,17 +21,17 @@ func enter():
 	playerinst.inBossfight = true
 	add_child(playerinst)
 	visible = true
-	print("ENTER PHASE 2")
 func update(): #start moving scene camera by changing its targetPos property
-	Globals.sceneCamera.targetPos.x += 4
+	if scrolling:
+		Globals.sceneCamera.targetPos.x += 4
 func exit(): #on win
-	Globals.sceneCamera.targetPos = Vector2(0,0)
-	get_parent().progress()
+	scrolling = false
+	$ExitTimer.start()
+
 #OTHER FUNCTIONS
 func spawnPlatform(platform):
-	if damageTaken >= 200:
-		get_parent().progress()
-		queue_free()
+	if damageTaken >= 10:
+		exit()
 	platform.position.x = queuedPlatformX
 	queuedPlatformX += 200
 	$DeathTile.position.x += 200
@@ -43,3 +44,9 @@ func playerDied():
 	get_parent().resetTimer.start()
 	get_tree().paused = true
 	$Player.queue_free()
+
+func _on_exit_timer_timeout():
+	Globals.sceneCamera.targetPos = Vector2(0,0)
+	Globals.sceneCamera.position = Vector2(0,0)
+	get_parent().progress()
+	queue_free()

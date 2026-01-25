@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch3wy2p37duya"]
+[gd_scene load_steps=6 format=3 uid="uid://ch3wy2p37duya"]
 
 [ext_resource type="Script" uid="uid://muray7cdpk6c" path="res://Gameplay Elements/phase_three.gd" id="1_au0ei"]
+[ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="3_8xbwp"]
+[ext_resource type="PackedScene" uid="uid://boqjg5y1vjoat" path="res://Gameplay Elements/Bossfight/Phase 3/vert_attack.tscn" id="3_bneyb"]
+[ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_bneyb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n1ba"]
 font_size = 60
 
 [node name="PhaseThree" type="Marker2D"]
-visible = false
 script = ExtResource("1_au0ei")
 
 [node name="Label" type="Label" parent="."]
@@ -16,3 +18,150 @@ offset_right = 137.0
 offset_bottom = 52.0
 text = "Phase 3"
 label_settings = SubResource("LabelSettings_8n1ba")
+
+[node name="ValidTiles" type="Marker2D" parent="."]
+
+[node name="ValidTile12" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(400, -200)
+
+[node name="ValidTile11" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(400, 200)
+
+[node name="ValidTile10" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(400, 0)
+
+[node name="ValidTile1" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(200, 0)
+
+[node name="ValidTile2" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+
+[node name="ValidTile3" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(200, -200)
+
+[node name="ValidTile4" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(0, -200)
+
+[node name="ValidTile5" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-200, -200)
+
+[node name="ValidTile6" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-200, 0)
+
+[node name="ValidTile7" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-200, 200)
+
+[node name="ValidTile8" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(0, 200)
+
+[node name="ValidTile9" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(200, 200)
+
+[node name="ValidTile13" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(400, -400)
+
+[node name="ValidTile14" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(200, -400)
+
+[node name="ValidTile15" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(0, -400)
+
+[node name="ValidTile16" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-200, -400)
+
+[node name="ValidTile17" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-400, -400)
+
+[node name="ValidTile18" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-400, -200)
+
+[node name="ValidTile19" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-400, 0)
+
+[node name="ValidTile20" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-400, 200)
+
+[node name="ValidTile21" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-400, 400)
+
+[node name="ValidTile22" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(-200, 400)
+
+[node name="ValidTile23" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(0, 400)
+
+[node name="ValidTile24" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(200, 400)
+
+[node name="ValidTile25" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
+position = Vector2(400, 400)
+
+[node name="VertAttack" parent="ValidTiles" instance=ExtResource("3_bneyb")]
+position = Vector2(1, -8)
+
+[node name="DeathTiles" type="Marker2D" parent="."]
+
+[node name="DeathTile" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(600, 0)
+
+[node name="DeathTile2" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(600, 200)
+
+[node name="DeathTile3" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(600, 400)
+
+[node name="DeathTile4" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(600, -200)
+
+[node name="DeathTile5" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(600, -400)
+
+[node name="DeathTile6" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(0, 600)
+
+[node name="DeathTile7" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(200, 600)
+
+[node name="DeathTile8" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(400, 600)
+
+[node name="DeathTile9" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-200, 600)
+
+[node name="DeathTile10" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-400, 600)
+
+[node name="DeathTile11" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-600, 400)
+
+[node name="DeathTile12" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-600, 200)
+
+[node name="DeathTile13" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-600, 0)
+
+[node name="DeathTile14" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-600, -200)
+
+[node name="DeathTile15" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-600, -400)
+
+[node name="DeathTile16" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-400, -600)
+
+[node name="DeathTile17" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(-200, -600)
+
+[node name="DeathTile18" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(0, -600)
+
+[node name="DeathTile19" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(200, -600)
+
+[node name="DeathTile20" parent="DeathTiles" instance=ExtResource("4_bneyb")]
+position = Vector2(400, -600)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -79,7 +79,11 @@ position = Vector2(1600, 0)
 [node name="DeathTile3" parent="." instance=ExtResource("4_ok1hk")]
 position = Vector2(1600, 200)
 
+[node name="ExitTimer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="area_entered" from="PlatformKiller" to="PlatformKiller" method="_on_area_entered"]
 [connection signal="body_entered" from="PlatformKiller" to="PlatformKiller" method="_on_body_entered"]
 [connection signal="area_entered" from="PlatformKiller/DebrisRemover" to="PlatformKiller/DebrisRemover" method="_on_area_entered"]
 [connection signal="body_entered" from="PlatformKiller/DebrisRemover" to="PlatformKiller/DebrisRemover" method="_on_body_entered"]
+[connection signal="timeout" from="ExitTimer" to="." method="_on_exit_timer_timeout"]

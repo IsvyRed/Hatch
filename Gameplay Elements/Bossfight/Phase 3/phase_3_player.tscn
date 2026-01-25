@@ -1,0 +1,243 @@
+[gd_scene load_steps=38 format=3 uid="uid://buhu8j74faklm"]
+
+[ext_resource type="Script" uid="uid://c73dunenu547b" path="res://phase_3_player.gd" id="1_3nsca"]
+[ext_resource type="Script" uid="uid://dfh1dic4buxmf" path="res://Scripts/animation_handler.gd" id="2_2akxd"]
+[ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="3_52h67"]
+[ext_resource type="Texture2D" uid="uid://dlh1kt37f8p4q" path="res://Sprites/Player/PlayerIdle2.png" id="4_be7g1"]
+[ext_resource type="Texture2D" uid="uid://pudq0t6y8sir" path="res://Sprites/Player/PlayerSwingH1.png" id="5_vfemr"]
+[ext_resource type="Texture2D" uid="uid://bukg1q5nihg36" path="res://Sprites/Player/PlayerSwingH2.png" id="6_dsccn"]
+[ext_resource type="Texture2D" uid="uid://bqxk4kpwukj4q" path="res://Sprites/Player/PlayerSwingH3.png" id="7_7kid7"]
+[ext_resource type="Texture2D" uid="uid://bjs6dx5kdihxg" path="res://Sprites/Player/PlayerSwingH4.png" id="8_5nk2f"]
+[ext_resource type="Texture2D" uid="uid://cg547qa0t30pv" path="res://Sprites/Player/PlayerSwingU1.png" id="9_0ye26"]
+[ext_resource type="Texture2D" uid="uid://ro2r5i4nywev" path="res://Sprites/Player/PlayerSwingU2.png" id="10_yvy4v"]
+[ext_resource type="Texture2D" uid="uid://cign268ul30sk" path="res://Sprites/Player/PlayerSwingU3.png" id="11_3finp"]
+[ext_resource type="Texture2D" uid="uid://x0sn5kf26c8j" path="res://Sprites/Player/PlayerSwingU4.png" id="12_ro5ar"]
+[ext_resource type="Texture2D" uid="uid://dislaryeslqmb" path="res://Sprites/Player/PlayerSwingD1.png" id="13_dfk8v"]
+[ext_resource type="Texture2D" uid="uid://b1w4tdw0cup7i" path="res://Sprites/Player/PlayerSwingD2.png" id="14_te62i"]
+[ext_resource type="Texture2D" uid="uid://d0h6is4itam37" path="res://Sprites/Player/PlayerSwingD3.png" id="15_7mtek"]
+[ext_resource type="Texture2D" uid="uid://dhbkq3etmxld7" path="res://Sprites/Player/PlayerSwingD4.png" id="16_7p0jm"]
+[ext_resource type="Texture2D" uid="uid://bslbyph265xqe" path="res://Sprites/Player/Attack1-1.png" id="17_xs88g"]
+[ext_resource type="Texture2D" uid="uid://dfxjtcaklvdx3" path="res://Sprites/Player/Attack1-2.png" id="18_cx0lb"]
+[ext_resource type="Texture2D" uid="uid://b56kxugxetg6u" path="res://Sprites/Player/empty.png" id="19_ud1bk"]
+[ext_resource type="Texture2D" uid="uid://bg8p1nn02gxek" path="res://Sprites/Player/Attack2-1.png" id="20_eq8sx"]
+[ext_resource type="Texture2D" uid="uid://d1ypm1r1x0l4e" path="res://Sprites/Player/Attack2-2.png" id="21_6qkm4"]
+[ext_resource type="Texture2D" uid="uid://b5eoxehcvoayw" path="res://Sprites/Player/Attack3-1.png" id="22_x7yer"]
+[ext_resource type="Texture2D" uid="uid://b1gmxw1fs4bfr" path="res://Sprites/Player/Attack3-2.png" id="23_3jxsc"]
+[ext_resource type="Texture2D" uid="uid://drsgsc4r5bys7" path="res://Sprites/KillShot1.png" id="24_rsx3w"]
+[ext_resource type="Texture2D" uid="uid://c6pbq4sl55hh0" path="res://Sprites/KillShot2.png" id="25_kle78"]
+[ext_resource type="Texture2D" uid="uid://4m84sgymjb41" path="res://Sprites/KillShot3.png" id="26_fxoar"]
+[ext_resource type="Texture2D" uid="uid://hnapx57cg0u5" path="res://Sprites/KillShot4.png" id="27_cl2af"]
+[ext_resource type="Texture2D" uid="uid://dvd1fyjoa80ta" path="res://Sprites/KillShot5.png" id="28_602r1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
+size = Vector2(20, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5fn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_52h67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_be7g1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83g1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vfemr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dsccn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7kid7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5nk2f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdv3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0ye26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yvy4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3finp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ro5ar")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plsvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_dfk8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_te62i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7mtek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7p0jm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uw717"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_xs88g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cx0lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ud1bk")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d42rm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_eq8sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6qkm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ud1bk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_holma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_x7yer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3jxsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ud1bk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tka8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_rsx3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kle78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fxoar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cl2af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_602r1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Phase3Player" type="Area2D"]
+z_index = 2
+z_as_relative = false
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_3nsca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_xxies")
+
+[node name="AnimationHandler" type="Marker2D" parent="."]
+script = ExtResource("2_2akxd")
+
+[node name="Idle" type="AnimatedSprite2D" parent="AnimationHandler"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_x5fn1")
+
+[node name="SwingH" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_83g1o")
+
+[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_wdv3t")
+
+[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_plsvp")
+
+[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_uw717")
+animation = &"new_animation"
+
+[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_d42rm")
+
+[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+position = Vector2(0, -10)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_holma")
+
+[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler"]
+visible = false
+z_index = 16
+z_as_relative = false
+position = Vector2(-60, 25)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_tka8h")
+
+[connection signal="animation_finished" from="AnimationHandler/SwingH" to="AnimationHandler" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationHandler/SwingU" to="AnimationHandler" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationHandler/SwingD" to="AnimationHandler" method="_on_animation_finished"]
