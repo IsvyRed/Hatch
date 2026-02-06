@@ -4,20 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="3_8xbwp"]
 [ext_resource type="PackedScene" uid="uid://boqjg5y1vjoat" path="res://Gameplay Elements/Bossfight/Phase 3/vert_attack.tscn" id="3_bneyb"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_bneyb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8n1ba"]
-font_size = 60
+[ext_resource type="Texture2D" uid="uid://bbu8xhx6n830y" path="res://Sprites/Bossfight/Phase 1/Platform.png" id="5_1aplq"]
 
 [node name="PhaseThree" type="Marker2D"]
 script = ExtResource("1_au0ei")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -87.0
-offset_top = -31.0
-offset_right = 137.0
-offset_bottom = 52.0
-text = "Phase 3"
-label_settings = SubResource("LabelSettings_8n1ba")
+[node name="Platform" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("5_1aplq")
+
+[node name="VertAttack" parent="." instance=ExtResource("3_bneyb")]
+position = Vector2(1, -8)
 
 [node name="ValidTiles" type="Marker2D" parent="."]
 
@@ -94,9 +91,6 @@ position = Vector2(200, 400)
 
 [node name="ValidTile25" parent="ValidTiles" instance=ExtResource("3_8xbwp")]
 position = Vector2(400, 400)
-
-[node name="VertAttack" parent="ValidTiles" instance=ExtResource("3_bneyb")]
-position = Vector2(1, -8)
 
 [node name="DeathTiles" type="Marker2D" parent="."]
 

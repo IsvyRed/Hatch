@@ -13,9 +13,6 @@ func _ready():
 		var curMarker = HPMARKER.instantiate()
 		$HealthOrbit.add_child(curMarker)
 		curMarker.progress_ratio += inc*i
-	#PHASE 2 STUFF
-	if get_parent().has_method("addMultihit"):
-		get_parent().addMultihit(self)
 
 func takeDamage():
 	dmgTaken += 1

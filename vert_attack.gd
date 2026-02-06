@@ -4,32 +4,38 @@ var ATTACKANIM = preload("res://Gameplay Elements/Bossfight/Phase 3/vert_attack_
 
 var flashTimings = [0,0,0] #frame number in which attack warning will play
 var frame = 0
+var horizontal = false
+var called = false
 
-func _ready():
-	attack(1)
 
-func attack(warningTime):
+func attack(warningTime, horArg):
+	called = true
+	horizontal = horArg
 	$WarningTimer.wait_time = warningTime
 	$LifespanOffset.wait_time = warningTime+0.05
 	$WarningTimer.start()
 	$LifespanOffset.start()
 	var warningTimeFrames = warningTime * 120
-	flashTimings[0] = warningTimeFrames / 5 * 2
-	flashTimings[1] = warningTimeFrames / 5 * 3
-	flashTimings[2] = warningTimeFrames / 5 * 4
+	print(warningTime)
+	flashTimings[0] = int(warningTimeFrames / 5 * 2)
+	flashTimings[1] = int(warningTimeFrames / 5 * 3)
+	flashTimings[2] = int(warningTimeFrames / 5 * 4)
 
 func _physics_process(_delta):
-	for timing in flashTimings:
-		if frame == timing:
-			$WarningSprite.visible = true
-			$WarningSprite.stop()
-			$WarningSprite.play()
-	frame += 1
+	if called:
+		for timing in flashTimings:
+			if frame == timing:
+				$WarningSprite.visible = true
+				$WarningSprite.stop()
+				$WarningSprite.play()
+		frame += 1
 
 func _on_warning_timer_timeout():
-	print("bossattack")
 	var animInst = ATTACKANIM.instantiate()
+	animInst.position = position
 	add_sibling(animInst)
+	if horizontal:
+		animInst.rotation = PI/2
 	set_collision_mask_value(3,true)
 
 func _on_lifespan_offset_timeout():
