@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://2pi8n7vrcpsf"]
+[gd_scene load_steps=10 format=3 uid="uid://2pi8n7vrcpsf"]
 
 [ext_resource type="Script" uid="uid://det2k4eietonb" path="res://Gameplay Elements/phase_two.gd" id="1_mdi0v"]
 [ext_resource type="PackedScene" uid="uid://bfsrdnp8l2pdg" path="res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.tscn" id="2_qrcq2"]
+[ext_resource type="Texture2D" uid="uid://cfgjvb1ccss36" path="res://Sprites/Bossfight/Phase 2/Phase2BG-A.png" id="2_tkgmd"]
 [ext_resource type="Script" uid="uid://g20vj5qul348" path="res://Gameplay Elements/Bossfight/platform_killer.gd" id="3_tkgmd"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_ok1hk"]
 [ext_resource type="Script" uid="uid://1gee4q24l05t" path="res://Gameplay Elements/Bossfight/Phase 2/debris_remover.gd" id="4_qrcq2"]
@@ -17,6 +18,19 @@ size = Vector2(258, 845)
 
 [node name="PhaseTwo" type="Marker2D"]
 script = ExtResource("1_mdi0v")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.05, 0)
+repeat_size = Vector2(5520, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 100
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -7
+position = Vector2(0, -100)
+scale = Vector2(5, 5)
+texture = ExtResource("2_tkgmd")
 
 [node name="PhaseTwoPlatform7" parent="." instance=ExtResource("2_qrcq2")]
 position = Vector2(1000, 0)
@@ -58,7 +72,7 @@ collision_mask = 0
 script = ExtResource("3_tkgmd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformKiller"]
-position = Vector2(-622, 0)
+position = Vector2(-747.715, 0)
 shape = SubResource("RectangleShape2D_bv4fc")
 
 [node name="DebrisRemover" type="Area2D" parent="PlatformKiller"]

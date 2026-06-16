@@ -46,7 +46,10 @@ func globalSave():
 func clearEnemies():
 	for enemy in enemies:
 		if enemy:
-			enemy.queue_free()
+			if enemy.has_method("cfree"):
+				enemy.cfree()
+			else:
+				enemy.queue_free()
 	enemies.clear()
 	enemiesLeft = 0
 	for debris in debrisList:

@@ -1,8 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfx4kbdwriry5"]
+[gd_scene load_steps=16 format=3 uid="uid://bfx4kbdwriry5"]
 
 [ext_resource type="Script" uid="uid://6lp1hmo22ci5" path="res://phase_one_pass_through.gd" id="1_mhf6p"]
-[ext_resource type="Texture2D" uid="uid://bl3577han30ys" path="res://Sprites/Enemies/Standing/StandingEnemyIdle1.png" id="2_60aq1"]
-[ext_resource type="Texture2D" uid="uid://dds1uwxfhc3au" path="res://Sprites/Enemies/Standing/StandingEnemyIdle2.png" id="3_brgwf"]
+[ext_resource type="Texture2D" uid="uid://1hy0k8ldqcxu" path="res://Sprites/Bossfight/Phase 1/Finger A1.png" id="2_gpuyl"]
+[ext_resource type="Texture2D" uid="uid://dkthnlkqvao8e" path="res://Sprites/Bossfight/Phase 1/Finger A2.png" id="3_tqffv"]
+[ext_resource type="Texture2D" uid="uid://rsxbjq4x0hrr" path="res://Sprites/Bossfight/Phase 1/Finger A3.png" id="4_j21yq"]
+[ext_resource type="Texture2D" uid="uid://dspvhwjgx76v" path="res://Sprites/Bossfight/Phase 1/Finger A4.png" id="5_ftis6"]
+[ext_resource type="Texture2D" uid="uid://dvhlu5oybl6jp" path="res://Sprites/Bossfight/Phase 1/Finger B1.png" id="6_qmv21"]
+[ext_resource type="Texture2D" uid="uid://i7fqdwp2q0st" path="res://Sprites/Bossfight/Phase 1/Finger B2.png" id="7_7anhl"]
+[ext_resource type="Texture2D" uid="uid://c4sl33o8uo0ai" path="res://Sprites/Bossfight/Phase 1/Finger B3.png" id="8_di4sp"]
+[ext_resource type="Texture2D" uid="uid://77embilc6ja3" path="res://Sprites/Bossfight/Phase 1/Finger B4.png" id="9_1mhgs"]
+[ext_resource type="Texture2D" uid="uid://d31ynr3wpetvn" path="res://Sprites/Bossfight/Phase 1/Finger C1.png" id="10_6oyc7"]
+[ext_resource type="Texture2D" uid="uid://4cepx0et5acg" path="res://Sprites/Bossfight/Phase 1/Finger C2.png" id="11_cypv0"]
+[ext_resource type="Texture2D" uid="uid://bforx4s0ygoh2" path="res://Sprites/Bossfight/Phase 1/Finger C3.png" id="12_gdpvk"]
+[ext_resource type="Texture2D" uid="uid://cjgsj86q3j2as" path="res://Sprites/Bossfight/Phase 1/Finger C4.png" id="13_2bihm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
 
@@ -10,14 +20,54 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_60aq1")
+"texture": ExtResource("2_gpuyl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_brgwf")
+"texture": ExtResource("3_tqffv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j21yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ftis6")
 }],
-"loop": true,
-"name": &"StandingIdle",
-"speed": 5.0
+"loop": false,
+"name": &"Spawn_A",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qmv21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7anhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_di4sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1mhgs")
+}],
+"loop": false,
+"name": &"Spawn_B",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6oyc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cypv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gdpvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2bihm")
+}],
+"loop": false,
+"name": &"Spawn_C",
+"speed": 6.0
 }]
 
 [node name="PhaseOnePassThrough" type="Area2D"]
@@ -34,6 +84,6 @@ shape = SubResource("RectangleShape2D_50ioy")
 position = Vector2(0, 9.536743e-07)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_khry0")
-animation = &"StandingIdle"
+animation = &"Spawn_A"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

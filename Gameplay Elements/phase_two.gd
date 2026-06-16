@@ -7,22 +7,37 @@ var damageTaken = 0
 var skipEnemyChance = 1 #set by platforms
 var curlane = 1
 var scrolling = true
+var allPlatforms 
 #STATE MACHINE FUNCTIONS
 func enter():
+	allPlatforms = [$PhaseTwoPlatform1,$PhaseTwoPlatform2,$PhaseTwoPlatform3,$PhaseTwoPlatform4,$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9]
+	#Setting platform sprites
+	print(allPlatforms)
+	var i = 9
+	for child in allPlatforms:
+		if child != null:
+			child.set_frame(i-1)
+			child._on_frame_switcher_timeout() #sets z_layer
+			print(child, " = ", i)
+		i-=1
 	curlane = 1
 	Globals.clearEnemies()
-	#skipped platforms behind and stacked w/ player, i know this code looks hideous dont mention it ot me
+	#skipped platforms behind and stacked w/ player, i know this code looks hideous dont mention it ot me -- enemy spawning
 	var initPlatforms = [$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9]
+	var starterVisibility = [false,false,false]
 	for platform in initPlatforms:
 		if platform:
 			platform.spawnEnemy(curlane)
+			starterVisibility[curlane] = true
+			platform.load_visibility(starterVisibility[0],starterVisibility[1],starterVisibility[2])
 	playerinst = PLAYER.instantiate()
 	playerinst.position.x = 400
 	playerinst.inBossfight = true
 	add_child(playerinst)
 	visible = true
-func update(): #start moving scene camera by changing its targetPos property
+func update(): #start moving scene camera
 	if scrolling:
+		Globals.sceneCamera.position.x += 4
 		Globals.sceneCamera.targetPos.x += 4
 func exit(): #on win
 	scrolling = false
@@ -30,7 +45,8 @@ func exit(): #on win
 
 #OTHER FUNCTIONS
 func spawnPlatform(platform):
-	if damageTaken >= 10:
+	platform.z_index = -6
+	if damageTaken >= 100:
 		exit()
 	platform.position.x = queuedPlatformX
 	queuedPlatformX += 200

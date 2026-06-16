@@ -1,9 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://dempb5ollee38"]
+[gd_scene load_steps=24 format=3 uid="uid://dempb5ollee38"]
 
 [ext_resource type="Script" uid="uid://dh5mbf38ujm44" path="res://phase_one_multi_hit.gd" id="1_ssob2"]
 [ext_resource type="PackedScene" uid="uid://d30vnaswbqnf4" path="res://Gameplay Elements/Enemies/HealthOrbit.tscn" id="2_wwj6i"]
-[ext_resource type="Texture2D" uid="uid://bl3577han30ys" path="res://Sprites/Enemies/Standing/StandingEnemyIdle1.png" id="3_0r211"]
-[ext_resource type="Texture2D" uid="uid://dds1uwxfhc3au" path="res://Sprites/Enemies/Standing/StandingEnemyIdle2.png" id="4_rmtap"]
+[ext_resource type="Texture2D" uid="uid://d2st14rswq4h0" path="res://Sprites/Bossfight/Phase 1/EyeSpawn1.png" id="3_wwj6i"]
+[ext_resource type="Texture2D" uid="uid://58lirsdvh36b" path="res://Sprites/Bossfight/Phase 1/EyeDmgA1.png" id="3_xw8q7"]
+[ext_resource type="Texture2D" uid="uid://bir4pface3qos" path="res://Sprites/Bossfight/Phase 1/EyeSpawn2.png" id="4_0r211"]
+[ext_resource type="Texture2D" uid="uid://dv445vg75827p" path="res://Sprites/Bossfight/Phase 1/EyeDmgA2.png" id="4_5csd2"]
+[ext_resource type="Texture2D" uid="uid://daomp2ob8gu4g" path="res://Sprites/Bossfight/Phase 1/EyeDmgA3.png" id="5_gv4vx"]
+[ext_resource type="Texture2D" uid="uid://bdkcu7vn2ylve" path="res://Sprites/Bossfight/Phase 1/EyeSpawn3.png" id="5_rmtap"]
+[ext_resource type="Texture2D" uid="uid://bk6f3hlxw68ju" path="res://Sprites/Bossfight/Phase 1/EyeDmgB1.png" id="6_ebkac"]
+[ext_resource type="Texture2D" uid="uid://bqvlye0a8ww2o" path="res://Sprites/Bossfight/Phase 1/EyeDmgB2.png" id="7_wecwx"]
+[ext_resource type="Texture2D" uid="uid://diybqtqjthde4" path="res://Sprites/Bossfight/Phase 1/EyeDmgB3.png" id="8_bimjn"]
+[ext_resource type="Texture2D" uid="uid://d154xb4w4817p" path="res://Sprites/Bossfight/Phase 1/EyeDmgC1.png" id="9_wa5nh"]
+[ext_resource type="Texture2D" uid="uid://b5ydexutk0ii7" path="res://Sprites/Bossfight/Phase 1/EyeDmgC2.png" id="10_guc8o"]
+[ext_resource type="Texture2D" uid="uid://cy4j5j3i8vnbh" path="res://Sprites/Bossfight/Phase 1/EyeDmgC3.png" id="11_qu5d8"]
+[ext_resource type="Texture2D" uid="uid://chrcn6tnp5r3b" path="res://Sprites/Bossfight/Phase 1/EyeIris1.png" id="15_wecwx"]
+[ext_resource type="Texture2D" uid="uid://cjntpkspu6ku3" path="res://Sprites/Bossfight/Phase 1/EyeIris2.png" id="16_bimjn"]
+[ext_resource type="Texture2D" uid="uid://c16ic0ec7o4l4" path="res://Sprites/Bossfight/Phase 1/EyeIris3.png" id="17_wa5nh"]
+[ext_resource type="Texture2D" uid="uid://c1pyxuy54uwup" path="res://Sprites/Bossfight/Phase 1/EyeIris4.png" id="18_guc8o"]
+[ext_resource type="Texture2D" uid="uid://clcp36fsvvy25" path="res://Sprites/Bossfight/Phase 1/EyeIrisDmg1.png" id="19_wa5nh"]
+[ext_resource type="Texture2D" uid="uid://b6cioii0aitv4" path="res://Sprites/Bossfight/Phase 1/EyeIrisDmg2.png" id="20_guc8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50ioy"]
 
@@ -11,20 +27,95 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_0r211")
+"texture": ExtResource("3_xw8q7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_rmtap")
+"texture": ExtResource("4_5csd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gv4vx")
+}],
+"loop": false,
+"name": &"0",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ebkac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wecwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bimjn")
+}],
+"loop": false,
+"name": &"1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wa5nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_guc8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qu5d8")
+}],
+"loop": false,
+"name": &"2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wwj6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0r211")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rmtap")
+}],
+"loop": false,
+"name": &"Spawn",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qu5d8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wecwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bimjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wa5nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_guc8o")
 }],
 "loop": true,
-"name": &"StandingIdle",
-"speed": 5.0
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_wa5nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_guc8o")
+}],
+"loop": false,
+"name": &"dmg",
+"speed": 12.0
 }]
 
 [node name="PhaseOneMultiHit" type="Area2D"]
 z_index = 1
 z_as_relative = false
-skew = 0.84648466
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_ssob2")
@@ -38,6 +129,25 @@ shape = SubResource("RectangleShape2D_50ioy")
 position = Vector2(0, 9.536743e-07)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_jfuod")
-animation = &"StandingIdle"
+animation = &"Spawn"
+
+[node name="Iris" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(20, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_qu5d8")
+animation = &"dmg"
+
+[node name="PlayerDir" type="RayCast2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="PlayerDir"]
+position = Vector2(20, 0)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerDir/Marker2D"]
+remote_path = NodePath("../../../Iris")
+update_rotation = false
+update_scale = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="animation_finished" from="Iris" to="." method="_on_iris_animation_finished"]

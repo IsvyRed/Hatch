@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://bqbeo2x0ikwfp"]
+
+[ext_resource type="Texture2D" uid="uid://b5vcbl8hh026e" path="res://Sprites/Bossfight/DmgExpire1.png" id="1_wh4km"]
+[ext_resource type="Texture2D" uid="uid://cm4qxq7yh8axl" path="res://Sprites/Bossfight/DmgExpire2.png" id="2_41d88"]
+[ext_resource type="Texture2D" uid="uid://bet7u6287nh4h" path="res://Sprites/Bossfight/DmgExpire3.png" id="3_meucr"]
+[ext_resource type="Texture2D" uid="uid://do4j1dqy3if4o" path="res://Sprites/Bossfight/DmgExpire4.png" id="4_gh22a"]
+[ext_resource type="Texture2D" uid="uid://dqlw6qeveop8j" path="res://Sprites/Bossfight/DmgExpire5.png" id="5_f1eb7"]
+[ext_resource type="Texture2D" uid="uid://cim1j60ol6kcq" path="res://Sprites/Bossfight/DmgExpire6.png" id="6_5kwbm"]
+[ext_resource type="Texture2D" uid="uid://b2mq7wcf3efp6" path="res://Sprites/Bossfight/DmgExpire7.png" id="7_eawcn"]
+[ext_resource type="Texture2D" uid="uid://vbdxapu17cot" path="res://Sprites/Bossfight/DmgExpire8.png" id="8_hmfp5"]
+[ext_resource type="Script" uid="uid://sdkhxvj0x3wr" path="res://Gameplay Elements/Bossfight/Phase 1/phase_1_dmg_expire.gd" id="9_41d88"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n48pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wh4km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_41d88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_meucr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gh22a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f1eb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5kwbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eawcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hmfp5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Phase1DmgExpire" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_n48pd")
+script = ExtResource("9_41d88")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

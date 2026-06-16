@@ -2,10 +2,12 @@ extends Node2D
 var phases #the instances being used
 var PHASES = [null,preload("res://Gameplay Elements/Bossfight/Phase 2/phase_two.tscn"),preload("res://Gameplay Elements/Bossfight/Phase 3/phase_three.tscn")]
 var phaseInstances = [] #all instances, must be cleared
+var camera
 var curPhaseIdx = 0
 var lives = 3
 var resetTimer
 func _ready():
+	camera = $mainCamera
 	Globals.normalLayer = self
 	resetTimer = $ResetTimer
 	phases = [$PhaseOne,null,null] #insert when next phase is instantiated
@@ -23,13 +25,12 @@ func progress(): #EXIT FUNCTION CALLED BY EACH PHASE
 	phaseInstances.append(curPhaseInst)
 	phases[curPhaseIdx].enter()
 
-func _on_reset_timer_timeout(): #called 3 seconds after player death
+func _on_reset_timer_timeout(): #called 3 seconds after player death - add screen wipe death anim here
 	phases[curPhaseIdx].visible = false
 	for phase in phaseInstances:
 		if phase:
 			phase.queue_free()
 	phaseInstances.clear()
-	print("timed out")
 	get_tree().paused = false
 	lives -= 1
 	if lives == 0:

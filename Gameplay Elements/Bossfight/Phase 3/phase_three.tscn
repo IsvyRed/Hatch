@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://ch3wy2p37duya"]
 
 [ext_resource type="Script" uid="uid://muray7cdpk6c" path="res://Gameplay Elements/phase_three.gd" id="1_au0ei"]
+[ext_resource type="Texture2D" uid="uid://baorxlc206kah" path="res://Sprites/Bossfight/Phase 1/Platform7.png" id="2_bneyb"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="3_8xbwp"]
 [ext_resource type="PackedScene" uid="uid://boqjg5y1vjoat" path="res://Gameplay Elements/Bossfight/Phase 3/vert_attack.tscn" id="3_bneyb"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_bneyb"]
-[ext_resource type="Texture2D" uid="uid://bbu8xhx6n830y" path="res://Sprites/Bossfight/Phase 1/Platform.png" id="5_1aplq"]
 
 [node name="PhaseThree" type="Marker2D"]
 script = ExtResource("1_au0ei")
 
 [node name="Platform" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("5_1aplq")
+texture = ExtResource("2_bneyb")
 
 [node name="VertAttack" parent="." instance=ExtResource("3_bneyb")]
 position = Vector2(1, -8)
