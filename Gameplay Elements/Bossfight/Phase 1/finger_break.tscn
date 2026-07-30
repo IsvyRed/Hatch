@@ -1,13 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://6qpvu017cbh"]
+[gd_scene format=3 uid="uid://6qpvu017cbh"]
 
 [ext_resource type="Texture2D" uid="uid://f7jlqxuoymlq" path="res://Sprites/Bossfight/Phase 1/Finger Break1.png" id="1_rn2bb"]
+[ext_resource type="Texture2D" uid="uid://bwhyfjkpabqjj" path="res://Sprites/Bossfight/Phase 1/Finger Break B1.png" id="1_ry26d"]
 [ext_resource type="Texture2D" uid="uid://c7pjoha0keu4j" path="res://Sprites/Bossfight/Phase 1/Finger Break2.png" id="2_1qp8y"]
+[ext_resource type="Texture2D" uid="uid://bf567nnm6lgql" path="res://Sprites/Bossfight/Phase 1/Finger Break B2.png" id="2_wi2o3"]
 [ext_resource type="Texture2D" uid="uid://bkyer8dl48myp" path="res://Sprites/Bossfight/Phase 1/Finger Break3.png" id="3_c62ir"]
+[ext_resource type="Texture2D" uid="uid://qw3xggavrc0k" path="res://Sprites/Bossfight/Phase 1/Finger Break B3.png" id="3_grw0u"]
 [ext_resource type="Texture2D" uid="uid://c0ykx3pyh5nkm" path="res://Sprites/Bossfight/Phase 1/Finger Break4.png" id="4_c3aox"]
+[ext_resource type="Texture2D" uid="uid://bfuljhwqence3" path="res://Sprites/Bossfight/Phase 1/Finger Break B4.png" id="4_ml3jk"]
 [ext_resource type="Script" uid="uid://cdmdrhqf2ds6k" path="res://finger_break.gd" id="5_ga3il"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wkla"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ry26d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wi2o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_grw0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ml3jk")
+}],
+"loop": false,
+"name": &"0",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_rn2bb")
@@ -22,13 +43,14 @@ animations = [{
 "texture": ExtResource("4_c3aox")
 }],
 "loop": false,
-"name": &"default",
+"name": &"1",
 "speed": 12.0
 }]
 
-[node name="FingerBreak" type="AnimatedSprite2D"]
+[node name="FingerBreak" type="AnimatedSprite2D" unique_id=976651426]
 z_index = 1
 z_as_relative = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_1wkla")
+animation = &"0"
 script = ExtResource("5_ga3il")
