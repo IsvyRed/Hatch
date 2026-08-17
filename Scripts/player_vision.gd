@@ -7,10 +7,10 @@ signal deathTile
 func _physics_process(_delta):
 	if is_colliding():
 		var collider = get_collider()
-		if collider.type == "valid":
-			emit_signal("validTile")
-		elif collider.type == "death":
+		if collider.type == "death":
 			emit_signal("deathTile")
+		elif collider.type == "valid":
+			emit_signal("validTile")
 		else:
 			emit_signal("undefined")
 	queue_free()

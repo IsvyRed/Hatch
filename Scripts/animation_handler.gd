@@ -23,6 +23,9 @@ func play(direction):
 		curState.flip_h = true
 
 func playAttack():
+	if Globals.sceneCamera:
+		print("atkflinch")
+		Globals.sceneCamera.flinch(Vector2(randi_range(-50,50),randi_range(50,50)))
 	attackCount += 1
 	attacks[attackCount%3].visible = true
 	attacks[attackCount%3].play()

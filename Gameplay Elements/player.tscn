@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bwiw68oyuvcma"]
+[gd_scene format=3 uid="uid://bwiw68oyuvcma"]
 
 [ext_resource type="Script" uid="uid://bereavdtwvx5n" path="res://Scripts/player.gd" id="1_oihdw"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_3dn4l"]
@@ -18,14 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://dhbkq3etmxld7" path="res://Sprites/Player/PlayerSwingD4.png" id="16_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://bslbyph265xqe" path="res://Sprites/Player/Attack1-1.png" id="17_5td2p"]
 [ext_resource type="Texture2D" uid="uid://dfxjtcaklvdx3" path="res://Sprites/Player/Attack1-2.png" id="18_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://d1bc71nyhujtn" path="res://Sprites/Player/Attack1-3.png" id="19_4mfl0"]
 [ext_resource type="Texture2D" uid="uid://b5eoxehcvoayw" path="res://Sprites/Player/Attack3-1.png" id="19_5td2p"]
 [ext_resource type="Texture2D" uid="uid://bg8p1nn02gxek" path="res://Sprites/Player/Attack2-1.png" id="19_ctpar"]
 [ext_resource type="Texture2D" uid="uid://b56kxugxetg6u" path="res://Sprites/Player/empty.png" id="19_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://d1ypm1r1x0l4e" path="res://Sprites/Player/Attack2-2.png" id="20_nhk8h"]
 [ext_resource type="Texture2D" uid="uid://b1gmxw1fs4bfr" path="res://Sprites/Player/Attack3-2.png" id="20_q4fvn"]
+[ext_resource type="Texture2D" uid="uid://c5igecyd362ko" path="res://Sprites/Player/Attack2-3.png" id="23_rlgda"]
 [ext_resource type="Texture2D" uid="uid://drsgsc4r5bys7" path="res://Sprites/KillShot1.png" id="24_gon66"]
 [ext_resource type="Texture2D" uid="uid://c6pbq4sl55hh0" path="res://Sprites/KillShot2.png" id="25_7dj4f"]
 [ext_resource type="Texture2D" uid="uid://4m84sgymjb41" path="res://Sprites/KillShot3.png" id="26_etl84"]
+[ext_resource type="Texture2D" uid="uid://c2oterymgv36l" path="res://Sprites/Player/Attack3-3.png" id="26_kjefq"]
 [ext_resource type="Texture2D" uid="uid://hnapx57cg0u5" path="res://Sprites/KillShot4.png" id="27_jkqc8"]
 [ext_resource type="Texture2D" uid="uid://dvd1fyjoa80ta" path="res://Sprites/KillShot5.png" id="28_c3wlo"]
 [ext_resource type="Texture2D" uid="uid://bp6whmxmnar1v" path="res://Sprites/KillShot6.png" id="29_jkqc8"]
@@ -53,7 +56,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_qd1yo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -73,7 +76,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_54kuu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -93,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_7oiih")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -113,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_nhk8h")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -121,52 +124,61 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_7fmjx"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("17_5td2p")
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_q4fvn")
 }, {
 "duration": 1.0,
+"texture": ExtResource("19_4mfl0")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_nhk8h")
 }],
-"loop": false,
+"loop": 0,
 "name": &"new_animation",
-"speed": 24.0
+"speed": 48.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2ovt"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("19_ctpar")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_nhk8h")
 }, {
 "duration": 1.0,
+"texture": ExtResource("23_rlgda")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_nhk8h")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
-"speed": 24.0
+"speed": 48.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctpar"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("19_5td2p")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_q4fvn")
 }, {
 "duration": 1.0,
+"texture": ExtResource("26_kjefq")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_nhk8h")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
-"speed": 24.0
+"speed": 48.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oosy3"]
@@ -199,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_nhk8h")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -249,7 +261,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_fdm5v")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 8.0
 }]
@@ -275,7 +287,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("43_t33eb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -283,53 +295,53 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxies"]
 size = Vector2(20, 41)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" unique_id=510105799]
 z_index = 2
 z_as_relative = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_oihdw")
 
-[node name="AnimationHandler" type="Marker2D" parent="."]
+[node name="AnimationHandler" type="Marker2D" parent="." unique_id=216639184]
 script = ExtResource("2_qd1yo")
 
-[node name="Idle" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Idle" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1900901726]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_dbv4j")
 
-[node name="SwingH" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingH" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=12182449]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_1ytrv")
 
-[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1095445544]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_7sqvo")
 
-[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1120866902]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_yt0ko")
 
-[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=970982110]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_7fmjx")
 animation = &"new_animation"
 
-[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=990084465]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_u2ovt")
 
-[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1875691492]
 visible = false
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ctpar")
 
-[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1112473802]
 visible = false
 z_index = 16
 z_as_relative = false
@@ -338,28 +350,28 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_oosy3")
 frame_progress = 1.0
 
-[node name="PlayerShot" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="PlayerShot" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1241152393]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_v4i84")
 
-[node name="Drop" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Drop" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1925617939]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_8wkp1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=332250154]
 shape = SubResource("RectangleShape2D_xxies")
 
-[node name="SlideTimer" type="Timer" parent="."]
+[node name="SlideTimer" type="Timer" parent="." unique_id=1479399376]
 wait_time = 0.05
 one_shot = true
 
-[node name="GameOverTimer" type="Timer" parent="."]
+[node name="GameOverTimer" type="Timer" parent="." unique_id=1458092467]
 wait_time = 3.1
 autostart = true
 
-[node name="ResetTimer" type="Timer" parent="."]
+[node name="ResetTimer" type="Timer" parent="." unique_id=44180228]
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationHandler/SwingH" to="AnimationHandler" method="_on_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://c6ysnrt6sscyq"]
+[gd_scene format=3 uid="uid://c6ysnrt6sscyq"]
 
 [ext_resource type="Script" uid="uid://bkl06dr4bfpqy" path="res://bossfight.gd" id="1_jhp7f"]
 [ext_resource type="PackedScene" uid="uid://bluh7mqpyv2r4" path="res://Gameplay Elements/main_camera.tscn" id="2_7t2ni"]
@@ -142,6 +142,7 @@
 [ext_resource type="Texture2D" uid="uid://dvwaarl2wyf2o" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB87.png" id="130_5on67"]
 [ext_resource type="Texture2D" uid="uid://dm1s8qcms37u1" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB88.png" id="131_mog5e"]
 [ext_resource type="Texture2D" uid="uid://dnryl050fi80m" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB89.png" id="132_1eluh"]
+[ext_resource type="Texture2D" uid="uid://r0jtmhdubboc" path="res://Sprites/Bossfight/Phase 1/TransitionOutptb.png" id="133_ns2jn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wruvp"]
 paragraph_spacing = 16.0
@@ -234,7 +235,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("31_1f488")
 }],
-"loop": false,
+"loop": 0,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -275,7 +276,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_tikxq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 8.0
 }, {
@@ -546,8 +547,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("132_1eluh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_ns2jn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"transition",
 "speed": 8.0
 }]
@@ -579,20 +583,20 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_bnmhl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 8.0
 }]
 
-[node name="BOSSFIGHT" type="Node2D"]
+[node name="BOSSFIGHT" type="Node2D" unique_id=1026956479]
 process_mode = 1
 script = ExtResource("1_jhp7f")
 
-[node name="mainCamera" parent="." instance=ExtResource("2_7t2ni")]
+[node name="mainCamera" parent="." unique_id=1276486920 instance=ExtResource("2_7t2ni")]
 offset = Vector2(0, -150)
 zoom = Vector2(0.5, 0.5)
 
-[node name="LivesCounter" type="Label" parent="mainCamera"]
+[node name="LivesCounter" type="Label" parent="mainCamera" unique_id=2064563904]
 offset_left = -964.0
 offset_top = -593.0
 offset_right = -802.0
@@ -600,187 +604,182 @@ offset_bottom = -529.0
 text = "Lives: 3"
 label_settings = SubResource("LabelSettings_wruvp")
 
-[node name="PhaseOne" type="Marker2D" parent="."]
+[node name="PhaseOne" type="Marker2D" parent="." unique_id=1847946920]
 script = ExtResource("2_vdx4a")
 
-[node name="Boss" type="AnimatedSprite2D" parent="PhaseOne"]
+[node name="Boss" type="AnimatedSprite2D" parent="PhaseOne" unique_id=1960367701]
 position = Vector2(120, -800)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_bnmhl")
 
-[node name="Platform" type="AnimatedSprite2D" parent="PhaseOne"]
+[node name="Platform" type="AnimatedSprite2D" parent="PhaseOne" unique_id=984880427]
 position = Vector2(0, 125)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_uewe3")
 
-[node name="Phase1bg" type="Sprite2D" parent="PhaseOne"]
+[node name="Phase1bg" type="Sprite2D" parent="PhaseOne" unique_id=77823287]
 z_index = -7
 z_as_relative = false
 position = Vector2(0, -700)
 scale = Vector2(5, 5)
 texture = ExtResource("7_2yguo")
 
-[node name="Extension" type="Sprite2D" parent="PhaseOne/Phase1bg"]
+[node name="Extension" type="Sprite2D" parent="PhaseOne/Phase1bg" unique_id=124413766]
 position = Vector2(-400, 0)
 texture = ExtResource("7_2yguo")
 
-[node name="ValidTiles" type="Marker2D" parent="PhaseOne"]
+[node name="ValidTiles" type="Marker2D" parent="PhaseOne" unique_id=491015050]
 
-[node name="ValidTile12" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile12" parent="PhaseOne/ValidTiles" unique_id=1081351201 instance=ExtResource("4_k6h3u")]
 position = Vector2(400, -200)
 
-[node name="ValidTile11" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile11" parent="PhaseOne/ValidTiles" unique_id=1430447304 instance=ExtResource("4_k6h3u")]
 position = Vector2(400, 200)
 
-[node name="ValidTile10" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile10" parent="PhaseOne/ValidTiles" unique_id=52185282 instance=ExtResource("4_k6h3u")]
 position = Vector2(400, 0)
 
-[node name="ValidTile1" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile1" parent="PhaseOne/ValidTiles" unique_id=1917985239 instance=ExtResource("4_k6h3u")]
 position = Vector2(200, 0)
 
-[node name="ValidTile2" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile2" parent="PhaseOne/ValidTiles" unique_id=1067122390 instance=ExtResource("4_k6h3u")]
 
-[node name="ValidTile3" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile3" parent="PhaseOne/ValidTiles" unique_id=1356549015 instance=ExtResource("4_k6h3u")]
 position = Vector2(200, -200)
 
-[node name="ValidTile4" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile4" parent="PhaseOne/ValidTiles" unique_id=1033150133 instance=ExtResource("4_k6h3u")]
 position = Vector2(0, -200)
 
-[node name="ValidTile5" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile5" parent="PhaseOne/ValidTiles" unique_id=1684436932 instance=ExtResource("4_k6h3u")]
 position = Vector2(-200, -200)
 
-[node name="ValidTile6" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile6" parent="PhaseOne/ValidTiles" unique_id=1627829643 instance=ExtResource("4_k6h3u")]
 position = Vector2(-200, 0)
 
-[node name="ValidTile7" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile7" parent="PhaseOne/ValidTiles" unique_id=1964372209 instance=ExtResource("4_k6h3u")]
 position = Vector2(-200, 200)
 
-[node name="ValidTile8" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile8" parent="PhaseOne/ValidTiles" unique_id=1323331618 instance=ExtResource("4_k6h3u")]
 position = Vector2(0, 200)
 
-[node name="ValidTile9" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile9" parent="PhaseOne/ValidTiles" unique_id=883845033 instance=ExtResource("4_k6h3u")]
 position = Vector2(200, 200)
 
-[node name="ValidTile13" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile13" parent="PhaseOne/ValidTiles" unique_id=1434867952 instance=ExtResource("4_k6h3u")]
 position = Vector2(400, -400)
 
-[node name="ValidTile14" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile14" parent="PhaseOne/ValidTiles" unique_id=1528545005 instance=ExtResource("4_k6h3u")]
 position = Vector2(200, -400)
 
-[node name="ValidTile15" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile15" parent="PhaseOne/ValidTiles" unique_id=1036436424 instance=ExtResource("4_k6h3u")]
 position = Vector2(0, -400)
 
-[node name="ValidTile16" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile16" parent="PhaseOne/ValidTiles" unique_id=220499214 instance=ExtResource("4_k6h3u")]
 position = Vector2(-200, -400)
 
-[node name="ValidTile17" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile17" parent="PhaseOne/ValidTiles" unique_id=1193565041 instance=ExtResource("4_k6h3u")]
 position = Vector2(-400, -400)
 
-[node name="ValidTile18" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile18" parent="PhaseOne/ValidTiles" unique_id=663708093 instance=ExtResource("4_k6h3u")]
 position = Vector2(-400, -200)
 
-[node name="ValidTile19" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile19" parent="PhaseOne/ValidTiles" unique_id=579701688 instance=ExtResource("4_k6h3u")]
 position = Vector2(-400, 0)
 
-[node name="ValidTile20" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile20" parent="PhaseOne/ValidTiles" unique_id=1720787245 instance=ExtResource("4_k6h3u")]
 position = Vector2(-400, 200)
 
-[node name="ValidTile21" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile21" parent="PhaseOne/ValidTiles" unique_id=866907140 instance=ExtResource("4_k6h3u")]
 position = Vector2(-400, 400)
 
-[node name="ValidTile22" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile22" parent="PhaseOne/ValidTiles" unique_id=1118774631 instance=ExtResource("4_k6h3u")]
 position = Vector2(-200, 400)
 
-[node name="ValidTile23" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile23" parent="PhaseOne/ValidTiles" unique_id=1995882309 instance=ExtResource("4_k6h3u")]
 position = Vector2(0, 400)
 
-[node name="ValidTile24" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile24" parent="PhaseOne/ValidTiles" unique_id=1985581043 instance=ExtResource("4_k6h3u")]
 position = Vector2(200, 400)
 
-[node name="ValidTile25" parent="PhaseOne/ValidTiles" instance=ExtResource("4_k6h3u")]
+[node name="ValidTile25" parent="PhaseOne/ValidTiles" unique_id=1364234672 instance=ExtResource("4_k6h3u")]
 position = Vector2(400, 400)
 
-[node name="DeathTiles" type="Marker2D" parent="PhaseOne"]
+[node name="DeathTiles" type="Marker2D" parent="PhaseOne" unique_id=376177691]
 
-[node name="DeathTile" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile" parent="PhaseOne/DeathTiles" unique_id=2115526330 instance=ExtResource("6_k6h3u")]
 position = Vector2(600, 0)
 
-[node name="DeathTile2" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile2" parent="PhaseOne/DeathTiles" unique_id=454926856 instance=ExtResource("6_k6h3u")]
 position = Vector2(600, 200)
 
-[node name="DeathTile3" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile3" parent="PhaseOne/DeathTiles" unique_id=887432385 instance=ExtResource("6_k6h3u")]
 position = Vector2(600, 400)
 
-[node name="DeathTile4" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile4" parent="PhaseOne/DeathTiles" unique_id=762036445 instance=ExtResource("6_k6h3u")]
 position = Vector2(600, -200)
 
-[node name="DeathTile5" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile5" parent="PhaseOne/DeathTiles" unique_id=1947118773 instance=ExtResource("6_k6h3u")]
 position = Vector2(600, -400)
 
-[node name="DeathTile6" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile6" parent="PhaseOne/DeathTiles" unique_id=2100257535 instance=ExtResource("6_k6h3u")]
 position = Vector2(0, 600)
 
-[node name="DeathTile7" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile7" parent="PhaseOne/DeathTiles" unique_id=46952171 instance=ExtResource("6_k6h3u")]
 position = Vector2(200, 600)
 
-[node name="DeathTile8" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile8" parent="PhaseOne/DeathTiles" unique_id=1965000778 instance=ExtResource("6_k6h3u")]
 position = Vector2(400, 600)
 
-[node name="DeathTile9" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile9" parent="PhaseOne/DeathTiles" unique_id=256989426 instance=ExtResource("6_k6h3u")]
 position = Vector2(-200, 600)
 
-[node name="DeathTile10" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile10" parent="PhaseOne/DeathTiles" unique_id=131610163 instance=ExtResource("6_k6h3u")]
 position = Vector2(-400, 600)
 
-[node name="DeathTile11" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile11" parent="PhaseOne/DeathTiles" unique_id=203408805 instance=ExtResource("6_k6h3u")]
 position = Vector2(-600, 400)
 
-[node name="DeathTile12" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile12" parent="PhaseOne/DeathTiles" unique_id=282735810 instance=ExtResource("6_k6h3u")]
 position = Vector2(-600, 200)
 
-[node name="DeathTile13" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile13" parent="PhaseOne/DeathTiles" unique_id=385321561 instance=ExtResource("6_k6h3u")]
 position = Vector2(-600, 0)
 
-[node name="DeathTile14" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile14" parent="PhaseOne/DeathTiles" unique_id=583217453 instance=ExtResource("6_k6h3u")]
 position = Vector2(-600, -200)
 
-[node name="DeathTile15" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile15" parent="PhaseOne/DeathTiles" unique_id=1242602082 instance=ExtResource("6_k6h3u")]
 position = Vector2(-600, -400)
 
-[node name="DeathTile16" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile16" parent="PhaseOne/DeathTiles" unique_id=1080288038 instance=ExtResource("6_k6h3u")]
 position = Vector2(-400, -600)
 
-[node name="DeathTile17" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile17" parent="PhaseOne/DeathTiles" unique_id=2037460433 instance=ExtResource("6_k6h3u")]
 position = Vector2(-200, -600)
 
-[node name="DeathTile18" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile18" parent="PhaseOne/DeathTiles" unique_id=1440228774 instance=ExtResource("6_k6h3u")]
 position = Vector2(0, -600)
 
-[node name="DeathTile19" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile19" parent="PhaseOne/DeathTiles" unique_id=1392434623 instance=ExtResource("6_k6h3u")]
 position = Vector2(200, -600)
 
-[node name="DeathTile20" parent="PhaseOne/DeathTiles" instance=ExtResource("6_k6h3u")]
+[node name="DeathTile20" parent="PhaseOne/DeathTiles" unique_id=219102198 instance=ExtResource("6_k6h3u")]
 position = Vector2(400, -600)
 
-[node name="ExitTimer" type="Timer" parent="PhaseOne"]
-wait_time = 14.0
-one_shot = true
-
-[node name="IntroTimer" type="Timer" parent="PhaseOne"]
+[node name="IntroTimer" type="Timer" parent="PhaseOne" unique_id=664902482]
 wait_time = 3.0
 one_shot = true
 
-[node name="RecenterTimer" type="Timer" parent="PhaseOne"]
+[node name="RecenterTimer" type="Timer" parent="PhaseOne" unique_id=1194957632]
 one_shot = true
 
-[node name="ResetTimer" type="Timer" parent="."]
+[node name="ResetTimer" type="Timer" parent="." unique_id=1105355125]
 process_mode = 3
 process_callback = 0
 one_shot = true
 ignore_time_scale = true
 
 [connection signal="animation_finished" from="PhaseOne/Boss" to="PhaseOne" method="_on_boss_animation_finished"]
-[connection signal="timeout" from="PhaseOne/ExitTimer" to="PhaseOne" method="_on_exit_timer_timeout"]
 [connection signal="timeout" from="PhaseOne/IntroTimer" to="PhaseOne" method="_on_intro_timer_timeout"]
 [connection signal="timeout" from="PhaseOne/RecenterTimer" to="PhaseOne" method="_on_recenter_timer_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

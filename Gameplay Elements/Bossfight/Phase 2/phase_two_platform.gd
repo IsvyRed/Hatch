@@ -11,6 +11,7 @@ func _ready():
 	bossfightCamera = get_parent().get_parent().camera
 #this will be called when the boss reaches this platform, spawn a new platform via the phase 2 script when this happens 
 func _on_kill_box_area_entered(_area):
+	print("entered")
 	get_parent().damageTaken += dmgDealtRound
 	dmgDealtRound = 0
 	for child in multihitChildren:

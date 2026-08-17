@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bfsrdnp8l2pdg"]
+[gd_scene format=3 uid="uid://bfsrdnp8l2pdg"]
 
 [ext_resource type="Script" uid="uid://c1w523h2ffpdp" path="res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.gd" id="1_1xhwf"]
 [ext_resource type="PackedScene" uid="uid://dxh7vnusjnor2" path="res://Gameplay Elements/valid_tile.tscn" id="2_n82j1"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://sbs0xg8rasjw" path="res://Sprites/Bossfight/Phase 2/Platforms/PlatformBotA11.png" id="28_kmu58"]
 [ext_resource type="Texture2D" uid="uid://dk33qwgqbvmkr" path="res://Sprites/Bossfight/Phase 2/Platforms/PlatformBotA12.png" id="29_x35ix"]
 [ext_resource type="Texture2D" uid="uid://bpdab7c5js7w4" path="res://Sprites/Bossfight/Phase 2/Platforms/PlatformBotA13.png" id="30_mucav"]
+[ext_resource type="Script" uid="uid://bg4ftnhoa03u6" path="res://Gameplay Elements/Bossfight/Phase 2/kill_box.gd" id="44_625v8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns7r7"]
 animations = [{
@@ -86,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_mucav")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -133,7 +134,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_k4q8r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -180,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30_mucav")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -188,54 +189,56 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bei1o"]
 size = Vector2(75, 76)
 
-[node name="PhaseTwoPlatform" type="Marker2D"]
+[node name="PhaseTwoPlatform" type="Marker2D" unique_id=1370512818]
 script = ExtResource("1_1xhwf")
 
-[node name="SpriteHandler" type="Marker2D" parent="."]
+[node name="SpriteHandler" type="Marker2D" parent="." unique_id=1935186297]
 script = ExtResource("4_3fm72")
 
-[node name="Top" type="AnimatedSprite2D" parent="SpriteHandler"]
+[node name="Top" type="AnimatedSprite2D" parent="SpriteHandler" unique_id=755185548]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ns7r7")
 frame = 6
 
-[node name="Mid" type="AnimatedSprite2D" parent="SpriteHandler"]
+[node name="Mid" type="AnimatedSprite2D" parent="SpriteHandler" unique_id=1793975578]
 texture_filter = 1
 position = Vector2(0, 200)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_veccs")
 frame = 6
 
-[node name="Bot" type="AnimatedSprite2D" parent="SpriteHandler"]
+[node name="Bot" type="AnimatedSprite2D" parent="SpriteHandler" unique_id=622167917]
 texture_filter = 1
 position = Vector2(0, 400)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_tb253")
 frame = 6
 
-[node name="ValidTile" parent="." instance=ExtResource("2_n82j1")]
+[node name="ValidTile" parent="." unique_id=2108437733 instance=ExtResource("2_n82j1")]
 position = Vector2(0, 200)
 
-[node name="ValidTile2" parent="." instance=ExtResource("2_n82j1")]
+[node name="ValidTile2" parent="." unique_id=931303527 instance=ExtResource("2_n82j1")]
 
-[node name="ValidTile3" parent="." instance=ExtResource("2_n82j1")]
+[node name="ValidTile3" parent="." unique_id=1847362687 instance=ExtResource("2_n82j1")]
 position = Vector2(0, -200)
 
-[node name="DeathTile" parent="." instance=ExtResource("3_1xhwf")]
+[node name="DeathTile" parent="." unique_id=1948901154 instance=ExtResource("3_1xhwf")]
 position = Vector2(0, -400)
 
-[node name="DeathTile2" parent="." instance=ExtResource("3_1xhwf")]
+[node name="DeathTile2" parent="." unique_id=1744538365 instance=ExtResource("3_1xhwf")]
 position = Vector2(0, 400)
 
-[node name="KillBox" type="Area2D" parent="."]
+[node name="KillBox" type="Area2D" parent="." unique_id=752177789]
 collision_layer = 0
 collision_mask = 128
+script = ExtResource("44_625v8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox" unique_id=741860429]
 position = Vector2(105, 0)
 shape = SubResource("RectangleShape2D_bei1o")
+debug_color = Color(0.84443474, 0.0010405869, 0.91434157, 0.41960785)
 
-[node name="FrameSwitcher" type="Timer" parent="."]
+[node name="FrameSwitcher" type="Timer" parent="." unique_id=58281643]
 wait_time = 0.4
 autostart = true
 

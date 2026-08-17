@@ -1,3 +1,4 @@
+#FIX INITIAL SPAWNS - enemies are spawning stacked up
 extends Marker2D
 var PLAYER = preload("res://Gameplay Elements/player.tscn")
 var PLATFORM = preload("res://Gameplay Elements/Bossfight/Phase 2/phase_two_platform.tscn")
@@ -10,7 +11,7 @@ var scrolling = true
 var allPlatforms 
 #STATE MACHINE FUNCTIONS
 func enter():
-	allPlatforms = [$PhaseTwoPlatform1,$PhaseTwoPlatform2,$PhaseTwoPlatform3,$PhaseTwoPlatform4,$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9]
+	allPlatforms = [$PhaseTwoPlatform1,$PhaseTwoPlatform2,$PhaseTwoPlatform3,$PhaseTwoPlatform4,$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9,$PhaseTwoPlatform10,$PhaseTwoPlatform11]
 	#Setting platform sprites
 	print(allPlatforms)
 	var i = 9
@@ -23,7 +24,7 @@ func enter():
 	curlane = 1
 	Globals.clearEnemies()
 	#skipped platforms behind and stacked w/ player, i know this code looks hideous dont mention it ot me -- enemy spawning
-	var initPlatforms = [$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9]
+	var initPlatforms = [$PhaseTwoPlatform5,$PhaseTwoPlatform6,$PhaseTwoPlatform7,$PhaseTwoPlatform8,$PhaseTwoPlatform9,$PhaseTwoPlatform10,$PhaseTwoPlatform11]
 	var starterVisibility = [false,false,false]
 	for platform in initPlatforms:
 		if platform:
