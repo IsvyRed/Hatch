@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bxptvf378ki0c"]
+[gd_scene format=3 uid="uid://bxptvf378ki0c"]
 
 [ext_resource type="Script" uid="uid://bfm8ahbm6aoke" path="res://Scripts/intermission_player.gd" id="1_ump6m"]
 [ext_resource type="Texture2D" uid="uid://bytmt4vf1nuh7" path="res://Sprites/Player/PlayerIdle1.png" id="2_epqwq"]
@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_vhfmc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -61,7 +61,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_768kw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_buoaq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -101,7 +101,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_dcbpq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 20.0
 }]
@@ -118,9 +118,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_5wd8n")
 }],
-"loop": false,
+"loop": 0,
 "name": &"new_animation",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d42rm"]
@@ -135,9 +135,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_5wd8n")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_holma"]
@@ -152,9 +152,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_5wd8n")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
-"speed": 15.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tka8h"]
@@ -175,62 +175,62 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_xuwp6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
 
-[node name="IntermissionPlayer" type="Area2D"]
+[node name="IntermissionPlayer" type="Area2D" unique_id=625460745]
 z_index = 2
 z_as_relative = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ump6m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339225615]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_xxies")
 
-[node name="AnimationHandler" type="Marker2D" parent="."]
+[node name="AnimationHandler" type="Marker2D" parent="." unique_id=852853314]
 script = ExtResource("4_gttjh")
 
-[node name="Idle" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Idle" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1323678096]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_x5fn1")
 
-[node name="SwingH" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingH" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=11931990]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_83g1o")
 
-[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingU" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=826624913]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_wdv3t")
 
-[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="SwingD" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=631672723]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_plsvp")
 
-[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack1" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=10745489]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_uw717")
 animation = &"new_animation"
 
-[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack2" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=643750053]
 visible = false
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_d42rm")
 
-[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="Attack3" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=1526934740]
 visible = false
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_holma")
 
-[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler"]
+[node name="DeathShot" type="AnimatedSprite2D" parent="AnimationHandler" unique_id=990276273]
 visible = false
 z_index = 16
 z_as_relative = false

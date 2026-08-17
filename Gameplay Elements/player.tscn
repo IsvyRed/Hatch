@@ -124,7 +124,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_7fmjx"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("17_5td2p")
 }, {
 "duration": 1.0,
@@ -138,13 +138,13 @@ animations = [{
 }],
 "loop": 0,
 "name": &"new_animation",
-"speed": 48.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2ovt"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("19_ctpar")
 }, {
 "duration": 1.0,
@@ -158,13 +158,13 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 48.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctpar"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("19_5td2p")
 }, {
 "duration": 1.0,
@@ -178,7 +178,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 48.0
+"speed": 24.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oosy3"]
