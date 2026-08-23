@@ -6,6 +6,16 @@
 [ext_resource type="Script" uid="uid://g20vj5qul348" path="res://Gameplay Elements/Bossfight/platform_killer.gd" id="3_tkgmd"]
 [ext_resource type="PackedScene" uid="uid://cwh7sdilh4bx" path="res://Gameplay Elements/death_tile.tscn" id="4_ok1hk"]
 [ext_resource type="Script" uid="uid://1gee4q24l05t" path="res://Gameplay Elements/Bossfight/Phase 2/debris_remover.gd" id="4_qrcq2"]
+[ext_resource type="Texture2D" uid="uid://cst41dncjlq3j" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB161.png" id="6_8wyt0"]
+[ext_resource type="Texture2D" uid="uid://c4b2eg4tfw8q0" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB162.png" id="7_p40bp"]
+[ext_resource type="Texture2D" uid="uid://b71xbp04o6krv" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB163.png" id="8_oq8qg"]
+[ext_resource type="Texture2D" uid="uid://bxy0j2okhqkuq" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB164.png" id="9_sn8oe"]
+[ext_resource type="Texture2D" uid="uid://mmlro6fxfh6y" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB165.png" id="10_ewprs"]
+[ext_resource type="Texture2D" uid="uid://ca3r8vpupn17h" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB166.png" id="11_u5u53"]
+[ext_resource type="Texture2D" uid="uid://bjynxjw1fs22i" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB167.png" id="12_y3h6s"]
+[ext_resource type="Texture2D" uid="uid://crbsj3fnx3sic" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB168.png" id="13_wtk6k"]
+[ext_resource type="Texture2D" uid="uid://cqh46siuocdux" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB169.png" id="14_ktvbv"]
+[ext_resource type="Texture2D" uid="uid://bm8iikm5lw31i" path="res://Sprites/Bossfight/Phase 1/TransitionOutptB170.png" id="15_87f60"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5xhfq"]
 font_size = 46
@@ -15,6 +25,44 @@ size = Vector2(198, 717)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkgmd"]
 size = Vector2(258, 845)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbolr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8wyt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p40bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oq8qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sn8oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ewprs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5u53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y3h6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wtk6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ktvbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_87f60")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="PhaseTwo" type="Marker2D" unique_id=1286067633]
 script = ExtResource("1_mdi0v")
@@ -89,6 +137,11 @@ script = ExtResource("4_qrcq2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformKiller/DebrisRemover" unique_id=721285452]
 position = Vector2(-521, 0)
 shape = SubResource("RectangleShape2D_tkgmd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlatformKiller" unique_id=1675302962]
+z_index = 100
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_kbolr")
 
 [node name="DeathTile" parent="." unique_id=35422996 instance=ExtResource("4_ok1hk")]
 position = Vector2(1600, -200)
